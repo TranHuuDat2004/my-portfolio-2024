@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="My Projects and Skills" />
+    <meta name="author" content="Tran Huu Dat" />
+    <title>Projects - Tran Huu Dat</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <!-- Custom Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <style>
+        body {
+            /* Áp dụng cursor: none cho toàn bộ body */
+            cursor: none;
+            position: relative;
+            /* Cần cho việc định vị con trỏ ảo nếu nó không fixed */
+        }
+
+        a,
+        button,
+        input[type="submit"],
+        /* Thêm cho nút submit */
+        .form-control
+
+        /* Thêm cho các input field */
+            {
+            cursor: url('assets/hand_blue.png'), auto;
+            /* Fallback là auto */
+        }
+
+        .interactive-grid-section {
+            margin-bottom: 3rem;
+        }
+
+
+
+        .interactive-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            /* position: relative;  Không cần nữa */
+            /* cursor: none;  Đã chuyển lên body */
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 0.75rem;
+            background-color: #ffffff;
+            justify-content: center;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-item {
+            padding: 10px 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 50px;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease-out;
+            color: #495057;
+            font-weight: 600;
+            font-size: 0.9rem;
+            /* cursor: default; Bỏ vì body đã là none, element con có thể set lại nếu muốn */
+        }
+
+        .grid-item:hover {
+            /* Thêm :hover cho grid-item khi người dùng tự di chuột */
+            background-color: #d1ecf1;
+            box-shadow: 0 0 15px rgba(13, 202, 240, 0.4);
+            transform: scale(1.1);
+            border-color: #0dcaf0;
+            color: #0a58ca;
+            cursor: none;
+        }
+
+        .grid-item.highlight-auto {
+            /* Class riêng cho animation tự động */
+            background-color: #d1ecf1;
+            box-shadow: 0 0 15px rgba(13, 202, 240, 0.4);
+            transform: scale(1.1);
+            border-color: #0dcaf0;
+            color: #0a58ca;
+        }
+
+        .cursor-element {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+            z-index: 1070;
+            /* Sẽ được set top/left bằng JS */
+            opacity: 0;
+            /* Bắt đầu ẩn, sẽ hiện ra khi JS chạy */
+            transition: opacity 0.3s ease-in-out;
+            /* Transition cho việc hiện ra */
+        }
+
+        .cursor-element.visible {
+            opacity: 1;
+        }
+
+        .cursor-element img {
+            width: 28px;
+            height: auto;
+            margin-right: 8px;
+        }
+
+        .cursor-element .cursor-text {
+            background-color: #0d6efd;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.95em;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+            font-weight: bold;
+            opacity: 1;
+            /* Trạng thái bình thường, text hiện rõ */
+            transition: opacity 0.5s ease-in-out;
+            /* Transition cho opacity */
+        }
+
+        .cursor-element .cursor-text.fade-out {
+            opacity: 0;
+            /* Trạng thái khi text mờ đi */
+        }
+
+        .project-card-image {
+            max-width: 150px;
+            /* Kích thước logo trên mobile */
+            /* margin-bottom: 1rem; Khoảng cách với text khi ở dạng cột (nếu ảnh ở trên) */
+            /* Nếu ảnh ở bên, margin-bottom không cần thiết khi flex-direction: column */
+            display: block;
+            /* Loại bỏ khoảng trắng thừa nếu là ảnh inline */
+            margin-left: auto;
+            /* Căn giữa ảnh trên mobile nếu text-align:center cho div cha */
+            margin-right: auto;
+        }
+
+        .featured-projects h2 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .project-card {
+            background-color: white;
+
+            border-radius: 6px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #58a6ff;
+            /* Màu tiêu đề */
+        }
+
+        .external-link-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: #8b949e;
+        }
+
+        .project-description {
+            font-size: 0.875rem;
+            color: #8b949e;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            /* Để description chiếm không gian còn lại */
+            line-height: 1.5;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+            color: #8b949e;
+        }
+
+        .project-language {
+            display: flex;
+            align-items: center;
+        }
+
+        .language-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+
+        .language-dot.ruby {
+            background-color: #701516;
+        }
+
+        .language-dot.css {
+            background-color: #563d7c;
+        }
+
+        .language-dot.html {
+            background-color: #e34c26;
+        }
+
+        .language-dot.javascript {
+            background-color: #f1e05a;
+        }
+
+        .language-dot.unknown {
+            background-color: #ccc;
+        }
+
+        .project-stats span {
+            margin-left: 1rem;
+        }
+
+        .project-stats .stars::before {
+            content: '⭐';
+            margin-right: 4px;
+        }
+
+        /* Hoặc dùng SVG icon */
+        .project-stats .forks::before {
+            content: '🍴';
+            margin-right: 4px;
+        }
+
+        /* css/styles.css */
+
+        /* Styles cho nội dung README được render */
+        #readme-content {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            line-height: 1.6;
+            color: #212529;
+            /* Màu chữ chính của Bootstrap */
+        }
+
+        #readme-content h1,
+        #readme-content h2,
+        #readme-content h3,
+        #readme-content h4,
+        #readme-content h5,
+        #readme-content h6 {
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            line-height: 1.25;
+            color: #0d6efd;
+            /* Màu text-primary của Bootstrap */
+        }
+
+        #readme-content h1 {
+            font-size: 2rem;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: .3em;
+        }
+
+        #readme-content h2 {
+            font-size: 1.75rem;
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: .3em;
+        }
+
+        #readme-content h3 {
+            font-size: 1.5rem;
+        }
+
+        #readme-content h4 {
+            font-size: 1.25rem;
+        }
+
+        #readme-content p {
+            margin-bottom: 1rem;
+        }
+
+        #readme-content ul,
+        #readme-content ol {
+            padding-left: 2rem;
+            /* Thụt lề cho danh sách */
+            margin-bottom: 1rem;
+        }
+
+        #readme-content ul ul,
+        #readme-content ol ol,
+        #readme-content ul ol,
+        #readme-content ol ul {
+            margin-bottom: 0;
+            /* Không thêm margin bottom cho list con */
+        }
+
+
+        #readme-content li {
+            margin-bottom: 0.35rem;
+        }
+
+        #readme-content code {
+            padding: .2em .4em;
+            margin: 0;
+            font-size: 85%;
+            background-color: #e9ecef;
+            /* Màu nền nhẹ cho code inline */
+            border-radius: 3px;
+            font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+
+        #readme-content pre {
+            padding: 1rem;
+            overflow: auto;
+            font-size: 0.9em;
+            line-height: 1.45;
+            background-color: #f8f9fa;
+            /* Nền cho khối code */
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            /* Bo góc nhẹ */
+            word-wrap: normal;
+        }
+
+        #readme-content pre code {
+            padding: 0;
+            margin: 0;
+            font-size: 100%;
+            background-color: transparent;
+            border: none;
+        }
+
+        #readme-content a {
+            color: #0d6efd;
+            /* Màu link primary của Bootstrap */
+            text-decoration: none;
+        }
+
+        #readme-content a:hover {
+            text-decoration: underline;
+        }
+
+        #readme-content img {
+            max-width: 100%;
+            /* Đảm bảo ảnh không tràn ra ngoài */
+            height: auto;
+            /* Giữ tỷ lệ khung hình */
+            box-sizing: border-box;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        #readme-content img.no-style {
+            /* Class bạn có thể thêm vào ảnh nếu không muốn margin */
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        /* Xử lý align từ Markdown (HTML attributes) */
+        #readme-content [align="center"] {
+            text-align: center;
+        }
+
+        #readme-content [align="center"]>img {
+            /* Căn giữa ảnh trong p align center */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #readme-content img[align="right"] {
+            float: right;
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+
+        #readme-content img[align="left"] {
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 10px;
+        }
+
+        /* Clearfix cho float images */
+        #readme-content p::after,
+        #readme-content div::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        #readme-content hr {
+            /* Style cho thẻ <hr> (--- trong markdown) */
+            border: 0;
+            height: 1px;
+            background-color: #dee2e6;
+            /* Màu đường kẻ */
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Cụ thể cho danh sách dự án nếu cần */
+        #readme-content h4+ol>li>em,
+        /* Tech stack trong project list */
+        #readme-content h4+ul>li>em {
+            font-style: italic;
+            color: #6c757d;
+            /* Màu secondary của Bootstrap */
+        }
+
+        /* Đảm bảo các ảnh từ GitHub Stats hiển thị tốt */
+        #readme-content p[align="center"] img[src*="github-readme-stats.vercel.app"],
+        #readme-content p[align="center"] img[src*="streak-stats.demolab.com"] {
+            display: inline-block;
+            /* Để chúng có thể nằm cạnh nhau nếu đủ không gian */
+            margin: 0.5rem;
+            /* Thêm chút khoảng cách */
+        }
+
+        /* css/styles.css */
+
+        #readme-content h4+p[align="center"]+ol,
+        /* Nhắm vào list ngay sau logo project */
+        #readme-content h4+p[align="center"]+ul {
+            clear: both;
+            /* Đảm bảo list bắt đầu sau khi ảnh đã được clear float (nếu có) */
+            margin-top: 1rem;
+            /* Thêm khoảng cách trên cho list */
+        }
+
+        #readme-content p[align="center"]>img[alt*="Logo"] {
+            /* Nhắm cụ thể vào ảnh logo trong p align center */
+            max-height: 70px;
+            /* Giới hạn chiều cao tối đa, bạn có thể điều chỉnh */
+            width: auto;
+            /* Để chiều rộng tự điều chỉnh theo tỷ lệ */
+            margin-bottom: 0.5rem;
+            /* Khoảng cách dưới logo */
+            /* display: block; margin-left: auto; margin-right: auto; đã được xử lý bởi align="center" */
+        }
+
+        /* Styles cho Connect with me và Languages and Tools */
+        #readme-content h3+p[align="left"] {
+            /* Nhắm vào <p> ngay sau <h3> */
+            display: flex;
+            /* Sử dụng Flexbox */
+            flex-wrap: wrap;
+            /* Cho phép xuống dòng nếu không đủ chỗ */
+            align-items: center;
+            /* Căn giữa các icon theo chiều dọc */
+            gap: 10px;
+            /* Khoảng cách giữa các icon */
+        }
+
+        #readme-content h3+p[align="left"] a {
+            display: inline-block;
+            /* Đảm bảo mỗi link là một block nhỏ */
+            line-height: 1;
+            /* Giúp căn chỉnh ảnh tốt hơn */
+        }
+
+        #readme-content h3+p[align="left"] img {
+            vertical-align: middle;
+            /* Căn giữa ảnh với text (nếu có) */
+            /* Không cần set width/height ở đây nếu đã set trong Markdown */
+        }
+
+        /* Căn chỉnh phần giới thiệu đầu tiên */
+  #readme-content > h1[align="center"] { /* Tiêu đề "Hi 👋, I'm Tran Huu Dat" */
+      margin-bottom: 0.5rem;
+  }
+  #readme-content > h3[align="center"] { /* "I'm a Software Engineering student..." */
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem; /* Có thể giảm kích thước một chút */
+      color: #6c757d; /* Màu xám nhẹ hơn */
+  }
+
+  /* Xử lý ảnh GIF type.gif và Profile views */
+  #readme-content > img[alt="Coding Animation"][align="right"] {
+      margin-top: -20px; /* Kéo ảnh lên một chút nếu cần */
+      max-width: 300px; /* Giảm kích thước nếu nó quá lớn trên một số màn hình */
+  }
+  @media (max-width: 768px) { /* Trên màn hình nhỏ hơn */
+      #readme-content > img[alt="Coding Animation"][align="right"] {
+          float: none; /* Bỏ float */
+          display: block;
+          margin: 1rem auto; /* Căn giữa và thêm khoảng cách */
+          max-width: 80%;
+      }
+      /* Đảm bảo text không bị ảnh đè lên quá nhiều */
+      #readme-content > h1[align="center"],
+      #readme-content > h3[align="center"],
+      #readme-content > p:has(img[alt="Profile Views"]) { /* Đoạn <p> chứa Profile Views */
+          clear: both; /* Quan trọng để text không bị float ảnh đè */
+      }
+  }
+
+
+  #readme-content > p:has(img[alt="Profile Views"]) { /* Đoạn <p> chứa Profile Views */
+      margin-bottom: 2rem; /* Tăng khoảng cách dưới Profile Views */
+  }
+
+  /* "Here's a little bit about me:" */
+  #readme-content > ul:first-of-type { /* Nhắm vào list ul đầu tiên (thường là phần "Here's a little bit about me") */
+      margin-top: 1rem;
+      list-style-position: outside; /* Đảm bảo bullet points không bị thụt vào quá nhiều */
+      padding-left: 1.5rem; /* Điều chỉnh thụt lề nếu cần */
+  }
+
+        /* Hoặc dùng SVG icon */
+
+        @media (min-width: 768px) {
+
+            /* md breakpoint của Bootstrap */
+            .project-card-image {
+                max-width: 220px;
+                /* Kích thước logo trên desktop, bạn có thể điều chỉnh */
+                margin-bottom: 0;
+                /* Reset margin-bottom */
+                margin-left: 0;
+                /* Reset căn giữa */
+                margin-right: 0;
+            }
+
+            /* Đảm bảo padding cho text và ảnh trên desktop/tablet */
+            .d-flex.flex-md-row>.text-md-start.p-md-0 {
+                padding: 1.5rem !important;
+                /* Thêm padding cho container ảnh trên desktop */
+            }
+
+            .d-flex.flex-md-row>.p-md-5 {
+                padding: 1.5rem !important;
+                /* Đồng bộ padding cho text trên desktop */
+            }
+        }
+
+        /* Tùy chọn: Nếu bạn muốn ảnh nhỏ hơn nữa trên màn hình cực nhỏ */
+        @media (max-width: 576px) {
+            .glimpse-image-wrapper {
+                width: 80%;
+                /* Hoặc có thể là 100% nếu bạn muốn nó đầy đủ hơn trên xs screens */
+            }
+
+            .card-body .row .col-lg-8 ul,
+            .card-body .row .col-lg-9 ul {
+                /* Áp dụng cho cột chứa mô tả trong Experience, Education, Awards */
+                padding-left: 1.25rem;
+                /* Giảm độ thụt lề của danh sách (mặc định Bootstrap là 2rem) */
+            }
+
+            .card-body .row .col-lg-8 ul li,
+            .card-body .row .col-lg-9 ul li,
+            .card-body .row .col-lg-8 p,
+            /* Nếu có đoạn văn p trong phần này */
+            .card-body .row .col-lg-9 p {
+                font-size: 0.875rem;
+                /* Giảm nhẹ cỡ chữ (14px nếu base là 16px) */
+                line-height: 1.5;
+                /* Giảm nhẹ khoảng cách dòng */
+                margin-bottom: 0.35rem;
+                /* Khoảng cách nhỏ giữa các list items */
+            }
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column h-100 bg-light"> <!-- Bỏ class interactive-grid ở đây -->
+    <main class="flex-shrink-0">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Tran Huu Dat</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section class="py-5">
+            <div class="container px-5 mb-5">
+                <div class="text-center mb-5">
+                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">My Projects</span></h1>
+                </div>
+                <!-- THÊM DIV CHO NỘI DUNG README Ở ĐÂY -->
+                <div class="container px-lg-5"> <!-- Optional: Thêm container để giới hạn chiều rộng -->
+                    <div id="readme-content" class="bg-white shadow rounded-3 p-4 p-sm-5">
+                        <!-- Nội dung từ README.md sẽ được chèn vào đây -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+    <section class="py-5"></section>
+    <!-- Footer (Giữ nguyên) -->
+    <footer class="bg-white py-4 mt-auto">
+        <!-- ... Nội dung ... -->
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0">Copyright © Tran Huu Dat 2024</div>
+                </div> <!-- Thay tên và năm -->
+                <div class="col-auto">
+                    <a class="small" href="#!">Privacy</a>
+                    <span class="mx-1">·</span>
+                    <a class="small" href="#!">Terms</a>
+                    <span class="mx-1">·</span>
+                    <a class="small" href="contact.html">Contact</a> <!-- Link đến trang contact -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cursor Element HTML -->
+    <div class="cursor-element">
+        <img src="assets/cursor_blue.png" alt="Custom Cursor Icon">
+        <span class="cursor-text">Huu Dat</span>
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+
+    <!-- JavaScript cho Interactive Grid -->
+    <script src="js/cursor.js">    </script>
+    <script src="js/github.js">    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Chúng ta sẽ tạo file render-readme.js ở bước sau -->
+    <script src="js/render-readme.js"></script>
+</body>
+
+</html>

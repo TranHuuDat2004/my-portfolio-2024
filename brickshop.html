@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Projects by Tran Huu Dat - Web Developer" />
+    <meta name="author" content="Tran Huu Dat" />
+    <title>Projects - Tran Huu Dat</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <!-- Custom Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        body {
+            cursor: none;
+            position: relative;
+        }
+
+        a,
+        button,
+        input[type="submit"],
+        .form-control {
+            cursor: url('assets/hand_blue.png'), auto;
+        }
+
+        .text-gradient-purple-pink {
+            background: -webkit-linear-gradient(315deg, #8A2BE2 0%, #FF69B4 100%);
+            background: linear-gradient(135deg, #8A2BE2 0%, #FF69B4 100%);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            text-fill-color: transparent;
+        }
+
+        .project-card {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        .project-category-tag-wrapper {
+            position: absolute;
+            top: 25px; 
+            left: -5px;
+            z-index: 1;
+            display: flex;
+            align-items: stretch; 
+        }
+        .project-category-tag-arrow {
+            width: 15px; 
+            background-color: #0D6EFD; 
+            clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
+            margin-right: -1px;
+        }
+        .project-category-tag-text {
+            background-color: #0D6EFD; 
+            color: white;
+            padding: 7px 12px 7px 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 0 4px 4px 0; 
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .tech-badge {
+            margin-right: 0.4rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.80em;
+            padding: 0.4em 0.75em;
+            border-radius: 10px;
+            font-weight: 500;
+            color: white;
+            border: 1px solid transparent;
+        }
+        .tech-badge.html5 { background-color: #0D6EFD; }
+        .tech-badge.css3 { background-color: #D63384; }
+        .tech-badge.bootstrap { background-color: #0DCAF0; color: #212529; }
+        .tech-badge.javascript { background-color: #FFDA07; color: #212529; }
+        .tech-badge.nodejs { background-color: #198754; }
+        .tech-badge.mysql { background-color: #DC3545; }
+        
+        .feature-list {
+            padding-left: 0; /* Remove default padding for list-unstyled */
+            font-size: 0.95rem;
+        }
+        .feature-list li {
+            margin-bottom: 0.3rem;
+        }
+
+        .project-card .card-body {
+            padding-top: 2.5rem !important;
+        }
+        .project-card-content-wrapper {
+            padding-top: 35px;
+        }
+
+        /* Screenshot Table Styles */
+        .screenshot-table-header {
+            background-color: #f8f9fa; /* Light grey for headers */
+            font-weight: 600;
+            font-size: 0.85rem; /* Slightly smaller header text */
+            padding: 0.6rem 0.5rem; /* Adjust padding */
+        }
+        .screenshot-table td {
+            padding: 0.5rem; /* Padding around images */
+            background-color: #fff;
+        }
+        .screenshot-img {
+            max-height: 170px; /* Max height for screenshot */
+            width: 100%; 
+            object-fit: contain; /* Scale image down to fit, preserving aspect ratio */
+            border: 1px solid #e9ecef;
+            border-radius: 0.25rem;
+        }
+        .screenshot-table-header.visually-hidden-empty,
+        .screenshot-table td.visually-hidden-empty {
+            /* Let table-bordered handle borders. Content is   */
+        }
+         .screenshot-table-header.visually-hidden-empty {
+            background-color: #f8f9fa; /* Match other headers */
+        }
+        .screenshot-table td.visually-hidden-empty {
+            background-color: #fff; /* Match other td */
+        }
+
+        /* Underline style for screenshot section title */
+        .underlined-heading {
+            text-decoration: underline;
+            text-decoration-color: #adb5bd; /* Softer underline color */
+            text-underline-offset: 5px; /* Space between text and underline */
+            text-decoration-thickness: 1px; /* Thinner underline */
+        }
+
+
+        /* Cursor styles */
+        .cursor-element {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+            z-index: 1070;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .cursor-element.visible {
+            opacity: 1;
+        }
+        .cursor-element img {
+            width: 28px;
+            height: auto;
+            margin-right: 8px;
+        }
+        .cursor-element .cursor-text {
+            background-color: #0d6efd;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.95em;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+            font-weight: bold;
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .cursor-element .cursor-text.fade-out {
+            opacity: 0;
+        }
+    </style>
+
+</head>
+
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Tran Huu Dat</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Projects Section -->
+        <section class="py-5">
+            <div class="container px-5 mb-5">
+                <div class="text-center mb-5">
+                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient-purple-pink d-inline">Projects</span></h1>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-11 col-xl-9 col-xxl-8">
+                        <!-- Project Card 1: BrickShop -->
+                        <div class="card overflow-hidden shadow rounded-4 border-0 project-card">
+                            <div class="project-category-tag-wrapper">
+                                <div class="project-category-tag-arrow"></div>
+                                <div class="project-category-tag-text">E-commerce Dev</div>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="project-card-content-wrapper">
+                                    <h2 class="fw-bolder">BrickShop - Building Block Toy Paradise <span role="img" aria-label="brick emoji">🧱</span></h2>
+                                    <p class="text-muted">Welcome to BrickShop, an e-commerce website project dedicated to providing creative building block toys from leading brands like Qman, Keeppley, and LEGO. Explore a world of creativity with diverse themes and a seamless shopping experience.</p>
+                                    
+                                    <h5 class="mt-4 mb-3">Technology Stack:</h5>
+                                    <div class="mb-4">
+                                        <span class="badge tech-badge html5">HTML5</span>
+                                        <span class="badge tech-badge css3">CSS3</span>
+                                        <span class="badge tech-badge bootstrap">Bootstrap</span>
+                                        <span class="badge tech-badge javascript">JavaScript</span>
+                                        <span class="badge tech-badge nodejs">Node.js</span>
+                                        <span class="badge tech-badge mysql">MySQL</span>
+                                    </div>
+
+                                    <h5 class="mt-4">Key Features Overview:</h5>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6 class="fw-semibold">For Customers:</h6>
+                                            <ul class="list-unstyled feature-list">
+                                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Authentication & Account Management</li>
+                                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Product Browsing, Filtering & Search</li>
+                                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Detailed Product View & Gallery</li>
+                                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Cart & Secure Checkout (Vouchers, QR)</li>
+                                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Order History & Tracking</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6 class="fw-semibold">For Administrators:</h6>
+                                            <ul class="list-unstyled feature-list">
+                                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Dashboard with Key Metrics</li>
+                                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i>User, Product, Order Management</li>
+                                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Discount/Coupon & Category Mgmt</li>
+                                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Multi-language Product Input</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="mt-4">
+                                        <small class="text-muted">Admin panel built with Tailwind CSS, customer site with Bootstrap. Full details on GitHub.</small>
+                                    </p>
+                                    <p class="mt-3">
+                                        <a class="btn btn-primary px-4 py-3 me-2" href="https://github.com/TranHuuDat2004/BrickShop" target="_blank" rel="noopener noreferrer">
+                                            <i class="bi bi-github"></i> View on GitHub
+                                        </a>
+                                    </p>
+                                    <p class="mt-3"><small class="text-muted">License: CC BY-NC 4.0</small></p>
+
+                                    <!-- CUSTOMER INTERFACE SCREENSHOTS SECTION -->
+                                    <hr class="my-4">
+                                    <h5 class="mb-3 fw-semibold underlined-heading">Customer Interface (Bootstrap) Screenshots</h5>
+                                    <p class="small text-muted mb-3">Note: Ensure screenshot images are placed in <code>assets/screenshots/</code> directory with correct names.</p>
+                                    <div class="table-responsive mt-2">
+                                        <table class="table table-bordered align-middle text-center screenshot-table">
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="col" class="screenshot-table-header">Home Page</th>
+                                                    <th scope="col" class="screenshot-table-header">LEGO Introduction</th>
+                                                    <th scope="col" class="screenshot-table-header">Qman Introduction</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="assets/screenshots/customer-home.png" alt="BrickShop Home Page" class="img-fluid screenshot-img"></td>
+                                                    <td><img src="assets/screenshots/customer-lego-intro.png" alt="BrickShop LEGO Introduction" class="img-fluid screenshot-img"></td>
+                                                    <td><img src="assets/screenshots/customer-qman-intro.png" alt="BrickShop Qman Introduction" class="img-fluid screenshot-img"></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th scope="col" class="screenshot-table-header">Keeppley Introduction</th>
+                                                    <th scope="col" class="screenshot-table-header">Products Page</th>
+                                                    <th scope="col" class="screenshot-table-header">Product Detail Page</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="assets/screenshots/customer-keeppley-intro.png" alt="BrickShop Keeppley Introduction" class="img-fluid screenshot-img"></td>
+                                                    <td><img src="assets/screenshots/customer-products-page.png" alt="BrickShop Products Page" class="img-fluid screenshot-img"></td>
+                                                    <td><img src="assets/screenshots/customer-product-detail.png" alt="BrickShop Product Detail Page" class="img-fluid screenshot-img"></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th scope="col" class="screenshot-table-header">Account Settings - Info</th>
+                                                    <th scope="col" class="screenshot-table-header">Account Settings - Avatar</th>
+                                                    <th scope="col" class="screenshot-table-header">Account Settings - Social Links</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="assets/screenshots/customer-settings-info.png" alt="BrickShop Account Settings - Info" class="img-fluid screenshot-img"></td>
+                                                    <td><img src="assets/screenshots/customer-settings-avatar.png" alt="BrickShop Account Settings - Avatar" class="img-fluid screenshot-img"></td>
+                                                    <td><img src="assets/screenshots/customer-settings-social.png" alt="BrickShop Account Settings - Social Links" class="img-fluid screenshot-img"></td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <th scope="col" class="screenshot-table-header">Order Detail</th>
+                                                    <th scope="col" class="screenshot-table-header visually-hidden-empty"> </th> <!-- Placeholder for 2nd header cell -->
+                                                    <th scope="col" class="screenshot-table-header visually-hidden-empty"> </th> <!-- Placeholder for 3rd header cell -->
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="assets/screenshots/customer-order-detail.png" alt="BrickShop Order Detail" class="img-fluid screenshot-img"></td>
+                                                    <td class="visually-hidden-empty"> </td> <!-- Placeholder for 2nd image cell -->
+                                                    <td class="visually-hidden-empty"> </td> <!-- Placeholder for 3rd image cell -->
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- END CUSTOMER INTERFACE SCREENSHOTS SECTION -->
+
+                                </div> <!-- End of project-card-content-wrapper -->
+                            </div> <!-- End of card-body -->
+                        </div> <!-- End of project-card -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer-->
+    <footer class="bg-white py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0">Copyright © Tran Huu Dat 2024</div>
+                </div>
+                <div class="col-auto">
+                    <a class="small" href="#!">Privacy Policy</a>
+                    <span class="mx-1">·</span>
+                    <a class="small" href="#!">Terms of Use</a>
+                    <span class="mx-1">·</span>
+                    <a class="small" href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cursor Element HTML -->
+    <div class="cursor-element">
+        <img src="assets/cursor_blue.png" alt="Custom Cursor Icon">
+        <span class="cursor-text">Huu Dat</span>
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- JavaScript cho Interactive Grid và Cursor -->
+    <script>
+        const cursorElement = document.querySelector('.cursor-element');
+        const cursorTextElement = cursorElement.querySelector('.cursor-text');
+
+        let autoTextCurrentIndex = 0;
+        let autoTextInterval;
+
+        const autoTexts = [
+            "My Work",
+            "BrickShop Project",
+            "E-commerce Dev",
+            "Full-Stack Apps",
+            "Explore Further!"
+        ];
+
+        function updateCursorPosition(x, y) {
+            if (!cursorElement) return;
+            if (cursorElement.classList.contains('hidden-by-interaction')) {
+                if (cursorElement.style.opacity !== '0') cursorElement.style.opacity = '0';
+                return;
+            }
+            if (cursorElement.style.opacity !== '1' && cursorElement.classList.contains('visible')) {
+                cursorElement.style.opacity = '1';
+            }
+            cursorElement.style.left = x + 'px';
+            cursorElement.style.top = y + 'px';
+            if (!cursorElement.classList.contains('visible')) {
+                cursorElement.classList.add('visible');
+            }
+        }
+
+        function changeCursorTextWithFade(newText) {
+            if (!cursorTextElement || cursorTextElement.isTextFading || cursorTextElement.textContent === newText) {
+                return;
+            }
+            cursorTextElement.isTextFading = true;
+            cursorTextElement.classList.add('fade-out');
+
+            setTimeout(() => {
+                cursorTextElement.textContent = newText;
+                cursorTextElement.classList.remove('fade-out');
+                cursorTextElement.isTextFading = false;
+            }, 300);
+        }
+
+        function updateAutoCursorText() {
+            if (cursorElement && cursorElement.classList.contains('hidden-by-interaction')) {
+                return;
+            }
+            const newTextToShow = autoTexts[autoTextCurrentIndex];
+            autoTextCurrentIndex = (autoTextCurrentIndex + 1) % autoTexts.length;
+            changeCursorTextWithFade(newTextToShow);
+        }
+
+        if (cursorElement) {
+            document.addEventListener('mousemove', (e) => {
+                updateCursorPosition(e.clientX, e.clientY);
+            });
+
+            const interactiveElements = document.querySelectorAll('a, button, input[type="submit"], .form-control'); 
+            
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursorElement.classList.add('hidden-by-interaction');
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursorElement.classList.remove('hidden-by-interaction');
+                });
+            });
+        }
+
+        if (cursorTextElement) {
+            updateAutoCursorText();
+            autoTextInterval = setInterval(updateAutoCursorText, 3000);
+        }
+
+        if (cursorElement) {
+            function initialCursorShow() {
+                if (!cursorElement.classList.contains('hidden-by-interaction') && !cursorElement.classList.contains('visible')) {
+                    cursorElement.classList.add('visible');
+                }
+            }
+            setTimeout(initialCursorShow, 100);
+        } else {
+            console.error("Cursor element not found for initial show!");
+        }
+    </script>
+</body>
+</html>

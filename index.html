@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Personal Portfolio of Tran Huu Dat - Web Developer" /> <!-- Cập nhật -->
+    <meta name="author" content="Tran Huu Dat" /> <!-- Cập nhật -->
+    <title>Tran Huu Dat - Web Developer Portfolio</title> <!-- Cập nhật -->
+    <!-- Favicon-->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <!-- Custom Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/github.css" rel="stylesheet" />
+    <!-- CSS cho Interactive Grid và Cursor -->
+    <style>
+        body {
+            cursor: none;
+            position: relative;
+        }
+
+        a,
+        button,
+        input[type="submit"],
+        /* Thêm cho nút submit */
+        .form-control
+
+        /* Thêm cho các input field */
+            {
+            cursor: url('assets/hand_blue.png'), auto;
+            /* Fallback là auto */
+        }
+
+
+        .interactive-grid-container {
+            /* Có thể thêm padding hoặc margin nếu cần */
+            margin-bottom: 1.5rem;
+            /* Khoảng cách giữa các grid */
+        }
+
+        .interactive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            /* Responsive grid */
+            gap: 1rem;
+            /* Khoảng cách giữa các item */
+            text-align: center;
+        }
+
+        .grid-item {
+            background-color: #f8f9fa;
+            /* Màu nền giống bg-light của Bootstrap */
+            padding: 1rem;
+            border-radius: 0.25rem;
+            /* bo tròn góc */
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: default;
+            /* hoặc pointer nếu có hành động click */
+            position: relative;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid #dee2e6;
+            /* Thêm viền nhẹ */
+            border-radius: 20px;
+        }
+
+        .grid-item:hover {
+            background-color: #d1ecf1;
+            box-shadow: 0 0 15px rgba(13, 202, 240, 0.4);
+            transform: scale(1.05);
+            border-color: #0dcaf0;
+            color: #0a58ca;
+            cursor: none;
+        }
+
+
+        /* Class highlight-auto không cần thiết nếu không có animation tự động */
+
+        .cursor-element {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+            z-index: 1070;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .cursor-element.visible {
+            opacity: 1;
+        }
+
+        .cursor-element img {
+            width: 28px;
+            height: auto;
+            margin-right: 8px;
+        }
+
+        .cursor-element .cursor-text {
+            background-color: #0d6efd;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.95em;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+            font-weight: bold;
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .cursor-element .cursor-text.fade-out {
+            opacity: 0;
+        }
+
+        /* CSS cho ảnh profile trong header */
+        .profile-img-custom {
+            max-width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            /* Bo tròn nhẹ ảnh */
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+
+        .profile .dots-1,
+        .profile .dots-2,
+        .profile .dots-3,
+        .profile .dots-4 {
+            display: none;
+            /* Ẩn các chấm SVG mặc định nếu không dùng */
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Tran Huu Dat</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="py-5">
+            <div class="container px-5 pb-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-xxl-5">
+                        <!-- Header text content-->
+                        <div class="text-center text-xxl-start">
+                            <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
+                                <div class="text-uppercase">Web Development · Full-Stack · Mobile</div>
+                                <!-- Thay thế -->
+                            </div>
+                            <div class="fs-3 fw-light text-muted">Hello, I'm</div>
+                            <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Tran Huu
+                                    Dat</span></h1>
+                            <p class="lead fw-light text-muted mb-4">A passionate Software Engineering student
+                                specializing in web and mobile application development, always eager to learn new
+                                technologies and contribute to innovative projects.</p> <!-- Mô tả ngắn về bạn -->
+                            <div
+                                class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="resume.html">My
+                                    Resume</a>
+                                <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="projects.html">My
+                                    Projects</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-7">
+                        <!-- Header profile picture-->
+                        <div class="d-flex justify-content-center mt-5 mt-xxl-0">
+                            <!-- Bỏ class .profile và các .dots- nếu không dùng ảnh nền gradient và SVG dots -->
+                            <div>
+                                <img class="profile-img-custom" src="assets/my_image.jpg"
+                                    alt="Tran Huu Dat Profile Picture" /> <!-- THAY THẾ BẰNG ẢNH CỦA BẠN -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Page Content-->
+        <div class="container px-5 my-5">
+            <div class="text-center">
+                <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">My Skills</span></h1>
+            </div>
+            <div class="row gx-5 justify-content-center">
+                <div class="col-lg-11 col-xl-9 col-xxl-8">
+
+                    <!-- Divider-->
+                    <div class="pb-5"></div>
+                    <!-- Skills Section-->
+                    <section>
+                        <div class="card shadow border-0 rounded-4 mb-5">
+                            <div class="card-body p-5">
+                                <div class="mb-5">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div
+                                            class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+                                            <i class="bi bi-tools"></i>
+                                        </div>
+                                        <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Professional
+                                                Skills</span></h3>
+                                    </div>
+                                    <h4 class="fw-bolder my-3 text-center text-gradient">General Expertise</h4>
+                                    <div class="interactive-grid-container mb-4">
+                                        <div class="interactive-grid">
+                                            <div class="grid-item" data-text="Web Technologies">Web Development</div>
+                                            <div class="grid-item" data-text="Mobile Platforms">Mobile Development</div>
+                                            <div class="grid-item" data-text="User-Centric Design">UI/UX Design
+                                                Principles</div>
+                                            <div class="grid-item" data-text="Problem Solving">Problem Solving</div>
+                                            <div class="grid-item" data-text="Team Collaboration">Teamwork</div>
+                                            <div class="grid-item" data-text="Detail Oriented">Attention to Detail</div>
+                                        </div>
+                                    </div>
+                                    <h4 class="fw-bolder my-3 text-center text-gradient">Tools</h4>
+                                    <div class="interactive-grid-container mb-4">
+                                        <div class="interactive-grid">
+                                            <div class="grid-item" data-text="Development IDE">VSCode</div>
+                                            <div class="grid-item" data-text="Containerization">Docker</div>
+                                            <div class="grid-item" data-text="Version Control">Git & GitHub</div>
+                                        </div>
+                                    </div>
+                                    <h4 class="fw-bolder my-3 text-center text-gradient">Design Software</h4>
+                                    <div class="interactive-grid-container">
+                                        <div class="interactive-grid">
+                                            <div class="grid-item" data-text="UI/UX Prototyping">Figma</div>
+                                            <div class="grid-item" data-text="Graphic Creation">Canva</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-0">
+                                    <div class="d-flex align-items-center mb-4">
+                                        <div
+                                            class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3">
+                                            <i class="bi bi-code-slash"></i>
+                                        </div>
+                                        <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Technical
+                                                Stack</span></h3>
+                                    </div>
+                                    <div class="interactive-grid-container">
+                                        <div class="interactive-grid">
+                                            <div class="grid-item" data-text="Frontend">HTML5</div>
+                                            <div class="grid-item" data-text="Styling">CSS3</div>
+                                            <div class="grid-item" data-text="Scripting">JavaScript (ES6+)</div>
+                                            <div class="grid-item" data-text="Backend">Node.js</div>
+                                            <div class="grid-item" data-text="Framework">Express.js</div>
+                                            <div class="grid-item" data-text="Backend">PHP</div>
+                                            <div class="grid-item" data-text="Database">MySQL</div>
+                                            <div class="grid-item" data-text="Database">Firebase (Firestore)</div>
+                                            <!-- <div class="grid-item" data-text="Mobile">Java (Android SDK)</div> -->
+                                            <div class="grid-item" data-text="CMS">WordPress</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- My Projects on GitHub -->
+    <section class="bg-light py-5"> <!-- Giữ lại bg-light hoặc đổi màu khác -->
+        <div class="container px-5 mb-5">
+            <div class="text-center mb-5">
+                <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">My Projects on
+                        GitHub</span></h1>
+            </div>
+        </div>
+
+
+        <!-- Projects Section -->
+        <section class="featured-projects">
+            <div class="projects-grid">
+                <!-- JavaScript sẽ chèn các card dự án vào đây -->
+
+                <div class="project-card">
+                    <p class="project-description">Project description here.</p>
+                    <div class="card-footer">
+                        <span class="project-language">
+                            <span class="language-dot ruby"></span>
+                            Ruby
+                        </span>
+                        <div class="project-stats">
+                            <span class="stars">⭐ 545</span>
+                            <span class="forks">🍴 207</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <div class="text-center mt-4">
+            <a class="btn btn-primary btn-lg px-5 py-3 fs-6 fw-bolder"
+                href="https://github.com/TranHuuDat2004?tab=repositories">Explore more of my projects in the
+                Repositories
+                tab.</a>
+        </div>
+    </section>
+    <!-- About Section-->
+
+    <div class="container px-8">
+        <div class="row gx-5 justify-content-center">
+            <div class="col-xxl-8">
+                <div class="my-5">
+                    <h2 class="display-5 fw-bolder text-center"><span class="text-gradient d-inline">About Me</span>
+                    </h2>
+                    <p class="lead fw-light mb-4">I am Tran Huu Dat, a dedicated software engineering student at Ton
+                        Duc Thang University.</p> <!-- Thay thế -->
+                    <p class="text-muted">Passionate about creating efficient and user-friendly web and mobile
+                        solutions. I enjoy tackling challenging problems and continuously expanding my skill set in
+                        the ever-evolving world of technology. My goal is to leverage my technical abilities to
+                        build impactful applications and contribute to meaningful projects. Currently seeking
+                        opportunities to apply my knowledge and grow as a professional developer.</p>
+                    <!-- Viết thêm về bạn -->
+                    <div class="d-flex justify-content-center fs-2 gap-4 mt-4"> <!-- Thêm mt-4 -->
+                        <a class="text-gradient" href="https://linkedin.com/in/tranhuudat2004" target="_blank" rel="noopener noreferrer"><i
+                                class="bi bi-linkedin"></i></a>
+                        <a class="text-gradient" href="https://github.com/TranHuuDat2004" target="_blank"
+                            rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                        <a class="text-gradient" href="mailto:huudat.peashooer@gmail.com"><i
+                                class="bi bi-envelope-fill"></i></a> <!-- Thêm icon email -->
+                        <!-- <a class="text-gradient" href="#!"><i class="bi bi-twitter"></i></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </main>
+    <!-- Footer-->
+    <footer class="bg-white py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0">Copyright © Tran Huu Dat 2024</div>
+                </div>
+                <div class="col-auto">
+                    <a class="small" href="#!">Privacy Policy</a> <!-- Có thể thêm link thật -->
+                    <span class="mx-1">·</span>
+                    <a class="small" href="#!">Terms of Use</a> <!-- Có thể thêm link thật -->
+                    <span class="mx-1">·</span>
+                    <a class="small" href="contact.html">Contact</a>
+                </div>
+            </div>
+    </footer>
+
+    <!-- Cursor Element HTML -->
+    <div class="cursor-element">
+        <img src="assets/cursor_blue.png" alt="Custom Cursor Icon"> <!-- Thay ảnh con trỏ nếu muốn -->
+        <span class="cursor-text">Huu Dat</span>
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script> <!-- JS mặc định của template -->
+
+
+    <script src="js/github.js"></script>
+
+    <!-- JavaScript cho Interactive Grid và Cursor -->
+    <!-- JavaScript cho Interactive Grid và Cursor (Giữ nguyên như phiên bản trước) -->
+    <script>
+        const cursorElement = document.querySelector('.cursor-element');
+        const cursorTextElement = cursorElement.querySelector('.cursor-text');
+        const gridItems = document.querySelectorAll('.interactive-grid .grid-item');
+
+        let autoTextCurrentIndex = 0;
+        let autoTextInterval;
+
+        const autoTexts = [
+            "Hello!",
+            "I'm Tran Huu Dat",
+            "I'm a Web Developer",
+            "I'm looking for a job",
+            "Thanks for visiting!"
+        ];
+
+        function updateCursorPosition(x, y) {
+            if (!cursorElement) return;
+            // Don't move if it's supposed to be hidden by interaction
+            if (cursorElement.classList.contains('hidden-by-interaction')) {
+                // Optionally, ensure it's visually hidden if class alone isn't enough
+                // (though the CSS class should handle this)
+                if (cursorElement.style.opacity !== '0') cursorElement.style.opacity = '0';
+                return;
+            }
+            // If it's not hidden by interaction, make it visible and position it
+            if (cursorElement.style.opacity !== '1' && cursorElement.classList.contains('visible')) {
+                cursorElement.style.opacity = '1'; // Restore opacity if it was set to 0
+            }
+
+            cursorElement.style.left = x + 'px';
+            cursorElement.style.top = y + 'px';
+            if (!cursorElement.classList.contains('visible')) {
+                cursorElement.classList.add('visible');
+            }
+        }
+
+        function changeCursorTextWithFade(newText) {
+            if (!cursorTextElement || cursorTextElement.isTextFading || cursorTextElement.textContent === newText) {
+                return;
+            }
+            cursorTextElement.isTextFading = true;
+            cursorTextElement.classList.add('fade-out');
+
+            setTimeout(() => {
+                cursorTextElement.textContent = newText;
+                cursorTextElement.classList.remove('fade-out');
+                cursorTextElement.isTextFading = false;
+            }, 300);
+        }
+
+        function updateAutoCursorText() {
+            let newTextToShow;
+            let isOverGridItem = false;
+            let currentGridItemText = null;
+
+            // Prevent text update if cursor is meant to be hidden
+            if (cursorElement && cursorElement.classList.contains('hidden-by-interaction')) {
+                return;
+            }
+
+            if (cursorElement && gridItems.length > 0) {
+                const cursorRect = cursorElement.getBoundingClientRect();
+                for (const item of gridItems) {
+                    const itemRect = item.getBoundingClientRect();
+                    if (
+                        cursorRect.right > itemRect.left &&
+                        cursorRect.left < itemRect.right &&
+                        cursorRect.bottom > itemRect.top &&
+                        cursorRect.top < itemRect.bottom
+                    ) {
+                        if (item.dataset.text) {
+                            isOverGridItem = true;
+                            currentGridItemText = item.dataset.text;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (isOverGridItem) {
+                newTextToShow = currentGridItemText;
+            } else {
+                newTextToShow = autoTexts[autoTextCurrentIndex];
+                autoTextCurrentIndex = (autoTextCurrentIndex + 1) % autoTexts.length;
+            }
+            changeCursorTextWithFade(newTextToShow);
+        }
+
+        if (cursorElement) {
+            document.addEventListener('mousemove', (e) => {
+                updateCursorPosition(e.clientX, e.clientY);
+            });
+
+            // --- NEW LOGIC FOR HIDING CURSOR ON INTERACTIVE ELEMENTS ---
+            const interactiveElements = document.querySelectorAll('a, button, input[type="submit"], .form-control');
+
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursorElement.classList.add('hidden-by-interaction');
+                    // Ensure system cursor is visible for these elements
+                    // This is already handled by your CSS:
+                    // button, button:hover, input[type="submit"], .form-control { cursor: url('assets/hand_blue.png'), auto; }
+                    // a { cursor: pointer; } (browser default)
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursorElement.classList.remove('hidden-by-interaction');
+                    // The mousemove event will quickly make it visible again if needed
+                    // and updateCursorPosition will restore its opacity if it was set to 0
+                });
+            });
+            // --- END OF NEW LOGIC ---
+        }
+
+
+        if (gridItems.length > 0 && cursorTextElement) {
+            gridItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    if (item.dataset.text) {
+                        changeCursorTextWithFade(item.dataset.text);
+                    }
+                });
+            });
+
+            updateAutoCursorText();
+            autoTextInterval = setInterval(updateAutoCursorText, 3000);
+        }
+
+
+        if (cursorElement) {
+            function initialCursorShow() {
+                // Only make it visible if not currently hidden by interaction (e.g. if page loads with mouse over a button)
+                if (!cursorElement.classList.contains('hidden-by-interaction') && !cursorElement.classList.contains('visible')) {
+                    cursorElement.classList.add('visible');
+                }
+            }
+            setTimeout(initialCursorShow, 100);
+        } else {
+            console.error("Cursor element not found for initial show!");
+        }
+    </script>
+</body>
+
+</html>

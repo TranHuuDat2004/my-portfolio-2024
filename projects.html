@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="My Projects and Skills" />
+    <meta name="author" content="Tran Huu Dat" />
+    <title>Projects - Tran Huu Dat</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <!-- Custom Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <style>
+        body {
+            /* Áp dụng cursor: none cho toàn bộ body */
+            cursor: none;
+            position: relative;
+            /* Cần cho việc định vị con trỏ ảo nếu nó không fixed */
+        }
+
+        a, 
+        button, 
+        input[type="submit"], /* Thêm cho nút submit */
+        .form-control /* Thêm cho các input field */
+        {
+            cursor: url('assets/hand_blue.png'), auto; /* Fallback là auto */
+        }
+
+        .interactive-grid-section {
+            margin-bottom: 3rem;
+        }
+
+
+
+        .interactive-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            /* position: relative;  Không cần nữa */
+            /* cursor: none;  Đã chuyển lên body */
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 0.75rem;
+            background-color: #ffffff;
+            justify-content: center;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-item {
+            padding: 10px 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 50px;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease-out;
+            color: #495057;
+            font-weight: 600;
+            font-size: 0.9rem;
+            /* cursor: default; Bỏ vì body đã là none, element con có thể set lại nếu muốn */
+        }
+
+        .grid-item:hover {
+            /* Thêm :hover cho grid-item khi người dùng tự di chuột */
+            background-color: #d1ecf1;
+            box-shadow: 0 0 15px rgba(13, 202, 240, 0.4);
+            transform: scale(1.1);
+            border-color: #0dcaf0;
+            color: #0a58ca;
+            cursor: none;
+        }
+
+        .grid-item.highlight-auto {
+            /* Class riêng cho animation tự động */
+            background-color: #d1ecf1;
+            box-shadow: 0 0 15px rgba(13, 202, 240, 0.4);
+            transform: scale(1.1);
+            border-color: #0dcaf0;
+            color: #0a58ca;
+        }
+
+        .cursor-element {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+            z-index: 1070;
+            /* Sẽ được set top/left bằng JS */
+            opacity: 0;
+            /* Bắt đầu ẩn, sẽ hiện ra khi JS chạy */
+            transition: opacity 0.3s ease-in-out;
+            /* Transition cho việc hiện ra */
+        }
+
+        .cursor-element.visible {
+            opacity: 1;
+        }
+
+        .cursor-element img {
+            width: 28px;
+            height: auto;
+            margin-right: 8px;
+        }
+
+        .cursor-element .cursor-text {
+            background-color: #0d6efd;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.95em;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+            font-weight: bold;
+            opacity: 1;
+            /* Trạng thái bình thường, text hiện rõ */
+            transition: opacity 0.5s ease-in-out;
+            /* Transition cho opacity */
+        }
+
+        .cursor-element .cursor-text.fade-out {
+            opacity: 0;
+            /* Trạng thái khi text mờ đi */
+        }
+
+        .project-card-image {
+            max-width: 150px;
+            /* Kích thước logo trên mobile */
+            /* margin-bottom: 1rem; Khoảng cách với text khi ở dạng cột (nếu ảnh ở trên) */
+            /* Nếu ảnh ở bên, margin-bottom không cần thiết khi flex-direction: column */
+            display: block;
+            /* Loại bỏ khoảng trắng thừa nếu là ảnh inline */
+            margin-left: auto;
+            /* Căn giữa ảnh trên mobile nếu text-align:center cho div cha */
+            margin-right: auto;
+        }
+
+        @media (min-width: 768px) {
+
+            /* md breakpoint của Bootstrap */
+            .project-card-image {
+                max-width: 220px;
+                /* Kích thước logo trên desktop, bạn có thể điều chỉnh */
+                margin-bottom: 0;
+                /* Reset margin-bottom */
+                margin-left: 0;
+                /* Reset căn giữa */
+                margin-right: 0;
+            }
+
+            /* Đảm bảo padding cho text và ảnh trên desktop/tablet */
+            .d-flex.flex-md-row>.text-md-start.p-md-0 {
+                padding: 1.5rem !important;
+                /* Thêm padding cho container ảnh trên desktop */
+            }
+
+            .d-flex.flex-md-row>.p-md-5 {
+                padding: 1.5rem !important;
+                /* Đồng bộ padding cho text trên desktop */
+            }
+        }
+
+                /* Tùy chọn: Nếu bạn muốn ảnh nhỏ hơn nữa trên màn hình cực nhỏ */
+        @media (max-width: 576px) {
+            .glimpse-image-wrapper {
+                width: 80%; /* Hoặc có thể là 100% nếu bạn muốn nó đầy đủ hơn trên xs screens */
+            }
+
+            .card-body .row .col-lg-8 ul,
+            .card-body .row .col-lg-9 ul { /* Áp dụng cho cột chứa mô tả trong Experience, Education, Awards */
+                padding-left: 1.25rem; /* Giảm độ thụt lề của danh sách (mặc định Bootstrap là 2rem) */
+            }
+
+            .card-body .row .col-lg-8 ul li,
+            .card-body .row .col-lg-9 ul li,
+            .card-body .row .col-lg-8 p, /* Nếu có đoạn văn p trong phần này */
+            .card-body .row .col-lg-9 p {
+                font-size: 0.875rem; /* Giảm nhẹ cỡ chữ (14px nếu base là 16px) */
+                line-height: 1.5;    /* Giảm nhẹ khoảng cách dòng */
+                margin-bottom: 0.35rem; /* Khoảng cách nhỏ giữa các list items */
+            }
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column h-100 bg-light"> <!-- Bỏ class interactive-grid ở đây -->
+    <main class="flex-shrink-0">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Tran Huu Dat</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Projects Section -->
+        <section class="py-5">
+            <div class="container px-5 mb-5">
+                <div class="text-center mb-5">
+                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">My Projects</span></h1>
+                </div>
+
+                <!-- Full-Stack Websites Section -->
+                <div class="mb-5">
+                    <h2 class="text-primary fw-bolder mb-4 text-center">Full-Stack Websites</h2>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-11 col-xl-9 col-xxl-8">
+                            <!-- Project Card: BrickShop -->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="d-flex flex-column flex-md-row align-items-center">
+                                        <div class="text-center text-md-start p-3 p-md-0">
+                                            <img class="img-fluid project-card-image" src="assets/logo_brickshop.png"
+                                                alt="BrickShop Logo" />
+                                        </div>
+                                        <div class="p-4 p-md-5 flex-grow-1">
+                                            <h3 class="fw-bolder">BrickShop - E-commerce</h3>
+                                            <p>Engineered an e-commerce hub for building block enthusiasts (Qman,
+                                                Keeppley, LEGO). Features seamless product browsing, secure checkout,
+                                                order management, and a dedicated admin dashboard.</p>
+                                            <p><em>Tech: Node.js, Express.js, MySQL, HTML, CSS, JS, Bootstrap, Tailwind
+                                                    CSS.</em></p>
+                                            <a href="https://github.com/TranHuuDat2004/brickshop"
+                                                class="btn btn-sm btn-outline-primary me-2 mt-2" target="_blank"
+                                                rel="noopener noreferrer">View Repository</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Project Card: ZStyle -->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="d-flex flex-column flex-md-row align-items-center">
+                                        <div class="text-center text-md-start p-3 p-md-0">
+                                            <img class="img-fluid project-card-image" src="assets/logo_zstyle.png"
+                                                alt="ZStyle Logo" />
+                                        </div>
+                                        <div class="p-4 p-md-5 flex-grow-1">
+                                            <h3 class="fw-bolder">ZStyle - Clothing E-commerce</h3>
+                                            <p>Developed a foundational e-commerce website for clothing as a course
+                                                project, implementing core functionalities for users to explore fashion
+                                                items.</p>
+                                            <p><em>Tech: PHP, MySQL, HTML5, CSS3, JavaScript.</em></p>
+                                            <a href="https://github.com/TranHuuDat2004/ZStyle"
+                                                class="btn btn-sm btn-outline-primary me-2 mt-2" target="_blank"
+                                                rel="noopener noreferrer">View Repository</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GitHub Pages & Frontend Projects Section -->
+                <div class="mb-5">
+                    <h2 class="text-primary fw-bolder mb-4 text-center">GitHub Pages & Frontend</h2>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-11 col-xl-9 col-xxl-8">
+                            <!-- Project Card: Puzzle & Image Tools Suite -->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="d-flex flex-column flex-md-row align-items-center">
+                                        <div class="text-center text-md-start p-3 p-md-0">
+                                            <img class="img-fluid project-card-image" src="assets/logo_puzzle0.png"
+                                                alt="Puzzle & Image Tools Suite Logo" />
+                                        </div>
+                                        <div class="p-4 p-md-5 flex-grow-1">
+                                            <h3 class="fw-bolder">Puzzle & Image Tools Suite</h3>
+                                            <p>An engaging web application featuring an interactive jigsaw puzzle and
+                                                practical image manipulation tools (square cropper, grid splitter,
+                                                resizer).</p>
+                                            <p><em>Tech: HTML5, CSS3, JavaScript, Bootstrap.</em></p>
+                                            <a href="https://tranhuudat2004.github.io/games_tools/"
+                                                class="btn btn-sm btn-primary me-2 mt-2" target="_blank"
+                                                rel="noopener noreferrer">Live Demo</a>
+                                            <a href="https://github.com/TranHuuDat2004/games_tools"
+                                                class="btn btn-sm btn-outline-primary mt-2" target="_blank"
+                                                rel="noopener noreferrer">View Repository</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Project Card: MyMusic Player Interface -->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="d-flex flex-column flex-md-row align-items-center">
+                                        <div class="text-center text-md-start p-3 p-md-0">
+                                            <img class="img-fluid project-card-image" src="assets/logo_mymusic.png"
+                                                alt="MyMusic Player Logo" />
+                                        </div>
+                                        <div class="p-4 p-md-5 flex-grow-1">
+                                            <h3 class="fw-bolder">MyMusic Player Interface</h3>
+                                            <p>A sleek, modern online music player interface inspired by platforms like
+                                                Spotify, showcasing UI/UX design and front-end proficiency with a focus
+                                                on responsive and interactive experience.</p>
+                                            <p><em>Tech: HTML5, CSS3, JavaScript (ES6+).</em></p>
+                                            <a href="https://tranhuudat2004.github.io/mymusic/"
+                                                class="btn btn-sm btn-primary me-2 mt-2" target="_blank"
+                                                rel="noopener noreferrer">Live Demo</a>
+                                            <a href="https://github.com/TranHuuDat2004/mymusic"
+                                                class="btn btn-sm btn-outline-primary mt-2" target="_blank"
+                                                rel="noopener noreferrer">View Repository</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Machine Learning Projects Section -->
+                <div>
+                    <h2 class="text-primary fw-bolder mb-4 text-center">Machine Learning</h2>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-11 col-xl-9 col-xxl-8">
+                            <!-- Project Card: Signature Verification -->
+                            <div class="card overflow-hidden shadow rounded-4 border-0">
+                                <div class="card-body p-0">
+                                    <div class="d-flex flex-column flex-md-row align-items-center">
+                                        <div class="text-center text-md-start p-3 p-md-0">
+                                            <img class="img-fluid project-card-image" src="assets/logo_handwriting.png"
+                                                alt="Signature Verification Logo" />
+                                        </div>
+                                        <div class="p-4 p-md-5 flex-grow-1">
+                                            <h3 class="fw-bolder">Signature Verification System</h3>
+                                            <p>Developed a model to authenticate handwritten signatures using Machine
+                                                Learning techniques in Google Colab, achieving high accuracy in
+                                                identifying genuine and forged signatures.</p>
+                                            <p><em>Tech: Python, TensorFlow/Keras, OpenCV, Matplotlib, Colab.</em></p>
+                                            <a href="https://github.com/TranHuuDat2004/handwriting-signature-recognition"
+                                                class="btn btn-sm btn-outline-primary mt-2" target="_blank"
+                                                rel="noopener noreferrer">View Repository</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to action section (Giữ nguyên) -->
+        <section class="py-5 bg-gradient-primary-to-secondary text-white">
+            <!-- ... Nội dung ... -->
+            <div class="container px-5 my-5">
+                <div class="text-center">
+                    <h2 class="display-4 fw-bolder mb-4">Let's build something together</h2>
+                    <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.html">Contact me</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer (Giữ nguyên) -->
+    <footer class="bg-white py-4 mt-auto">
+        <!-- ... Nội dung ... -->
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0">Copyright © Tran Huu Dat 2024</div>
+                </div> <!-- Thay tên và năm -->
+                <div class="col-auto">
+                    <a class="small" href="#!">Privacy</a>
+                    <span class="mx-1">·</span>
+                    <a class="small" href="#!">Terms</a>
+                    <span class="mx-1">·</span>
+                    <a class="small" href="contact.html">Contact</a> <!-- Link đến trang contact -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cursor Element HTML -->
+    <div class="cursor-element">
+        <img src="assets/cursor_blue.png" alt="Custom Cursor Icon">
+        <span class="cursor-text">Huu Dat</span>
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+
+    <!-- JavaScript cho Interactive Grid -->
+    <script src="js/cursor.js">    </script>
+</body>
+
+</html>

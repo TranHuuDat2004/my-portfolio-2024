@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Contact Tran Huu Dat for collaborations or inquiries." />
+    <meta name="author" content="Tran Huu Dat" />
+    <title>Contact Me - Tran Huu Dat</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+
+    <style>
+        body {
+            cursor: none; /* Vẫn ẩn cursor mặc định của hệ thống */
+            position: relative;
+        }
+
+        a,
+        button,
+        input[type="submit"], /* Thêm cho nút submit */
+        .form-control /* Thêm cho các input field */
+        {
+            cursor: url('assets/hand.png'), auto; /* Fallback là auto */
+        }
+
+       
+
+        .cursor-element {
+            position: fixed;
+            display: flex; /* Sẽ dùng opacity để ẩn hiện thay vì display: none */
+            align-items: center;
+            pointer-events: none;
+            z-index: 1070;
+            opacity: 0; /* Bắt đầu ẩn */
+            transition: opacity 0.2s ease-in-out; /* Giảm thời gian transition một chút */
+        }
+
+        .cursor-element.visible {
+            opacity: 1;
+        }
+
+        .cursor-element img {
+            width: 28px;
+            height: auto;
+            margin-right: 8px;
+        }
+
+        .cursor-element .cursor-text {
+            background-color: #4CAF50;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.95em;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+            font-weight: bold;
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out; /* Giảm thời gian transition */
+        }
+
+        .cursor-element .cursor-text.fade-out {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Tran Huu Dat</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page content-->
+        <section class="py-5">
+            <div class="container px-5">
+                <!-- Contact form-->
+                <div class="bg-light rounded-4 py-5 px-4 px-md-5">
+                    <div class="text-center mb-5">
+                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i
+                                class="bi bi-envelope"></i></div>
+                        <h1 class="fw-bolder">Get in Touch</h1>
+                        <p class="lead fw-normal text-muted mb-0">I'd love to hear from you! Let's connect.</p>
+                    </div>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            <form id="contactForm" data-sb-form-api-token="API_TOKEN_CUA_BAN">
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..."
+                                        data-sb-validations="required" />
+                                    <label for="name">Full name</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.
+                                    </div>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="email" type="email" placeholder="name@example.com"
+                                        data-sb-validations="required,email" />
+                                    <label for="email">Email address</label>
+                                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is
+                                        required.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.
+                                    </div>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
+                                        data-sb-validations />
+                                    <label for="phone">Phone number (Optional)</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control" id="message" type="text"
+                                        placeholder="Enter your message here..." style="height: 10rem"
+                                        data-sb-validations="required"></textarea>
+                                    <label for="message">Message</label>
+                                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is
+                                        required.</div>
+                                </div>
+                                <div class="d-none" id="submitSuccessMessage">
+                                    <div class="text-center mb-3">
+                                        <div class="fw-bolder">Form submission successful! Thank you.</div>
+                                    </div>
+                                </div>
+                                <div class="d-none" id="submitErrorMessage">
+                                    <div class="text-center text-danger mb-3">Error sending message! Please try again.
+                                    </div>
+                                </div>
+                                <div class="d-grid"><button class="btn btn-success btn-lg" id="submitButton"
+                                        type="submit">Submit</button></div>
+                            </form>
+                            <hr class="my-5">
+                            <div class="text-center">
+                                <p class="lead fw-normal text-muted mb-2">Or reach out directly:</p>
+                                <p class="mb-1"><i class="bi bi-envelope-fill text-primary me-2"></i><a
+                                        href="mailto:huudat.peashooer@gmail.com">huudat.peashooer@gmail.com</a></p>
+                                <p class="mb-0">
+                                    <i class="bi bi-linkedin text-primary me-2"></i><a href="https://linkedin.com/in/tranhuudat2004"
+                                        target="_blank" rel="noopener noreferrer">Your LinkedIn Profile</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer-->
+    <footer class="bg-white py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0">Copyright © Tran Huu Dat 2024</div>
+                </div>
+                <div class="col-auto">
+                    <a class="small" href="#!">Privacy</a>
+                    <span class="mx-1">·</span>
+                    <a class="small" href="#!">Terms</a>
+                    <span class="mx-1">·</span>
+                    <a class="small" href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cursor-element">
+        <img src="assets/cursor.png" alt="Custom Cursor Icon">
+        <span class="cursor-text">Huu Dat</span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+    <script>
+        const cursorElement = document.querySelector('.cursor-element');
+        const cursorTextElement = cursorElement ? cursorElement.querySelector('.cursor-text') : null;
+
+        let autoTextCurrentIndex = 0;
+        let autoTextInterval;
+        let isTextFading = false;
+        let isCustomCursorActive = true; // Theo dõi trạng thái của custom cursor
+
+        const autoTexts = [
+            "Let's connect!",
+            "Ask me anything",
+            "Project inquiry?",
+            "Say Hello!"
+        ];
+
+        function updateCursorPosition(x, y) {
+            if (!cursorElement) return;
+            cursorElement.style.left = x + 'px';
+            cursorElement.style.top = y + 'px';
+        }
+
+        function showCustomCursor() {
+            if (!cursorElement) return;
+            isCustomCursorActive = true;
+            cursorElement.classList.add('visible');
+            // Khởi động lại auto text nếu có và chưa chạy
+            if (cursorTextElement && !autoTextInterval) {
+                updateAutoCursorText(); // Hiển thị text ngay
+                autoTextInterval = setInterval(updateAutoCursorText, 3000);
+            }
+        }
+
+        function hideCustomCursor() {
+            if (!cursorElement) return;
+            isCustomCursorActive = false;
+            cursorElement.classList.remove('visible');
+            // Dừng auto text
+            if (autoTextInterval) {
+                clearInterval(autoTextInterval);
+                autoTextInterval = null;
+            }
+        }
+
+        function changeCursorTextWithFade(newText) {
+            if (!cursorTextElement || isTextFading || cursorTextElement.textContent === newText) {
+                return;
+            }
+            isTextFading = true;
+            cursorTextElement.classList.add('fade-out');
+
+            setTimeout(() => {
+                cursorTextElement.textContent = newText;
+                cursorTextElement.classList.remove('fade-out');
+                isTextFading = false;
+            }, 200); // Giảm thời gian fade
+        }
+
+        function updateAutoCursorText() {
+            if (!isCustomCursorActive || !cursorTextElement) return; // Chỉ chạy nếu custom cursor đang active
+            const newTextToShow = autoTexts[autoTextCurrentIndex];
+            autoTextCurrentIndex = (autoTextCurrentIndex + 1) % autoTexts.length;
+            changeCursorTextWithFade(newTextToShow);
+        }
+
+        if (cursorElement) {
+            document.addEventListener('mousemove', (e) => {
+                updateCursorPosition(e.clientX, e.clientY);
+                // Chỉ hiển thị custom cursor nếu nó đang active (không hover qua link/button)
+                // và nó chưa visible (trường hợp ban đầu hoặc sau khi mouseleave khỏi body)
+                if (isCustomCursorActive && !cursorElement.classList.contains('visible')) {
+                     showCustomCursor();
+                }
+            });
+
+
+
+            // Các element tương tác sẽ ẩn custom cursor và hiển thị cursor mặc định (hand.png)
+            const interactiveElements = document.querySelectorAll('a, button, input[type="submit"], .form-control');
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    hideCustomCursor();
+                });
+                el.addEventListener('mouseleave', (e) => {
+                    // Khi rời khỏi, cập nhật vị trí và hiển thị lại custom cursor
+                    updateCursorPosition(e.clientX, e.clientY);
+                    showCustomCursor();
+                });
+            });
+
+            // Hiển thị cursor lần đầu
+            setTimeout(showCustomCursor, 100);
+
+        } else {
+            console.error("Cursor element not found!");
+        }
+    </script>
+</body>
+
+</html>
