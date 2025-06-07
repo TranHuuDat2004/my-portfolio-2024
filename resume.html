@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="My Resume - Tran Huu Dat" /> <!-- Cập nhật description -->
-    <meta name="author" content="Tran Huu Dat" /> <!-- Cập nhật author -->
-    <title>Resume - Tran Huu Dat</title> <!-- Cập nhật title -->
+    <meta name="description" content="Hồ sơ của tôi - Trần Hữu Đạt" data-translate-key="metaDescription" />
+    <meta name="author" content="Trần Hữu Đạt" />
+    <title>Hồ sơ - Trần Hữu Đạt</title>
     <!-- Favicon-->
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <!-- Custom Google font-->
@@ -20,7 +20,7 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
 
-    <!-- CSS cho Interactive Grid và Cursor -->
+    <!-- CSS tùy chỉnh -->
     <style>
         body {
             cursor: none;
@@ -29,134 +29,78 @@
 
         a,
         button,
-        button:hover,
         input[type="submit"],
-        /* Thêm cho nút submit */
-        .form-control
-
-        /* Thêm cho các input field */
-            {
+        .form-control,
+        .current-flag {
             cursor: url('assets/hand_blue.png'), auto;
-            /* Fallback là auto */
         }
-
-        .interactive-grid-container {
-            /* Có thể thêm padding hoặc margin nếu cần */
-            margin-bottom: 1.5rem;
-            /* Khoảng cách giữa các grid */
-        }
-
-        .interactive-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            /* Responsive grid */
-            gap: 1rem;
-            /* Khoảng cách giữa các item */
-            text-align: center;
-        }
-
-        .grid-item {
-            background-color: #f8f9fa;
-            /* Màu nền giống bg-light của Bootstrap */
-            padding: 1rem;
-            border-radius: 0.25rem;
-            /* bo tròn góc */
-            font-size: 0.9rem;
-            font-weight: 500;
-            cursor: default;
-            /* hoặc pointer nếu có hành động click */
-            position: relative;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            border: 1px solid #dee2e6;
-            /* Thêm viền nhẹ */
-            border-radius: 20px;
-        }
-
-        .grid-item:hover {
-            background-color: #d1ecf1;
-            box-shadow: 0 0 15px rgba(13, 202, 240, 0.4);
-            transform: scale(1.05);
-            border-color: #0dcaf0;
-            color: #0a58ca;
-            cursor: none;
-        }
-
-        .grid-item.highlight-auto {
-            background-color: #d1ecf1;
-            box-shadow: 0 0 15px rgba(13, 202, 240, 0.4);
-            transform: scale(1.1);
-            border-color: #0dcaf0;
-            color: #0a58ca;
-        }
-
-        .cursor-element {
-            position: fixed;
-            display: flex;
-            align-items: center;
-            pointer-events: none;
-            z-index: 1070;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        .cursor-element.visible {
-            opacity: 1;
-        }
-
-        .cursor-element img {
-            width: 28px;
-            height: auto;
-            margin-right: 8px;
-        }
-
-        .cursor-element .cursor-text {
-            background-color: #0d6efd;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.95em;
-            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
-            font-weight: bold;
-            opacity: 1;
-            /* Trạng thái bình thường, text hiện rõ */
-            transition: opacity 0.5s ease-in-out;
-            /* Transition cho opacity */
-        }
-
-        .cursor-element .cursor-text.fade-out {
-            opacity: 0;
-            /* Trạng thái khi text mờ đi */
-        }
-
-                /* ... (CSS hiện tại của bạn) ... */
 
         .glimpse-image-wrapper {
-            width: 90%; /* Ảnh sẽ chiếm 90% chiều rộng của container cha trên thiết bị nhỏ */
-            max-width: 600px; /* Nhưng không bao giờ vượt quá 400px trên màn hình lớn */
-            margin-top: 1rem; /* Thêm chút khoảng cách phía trên ảnh nếu cần */
-            margin-bottom: 1rem; /* Thêm chút khoảng cách phía dưới ảnh */
+            width: 90%;
+            max-width: 600px;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
         }
 
-        /* Tùy chọn: Nếu bạn muốn ảnh nhỏ hơn nữa trên màn hình cực nhỏ */
         @media (max-width: 576px) {
             .glimpse-image-wrapper {
-                width: 80%; /* Hoặc có thể là 100% nếu bạn muốn nó đầy đủ hơn trên xs screens */
+                width: 80%;
             }
 
             .card-body .row .col-lg-8 ul,
-            .card-body .row .col-lg-9 ul { /* Áp dụng cho cột chứa mô tả trong Experience, Education, Awards */
-                padding-left: 1.25rem; /* Giảm độ thụt lề của danh sách (mặc định Bootstrap là 2rem) */
+            .card-body .row .col-lg-9 ul {
+                padding-left: 1.25rem;
             }
 
             .card-body .row .col-lg-8 ul li,
             .card-body .row .col-lg-9 ul li,
-            .card-body .row .col-lg-8 p, /* Nếu có đoạn văn p trong phần này */
+            .card-body .row .col-lg-8 p,
             .card-body .row .col-lg-9 p {
-                font-size: 0.875rem; /* Giảm nhẹ cỡ chữ (14px nếu base là 16px) */
-                line-height: 1.5;    /* Giảm nhẹ khoảng cách dòng */
-                margin-bottom: 0.35rem; /* Khoảng cách nhỏ giữa các list items */
+                font-size: 0.875rem;
+                line-height: 1.5;
+                margin-bottom: 0.35rem;
             }
         }
+        
+        /* CSS CHO NÚT CHUYỂN NGÔN NGỮ */
+        .language-switcher {
+            position: relative; display: inline-block; margin-left: 20px;
+        }
+        .language-switcher .current-flag img {
+            width: 32px; border-radius: 4px; border: 1px solid #ddd;
+        }
+        .language-dropdown {
+            display: none; position: absolute; top: 120%; right: 0;
+            background-color: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            padding: 8px; z-index: 1100; width: 180px; border: 1px solid #eee;
+            opacity: 0; transform: translateY(10px);
+            transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+            pointer-events: none;
+        }
+        .language-dropdown.show {
+            display: block; opacity: 1; transform: translateY(0); pointer-events: auto;
+        }
+        .language-dropdown a {
+            display: flex; align-items: center; padding: 10px 15px; text-decoration: none;
+            color: #333; font-size: 1rem; font-weight: 500; border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+        .language-dropdown a:hover { background-color: #f0f2f5; }
+        .language-dropdown img { width: 24px; margin-right: 12px; border-radius: 3px; }
+        
+        /* CSS CHO CON TRỎ TÙY CHỈNH */
+        .cursor-element {
+            position: fixed; display: flex; align-items: center; pointer-events: none;
+            z-index: 1070; opacity: 0; transition: opacity 0.3s ease-in-out;
+        }
+        .cursor-element.visible { opacity: 1; }
+        .cursor-element img { width: 28px; height: auto; margin-right: 8px; }
+        .cursor-element .cursor-text {
+            background-color: #0d6efd; color: white; padding: 6px 12px; border-radius: 20px;
+            font-size: 0.95em; box-shadow: 0 3px 7px rgba(0,0,0,0.15); font-weight: bold;
+            opacity: 1; transition: opacity 0.5s ease-in-out;
+        }
+        .cursor-element .cursor-text.fade-out { opacity: 0; }
     </style>
 </head>
 
@@ -165,82 +109,74 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
             <div class="container px-5">
-                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Tran Huu Dat</span></a>
+                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Trần Hữu Đạt</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation"><span
                         class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html" data-translate-key="navHome">Trang chủ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="resume.html" data-translate-key="navResume">Hồ sơ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html" data-translate-key="navProjects">Dự án</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html" data-translate-key="navContact">Liên hệ</a></li>
                     </ul>
+                    <!-- NÚT CHUYỂN NGÔN NGỮ -->
+                    <div class="language-switcher">
+                        <div class="current-flag">
+                            <img id="current-flag-img" src="assets/vn.png" alt="Current Language">
+                        </div>
+                        <div class="language-dropdown">
+                            <a href="#" class="lang-option" data-lang="en">
+                                <img src="assets/en.png" alt="English Flag">
+                                <span>English</span>
+                            </a>
+                            <a href="#" class="lang-option" data-lang="vi">
+                                <img src="assets/vn.png" alt="Vietnamese Flag">
+                                <span>Tiếng Việt</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
         <!-- Page Content-->
         <div class="container px-5 my-5">
             <div class="text-center mb-5">
-                <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Resume</span></h1>
+                <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline" data-translate-key="resumeTitle">Hồ sơ</span></h1>
             </div>
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-11 col-xl-9 col-xxl-8">
                     <!-- Experience Section -->
                     <section>
                         <div class="d-flex align-items-center justify-content-between mb-4">
-                            <h2 class="text-primary fw-bolder mb-0">Experience</h2>
+                            <h2 class="text-primary fw-bolder mb-0" data-translate-key="expTitle">Kinh nghiệm</h2>
                             <a class="btn btn-primary px-4 py-3" href="assets/TranHuuDat-Resume.pdf"
                                 download="TranHuuDat-Resume.pdf">
                                 <div class="d-inline-block bi bi-download me-2"></div>
-                                Download Resume
+                                <span data-translate-key="btnDownload">Tải CV</span>
                             </a>
                         </div>
-                        <!-- Experience Card 1 (Placeholder - Update or Remove if Invigilator is primary) -->
-                        <div class="card shadow border-0 rounded-4 mb-5">
-                            <div class="card-body p-5">
-                                <div class="row align-items-center gx-5">
-                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                        <div class="bg-light p-4 rounded-4">
-                                            <div class="text-primary fw-bolder mb-2">[Dates for Exp 1]</div>
-                                            <div class="small fw-bolder">[Your Role for Exp 1]</div>
-                                            <div class="small text-muted">[Company Name for Exp 1]</div>
-                                            <div class="small text-muted">[Location for Exp 1]</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <div>[Your responsibilities and achievements for Exp 1. If this is not needed,
-                                            remove this entire card.]</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        
                         <!-- Experience Card for Invigilator -->
                         <div class="card shadow border-0 rounded-4 mb-5">
                             <div class="card-body p-5">
                                 <div class="row align-items-center gx-5">
                                     <div class="col text-center text-lg-start mb-4 mb-lg-0">
                                         <div class="bg-light p-4 rounded-4">
-                                            <!-- UPDATED DATE -->
-                                            <div class="text-primary fw-bolder mb-2">2024 - Present</div>
-                                            <div class="small fw-bolder">Invigilator (Part-time)</div>
-                                            <div class="small text-muted">Ton Duc Thang University</div>
-                                            <div class="small text-muted">Ho Chi Minh City, VN</div>
+                                            <div class="text-primary fw-bolder mb-2" data-translate-key="exp1Date">2024 - Hiện tại</div>
+                                            <div class="small fw-bolder" data-translate-key="exp1Role">Giám thị (Bán thời gian)</div>
+                                            <div class="small text-muted" data-translate-key="exp1Company">Đại học Tôn Đức Thắng</div>
+                                            <div class="small text-muted" data-translate-key="exp1Location">TP. Hồ Chí Minh, VN</div>
                                         </div>
                                     </div>
                                     <div class="col-lg-8">
                                         <div>
                                             <ul>
-                                                <li>Ensured the integrity and fairness of university examinations by
-                                                    strictly adhering to examination protocols.</li>
-                                                <li>Supervised candidates, managed examination materials, and addressed
-                                                    procedural queries to maintain a smooth testing environment.</li>
-                                                <li>Developed strong discipline, meticulous attention to detail, and the
-                                                    ability to remain composed and decisive under pressure.</li>
-                                                <li>Enhanced observational skills and professionalism through
-                                                    interactions with faculty and students.</li>
+                                                <li data-translate-key="exp1Desc1">Đảm bảo tính liêm chính và công bằng của các kỳ thi đại học bằng cách tuân thủ nghiêm ngặt các quy chế thi.</li>
+                                                <li data-translate-key="exp1Desc2">Giám sát thí sinh, quản lý tài liệu thi và giải quyết các thắc mắc về thủ tục để duy trì một môi trường thi cử suôn sẻ.</li>
+                                                <li data-translate-key="exp1Desc3">Phát triển tính kỷ luật, sự tỉ mỉ đến từng chi tiết và khả năng giữ bình tĩnh và quyết đoán dưới áp lực.</li>
+                                                <li data-translate-key="exp1Desc4">Nâng cao kỹ năng quan sát và tính chuyên nghiệp thông qua tương tác với giảng viên và sinh viên.</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -251,25 +187,24 @@
 
                     <!-- Education Section -->
                     <section>
-                        <h2 class="text-secondary fw-bolder mb-4">Education</h2>
+                        <h2 class="text-secondary fw-bolder mb-4" data-translate-key="eduTitle">Học vấn</h2>
                         <div class="card shadow border-0 rounded-4 mb-5">
                             <div class="card-body p-5">
                                 <div class="row align-items-center gx-5">
                                     <div class="col text-center text-lg-start mb-4 mb-lg-0">
                                         <div class="bg-light p-4 rounded-4">
-                                            <div class="text-secondary fw-bolder mb-2">2022 - 2026 (Expected)</div>
+                                            <div class="text-secondary fw-bolder mb-2" data-translate-key="edu1Date">2022 - 2026 (Dự kiến)</div>
                                             <div class="mb-2">
-                                                <div class="small fw-bolder">Ton Duc Thang University</div>
-                                                <div class="small text-muted">Ho Chi Minh City, VN</div>
+                                                <div class="small fw-bolder" data-translate-key="edu1School">Đại học Tôn Đức Thắng</div>
+                                                <div class="small text-muted" data-translate-key="edu1Location">TP. Hồ Chí Minh, VN</div>
                                             </div>
                                             <div class="fst-italic">
-                                                <div class="small text-muted">Major: Software Engineering</div>
+                                                <div class="small text-muted" data-translate-key="edu1Major">Chuyên ngành: Kỹ thuật Phần mềm</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-8">
-                                        <!-- UPDATED Details -->
-                                        <div>GPA: ~7.8/10 </div>
+                                        <div data-translate-key="edu1GPA">Điểm trung bình: ~7.8/10</div>
                                     </div>
                                 </div>
                             </div>
@@ -278,91 +213,65 @@
 
                     <!-- Awards & Achievements Section -->
                     <section>
-                        <h2 class="text-primary fw-bolder mb-4">Awards & Achievements</h2>
-                        <!-- Award Card 1 -->
+                        <h2 class="text-primary fw-bolder mb-4" data-translate-key="awardsTitle">Giải thưởng & Thành tích</h2>
                         <div class="card shadow border-0 rounded-4 mb-5">
                             <div class="card-body p-5">
                                 <div class="row align-items-center gx-5">
                                     <div class="col text-center text-lg-start mb-4 mb-lg-0">
                                         <div class="bg-light p-4 rounded-4">
-                                            <div class="text-primary fw-bolder mb-2">April 2023</div>
-                                            <!-- Chính xác hơn là tháng diễn ra chung kết -->
-                                            <div class="small fw-bolder">Consolation Prize</div>
-
+                                            <div class="text-primary fw-bolder mb-2" data-translate-key="award1Date">Tháng 4, 2023</div>
+                                            <div class="small fw-bolder" data-translate-key="award1Prize">Giải Khuyến khích</div>
                                             <div class="mb-2">
-                                                <div class="small text-muted">
-                                                    "Thiết kế Website Lớp năm 2023" (Class Website
-                                                Design Competition 2023)</div>
-                                                
+                                                <div class="small text-muted" data-translate-key="award1CompName">Cuộc thi "Thiết kế Website Lớp năm 2023"</div>
                                             </div>
                                             <div class="fst-italic">
-                                                <div class="small text-muted">Faculty of Information Technology, Ton Duc
-                                                    Thang University</div>
+                                                <div class="small text-muted" data-translate-key="award1Org">Khoa Công nghệ Thông tin, Đại học Tôn Đức Thắng</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-8">
                                         <div>
                                             <ul>
-                                                <li>Achieved a Consolation Prize as part of team representing
-                                                    22H50201 class in a university-wide competition with over 20 participating
-                                                    classes.</li>
-                                                <li>The competition was part of "Tháng Thanh niên 2023" (Youth Month
-                                                    2023) under the theme "Tuổi trẻ tiên phong chuyển đổi số" (Youth
-                                                    Pioneering Digital Transformation).</li>
-                                                <li>Developed a class website aimed at fostering academic exchange and preserving class
-                                                    memories.</li>
-                                                <li>Contributed to UI/UX design,
-                                                    WordPress theme customization.</li>
-                                                <li>Demonstrated teamwork, creativity, and early application of web
-                                                    development skills in a competitive setting.</li>
-                                                <li><em>Note: The university-hosted competition website
-                                                        (<code>itclass.tdtu.edu.vn/ktpm2022clc01/</code>) has since been
-                                                        archived and is no longer publicly accessible.</em></li>
-                                                <!-- Optional: If you have screenshots or a local version, you could mention it or link to a portfolio item showcasing it -->
-                                                <!-- e.g., <li>Further details and visual evidence of the project are available in my <a href="[link_to_your_portfolio_page]" target="_blank">portfolio</a>.</li> -->
+                                                <li data-translate-key="award1Desc1">Đạt giải Khuyến khích cùng đội đại diện lớp 22H50201 trong cuộc thi toàn trường với hơn 20 lớp tham gia.</li>
+                                                <li data-translate-key="award1Desc2">Cuộc thi là một phần của "Tháng Thanh niên 2023" với chủ đề "Tuổi trẻ tiên phong chuyển đổi số".</li>
+                                                <li data-translate-key="award1Desc3">Phát triển một trang web lớp học nhằm thúc đẩy trao đổi học thuật và lưu giữ kỷ niệm của lớp.</li>
+                                                <li data-translate-key="award1Desc4">Đóng góp vào thiết kế UI/UX và tùy chỉnh giao diện WordPress.</li>
+                                                <li data-translate-key="award1Desc5">Thể hiện tinh thần đồng đội, sự sáng tạo và ứng dụng sớm các kỹ năng phát triển web trong một môi trường cạnh tranh.</li>
+                                                <li data-translate-key="award1Desc6"><em>Lưu ý: Trang web cuộc thi do trường lưu trữ (<code>itclass.tdtu.edu.vn/ktpm2022clc01/</code>) đã được lưu trữ và không còn truy cập công khai.</em></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- You can add more award cards here if needed -->
                     </section>
 
-                    <!-- NEW: Souvenir Photo Section -->
+                    <!-- Souvenir Photo Section -->
                     <section class="text-center my-5">
-                        <h2 class="text-gradient d-inline fw-bolder mb-4">A Proud Moment</h2>
-                        
-                        <!-- Wrapper for the image to control its size and centering -->
+                        <h2 class="text-gradient d-inline fw-bolder mb-4" data-translate-key="photoTitle">Một Khoảnh khắc Tự hào</h2>
                         <div class="glimpse-image-wrapper mx-auto"> 
                             <img src="assets/achive.jpg" alt="A memorable moment - Receiving award at TDTU 2023"
-                                class="img-fluid rounded shadow-sm"
-                                style="height: auto; border: 1px solid #dee2e6;">
+                                class="img-fluid rounded shadow-sm" style="height: auto; border: 1px solid #dee2e6;">
                         </div>
-                        
-                        <p class="text-muted fst-italic small">Receiving the design award at TDTU, 2023</p>
+                        <p class="text-muted fst-italic small" data-translate-key="photoCaption">Nhận giải thưởng thiết kế tại TDTU, 2023</p>
                     </section>
-
-
-                    
                 </div>
             </div>
         </div>
     </main>
-    <!-- Footer (Your existing footer) -->
+    <!-- Footer -->
     <footer class="bg-white py-4 mt-auto">
         <div class="container px-5">
             <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                 <div class="col-auto">
-                    <div class="small m-0">Copyright © Tran Huu Dat 2024</div>
+                    <div class="small m-0" data-translate-key="footerCopyright">Bản quyền © Trần Hữu Đạt 2024</div>
                 </div>
                 <div class="col-auto">
-                    <a class="small" href="#!">Privacy</a>
+                    <a class="small" href="#!" data-translate-key="footerPrivacy">Bảo mật</a>
                     <span class="mx-1">·</span>
-                    <a class="small" href="#!">Terms</a>
+                    <a class="small" href="#!" data-translate-key="footerTerms">Điều khoản</a>
                     <span class="mx-1">·</span>
-                    <a class="small" href="contact.html">Contact</a>
+                    <a class="small" href="contact.html" data-translate-key="footerContact">Liên hệ</a>
                 </div>
             </div>
         </div>
@@ -370,8 +279,8 @@
 
     <!-- Cursor Element HTML -->
     <div class="cursor-element">
-        <img src="assets/cursor_blue.png" alt="Custom Cursor Icon"> <!-- Thay đổi ảnh con trỏ nếu muốn -->
-        <span class="cursor-text">Huu Dat</span>
+        <img src="assets/cursor_blue.png" alt="Custom Cursor Icon">
+        <span class="cursor-text">Hữu Đạt</span>
     </div>
 
     <!-- Bootstrap core JS-->
@@ -379,147 +288,197 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
 
-    <!-- JavaScript cho Interactive Grid và Cursor (Giữ nguyên như phiên bản trước) -->
+    <!-- JavaScript tùy chỉnh -->
     <script>
-        const cursorElement = document.querySelector('.cursor-element');
-        const cursorTextElement = cursorElement.querySelector('.cursor-text');
-        const gridItems = document.querySelectorAll('.interactive-grid .grid-item');
+        document.addEventListener('DOMContentLoaded', () => {
 
-        let autoTextCurrentIndex = 0;
-        let autoTextInterval;
+            const translations = {
+                "en": {
+                    "metaDescription": "My Resume - Tran Huu Dat",
+                    "navHome": "Home",
+                    "navResume": "Resume",
+                    "navProjects": "Projects",
+                    "navContact": "Contact",
+                    "resumeTitle": "Resume",
+                    "expTitle": "Experience",
+                    "btnDownload": "Download Resume",
+                    "exp1Date": "2024 - Present",
+                    "exp1Role": "Invigilator (Part-time)",
+                    "exp1Company": "Ton Duc Thang University",
+                    "exp1Location": "Ho Chi Minh City, VN",
+                    "exp1Desc1": "Ensured the integrity and fairness of university examinations by strictly adhering to examination protocols.",
+                    "exp1Desc2": "Supervised candidates, managed examination materials, and addressed procedural queries to maintain a smooth testing environment.",
+                    "exp1Desc3": "Developed strong discipline, meticulous attention to detail, and the ability to remain composed and decisive under pressure.",
+                    "exp1Desc4": "Enhanced observational skills and professionalism through interactions with faculty and students.",
+                    "eduTitle": "Education",
+                    "edu1Date": "2022 - 2026 (Expected)",
+                    "edu1School": "Ton Duc Thang University",
+                    "edu1Location": "Ho Chi Minh City, VN",
+                    "edu1Major": "Major: Software Engineering",
+                    "edu1GPA": "GPA: ~7.8/10",
+                    "awardsTitle": "Awards & Achievements",
+                    "award1Date": "April 2023",
+                    "award1Prize": "Consolation Prize",
+                    "award1CompName": "'Class Website Design Competition 2023'",
+                    "award1Org": "Faculty of Information Technology, Ton Duc Thang University",
+                    "award1Desc1": "Achieved a Consolation Prize as part of team representing 22H50201 class in a university-wide competition with over 20 participating classes.",
+                    "award1Desc2": "The competition was part of 'Youth Month 2023' under the theme 'Youth Pioneering Digital Transformation'.",
+                    "award1Desc3": "Developed a class website aimed at fostering academic exchange and preserving class memories.",
+                    "award1Desc4": "Contributed to UI/UX design and WordPress theme customization.",
+                    "award1Desc5": "Demonstrated teamwork, creativity, and early application of web development skills in a competitive setting.",
+                    "award1Desc6": "<em>Note: The university-hosted competition website (<code>itclass.tdtu.edu.vn/ktpm2022clc01/</code>) has since been archived and is no longer publicly accessible.</em>",
+                    "photoTitle": "A Proud Moment",
+                    "photoCaption": "Receiving the design award at TDTU, 2023",
+                    "footerCopyright": "Copyright © Tran Huu Dat 2024",
+                    "footerPrivacy": "Privacy",
+                    "footerTerms": "Terms",
+                    "footerContact": "Contact"
+                },
+                "vi": {
+                    "metaDescription": "Hồ sơ của tôi - Trần Hữu Đạt",
+                    "navHome": "Trang chủ",
+                    "navResume": "Hồ sơ",
+                    "navProjects": "Dự án",
+                    "navContact": "Liên hệ",
+                    "resumeTitle": "Hồ sơ",
+                    "expTitle": "Kinh nghiệm",
+                    "btnDownload": "Tải CV",
+                    "exp1Date": "2024 - Hiện tại",
+                    "exp1Role": "Giám thị (Bán thời gian)",
+                    "exp1Company": "Đại học Tôn Đức Thắng",
+                    "exp1Location": "TP. Hồ Chí Minh, VN",
+                    "exp1Desc1": "Đảm bảo tính liêm chính và công bằng của các kỳ thi đại học bằng cách tuân thủ nghiêm ngặt các quy chế thi.",
+                    "exp1Desc2": "Giám sát thí sinh, quản lý tài liệu thi và giải quyết các thắc mắc về thủ tục để duy trì một môi trường thi cử suôn sẻ.",
+                    "exp1Desc3": "Phát triển tính kỷ luật, sự tỉ mỉ đến từng chi tiết và khả năng giữ bình tĩnh và quyết đoán dưới áp lực.",
+                    "exp1Desc4": "Nâng cao kỹ năng quan sát và tính chuyên nghiệp thông qua tương tác với giảng viên và sinh viên.",
+                    "eduTitle": "Học vấn",
+                    "edu1Date": "2022 - 2026 (Dự kiến)",
+                    "edu1School": "Đại học Tôn Đức Thắng",
+                    "edu1Location": "TP. Hồ Chí Minh, VN",
+                    "edu1Major": "Chuyên ngành: Kỹ thuật Phần mềm",
+                    "edu1GPA": "Điểm trung bình: ~7.8/10",
+                    "awardsTitle": "Giải thưởng & Thành tích",
+                    "award1Date": "Tháng 4, 2023",
+                    "award1Prize": "Giải Khuyến khích",
+                    "award1CompName": "Cuộc thi 'Thiết kế Website Lớp năm 2023'",
+                    "award1Org": "Khoa Công nghệ Thông tin, Đại học Tôn Đức Thắng",
+                    "award1Desc1": "Đạt giải Khuyến khích cùng đội đại diện lớp 22H50201 trong cuộc thi toàn trường với hơn 20 lớp tham gia.",
+                    "award1Desc2": "Cuộc thi là một phần của 'Tháng Thanh niên 2023' với chủ đề 'Tuổi trẻ tiên phong chuyển đổi số'.",
+                    "award1Desc3": "Phát triển một trang web lớp học nhằm thúc đẩy trao đổi học thuật và lưu giữ kỷ niệm của lớp.",
+                    "award1Desc4": "Đóng góp vào thiết kế UI/UX và tùy chỉnh giao diện WordPress.",
+                    "award1Desc5": "Thể hiện tinh thần đồng đội, sự sáng tạo và ứng dụng sớm các kỹ năng phát triển web trong một môi trường cạnh tranh.",
+                    "award1Desc6": "<em>Lưu ý: Trang web cuộc thi do trường lưu trữ (<code>itclass.tdtu.edu.vn/ktpm2022clc01/</code>) đã được lưu trữ và không còn truy cập công khai.</em>",
+                    "photoTitle": "Một Khoảnh khắc Tự hào",
+                    "photoCaption": "Nhận giải thưởng thiết kế tại TDTU, 2023",
+                    "footerCopyright": "Bản quyền © Trần Hữu Đạt 2024",
+                    "footerPrivacy": "Bảo mật",
+                    "footerTerms": "Điều khoản",
+                    "footerContact": "Liên hệ"
+                }
+            };
 
-        const autoTexts = [
-            "Hello!",
-            "I'm Tran Huu Dat",
-            "I'm a Web Developer",
-            "I'm looking for a job",
-            "Thanks for visiting!"
-        ];
+            const languageSwitcher = document.querySelector('.language-switcher');
+            const currentFlag = languageSwitcher.querySelector('.current-flag');
+            const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
 
-        function updateCursorPosition(x, y) {
-            if (!cursorElement) return;
-            // Don't move if it's supposed to be hidden by interaction
-            if (cursorElement.classList.contains('hidden-by-interaction')) {
-                // Optionally, ensure it's visually hidden if class alone isn't enough
-                // (though the CSS class should handle this)
-                if (cursorElement.style.opacity !== '0') cursorElement.style.opacity = '0';
-                return;
-            }
-            // If it's not hidden by interaction, make it visible and position it
-            if (cursorElement.style.opacity !== '1' && cursorElement.classList.contains('visible')) {
-                cursorElement.style.opacity = '1'; // Restore opacity if it was set to 0
-            }
-
-            cursorElement.style.left = x + 'px';
-            cursorElement.style.top = y + 'px';
-            if (!cursorElement.classList.contains('visible')) {
-                cursorElement.classList.add('visible');
-            }
-        }
-
-        function changeCursorTextWithFade(newText) {
-            if (!cursorTextElement || cursorTextElement.isTextFading || cursorTextElement.textContent === newText) {
-                return;
-            }
-            cursorTextElement.isTextFading = true;
-            cursorTextElement.classList.add('fade-out');
-
-            setTimeout(() => {
-                cursorTextElement.textContent = newText;
-                cursorTextElement.classList.remove('fade-out');
-                cursorTextElement.isTextFading = false;
-            }, 300);
-        }
-
-        function updateAutoCursorText() {
-            let newTextToShow;
-            let isOverGridItem = false;
-            let currentGridItemText = null;
-
-            // Prevent text update if cursor is meant to be hidden
-            if (cursorElement && cursorElement.classList.contains('hidden-by-interaction')) {
-                return;
-            }
-
-            if (cursorElement && gridItems.length > 0) {
-                const cursorRect = cursorElement.getBoundingClientRect();
-                for (const item of gridItems) {
-                    const itemRect = item.getBoundingClientRect();
-                    if (
-                        cursorRect.right > itemRect.left &&
-                        cursorRect.left < itemRect.right &&
-                        cursorRect.bottom > itemRect.top &&
-                        cursorRect.top < itemRect.bottom
-                    ) {
-                        if (item.dataset.text) {
-                            isOverGridItem = true;
-                            currentGridItemText = item.dataset.text;
-                            break;
+            const setLanguage = (lang) => {
+                document.querySelectorAll('[data-translate-key]').forEach(element => {
+                    const key = element.getAttribute('data-translate-key');
+                    if (translations[lang] && translations[lang][key]) {
+                        if (element.tagName === 'META') {
+                            element.setAttribute('content', translations[lang][key]);
+                        } else {
+                            element.innerHTML = translations[lang][key];
                         }
                     }
+                });
+
+                document.documentElement.lang = lang;
+                const flagImg = document.getElementById('current-flag-img');
+                flagImg.src = lang === 'en' ? 'assets/en.png' : 'assets/vn.png';
+                flagImg.alt = lang === 'en' ? 'English' : 'Tiếng Việt';
+                localStorage.setItem('language', lang);
+            };
+
+            currentFlag.addEventListener('click', (event) => {
+                event.stopPropagation();
+                languageDropdown.classList.toggle('show');
+            });
+
+            window.addEventListener('click', () => {
+                if (languageDropdown.classList.contains('show')) {
+                    languageDropdown.classList.remove('show');
                 }
-            }
-
-            if (isOverGridItem) {
-                newTextToShow = currentGridItemText;
-            } else {
-                newTextToShow = autoTexts[autoTextCurrentIndex];
-                autoTextCurrentIndex = (autoTextCurrentIndex + 1) % autoTexts.length;
-            }
-            changeCursorTextWithFade(newTextToShow);
-        }
-
-        if (cursorElement) {
-            document.addEventListener('mousemove', (e) => {
-                updateCursorPosition(e.clientX, e.clientY);
             });
 
-            // --- NEW LOGIC FOR HIDING CURSOR ON INTERACTIVE ELEMENTS ---
-            const interactiveElements = document.querySelectorAll('a, button, input[type="submit"], .form-control');
-
-            interactiveElements.forEach(el => {
-                el.addEventListener('mouseenter', () => {
-                    cursorElement.classList.add('hidden-by-interaction');
-                    // Ensure system cursor is visible for these elements
-                    // This is already handled by your CSS:
-                    // button, button:hover, input[type="submit"], .form-control { cursor: url('assets/hand_blue.png'), auto; }
-                    // a { cursor: pointer; } (browser default)
-                });
-                el.addEventListener('mouseleave', () => {
-                    cursorElement.classList.remove('hidden-by-interaction');
-                    // The mousemove event will quickly make it visible again if needed
-                    // and updateCursorPosition will restore its opacity if it was set to 0
+            document.querySelectorAll('.lang-option').forEach(item => {
+                item.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const selectedLang = item.getAttribute('data-lang');
+                    setLanguage(selectedLang);
+                    languageDropdown.classList.remove('show');
                 });
             });
-            // --- END OF NEW LOGIC ---
-        }
 
+            const savedLang = localStorage.getItem('language') || 'vi';
+            setLanguage(savedLang);
 
-        if (gridItems.length > 0 && cursorTextElement) {
-            gridItems.forEach(item => {
-                item.addEventListener('mouseenter', () => {
-                    if (item.dataset.text) {
-                        changeCursorTextWithFade(item.dataset.text);
+            // --- LOGIC CON TRỎ TÙY CHỈNH ---
+            const cursorElement = document.querySelector('.cursor-element');
+            if (cursorElement) {
+                const cursorTextElement = cursorElement.querySelector('.cursor-text');
+                const autoTexts = ["Welcome!", "This is my resume", "Let's connect!"];
+                let autoTextCurrentIndex = 0;
+
+                function updateCursorPosition(x, y) {
+                    if (cursorElement.classList.contains('hidden-by-interaction')) {
+                        if (cursorElement.style.opacity !== '0') cursorElement.style.opacity = '0';
+                        return;
                     }
-                });
-            });
-
-            updateAutoCursorText();
-            autoTextInterval = setInterval(updateAutoCursorText, 3000);
-        }
-
-
-        if (cursorElement) {
-            function initialCursorShow() {
-                // Only make it visible if not currently hidden by interaction (e.g. if page loads with mouse over a button)
-                if (!cursorElement.classList.contains('hidden-by-interaction') && !cursorElement.classList.contains('visible')) {
-                    cursorElement.classList.add('visible');
+                    if (cursorElement.style.opacity !== '1' && cursorElement.classList.contains('visible')) {
+                        cursorElement.style.opacity = '1';
+                    }
+                    cursorElement.style.left = x + 'px';
+                    cursorElement.style.top = y + 'px';
+                    if (!cursorElement.classList.contains('visible')) {
+                        cursorElement.classList.add('visible');
+                    }
                 }
+                
+                function changeCursorTextWithFade(newText) {
+                    if (!cursorTextElement || cursorTextElement.isTextFading || cursorTextElement.textContent === newText) return;
+                    cursorTextElement.isTextFading = true;
+                    cursorTextElement.classList.add('fade-out');
+                    setTimeout(() => {
+                        cursorTextElement.textContent = newText;
+                        cursorTextElement.classList.remove('fade-out');
+                        cursorTextElement.isTextFading = false;
+                    }, 300);
+                }
+                
+                function updateAutoCursorText() {
+                    changeCursorTextWithFade(autoTexts[autoTextCurrentIndex]);
+                    autoTextCurrentIndex = (autoTextCurrentIndex + 1) % autoTexts.length;
+                }
+                
+                document.addEventListener('mousemove', (e) => updateCursorPosition(e.clientX, e.clientY));
+                
+                const interactiveElements = document.querySelectorAll('a, button, input, .form-control, .current-flag');
+                interactiveElements.forEach(el => {
+                    el.addEventListener('mouseenter', () => cursorElement.classList.add('hidden-by-interaction'));
+                    el.addEventListener('mouseleave', () => cursorElement.classList.remove('hidden-by-interaction'));
+                });
+                
+                updateAutoCursorText();
+                setInterval(updateAutoCursorText, 3000);
+
+                setTimeout(() => {
+                    if (!cursorElement.classList.contains('hidden-by-interaction')) {
+                         cursorElement.classList.add('visible');
+                    }
+                }, 100);
             }
-            setTimeout(initialCursorShow, 100);
-        } else {
-            console.error("Cursor element not found for initial show!");
-        }
+        });
     </script>
 </body>
 
