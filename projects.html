@@ -35,11 +35,238 @@
             cursor: url('assets/hand_blue.png'), auto;
         }
 
+        /* (CSS hiện tại của bạn) */
+
+        /* CSS CHO TAG PHÂN LOẠI DỰ ÁN */
+        .project-category-tag {
+            display: inline-block;
+            background-color: #b3cde0;
+            /* Pastel blue */
+            color: #333;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 50px;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .project-category-tag.frontend {
+            background-color: #ccebc5;
+            /* Pastel green */
+        }
+
+        .project-category-tag.mobile {
+            background-color: #ffedbc;
+            /* Pastel yellow */
+            color: #333;
+        }
+
+        .project-category-tag.ml {
+            background-color: #decbe4;
+            /* Pastel purple */
+        }
+
+        .project-category-tag.fullstack {
+            background-color: #fed9a6;
+            /* Pastel orange */
+        }
+
+        .project-tag-special {
+            background-color: #b3cde0;
+            /* Pastel blue */
+        }
+
+        .project-tag-highly-recommended {
+            background-color: #ccebc5;
+            /* Pastel green */
+        }
+
+        .project-tag-featured {
+            background-color: #ffedbc;
+            /* Pastel yellow */
+            color: #333;
+        }
+
+        .project-tag-best-choice {
+            background-color: #fddaec;
+            /* Pastel pink */
+        }
+
+        .project-tag-new-release {
+            background-color: #b3e2cd;
+            /* Pastel teal */
+            color: #333;
+        }
+
+        .project-tag-starter {
+            background-color: #f1d4d4;
+            /* Pastel red */
+        }
+
+        .project-tag-learning {
+            background-color: #e6e6e6;
+            /* Pastel gray */
+        }
+
+        /* CSS CHO TECH TAGS */
+        .tech-stack-container {
+            margin-top: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-tag {
+            display: inline-block;
+            padding: 0.35em 0.65em;
+            font-size: 0.8em;
+            font-weight: 600;
+            line-height: 1;
+            color: #333;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.375rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-tag.html5 {
+            background-color: #f1d4d4;
+            /* Pastel red */
+        }
+
+        .tech-tag.css3 {
+            background-color: #d1e5f0;
+            /* Pastel blue */
+        }
+
+        .tech-tag.javascript {
+            background-color: #fff2cc;
+            /* Pastel yellow */
+        }
+
+        .tech-tag.bootstrap {
+            background-color: #e6d9f2;
+            /* Pastel purple */
+        }
+
+        .tech-tag.tailwind {
+            background-color: #b3e0e6;
+            /* Pastel cyan */
+        }
+
+        .tech-tag.nodejs {
+            background-color: #ccebd7;
+            /* Pastel green */
+        }
+
+        .tech-tag.expressjs {
+            background-color: #e6e6e6;
+            /* Pastel gray */
+        }
+
+        .tech-tag.php {
+            background-color: #f2e6d9;
+            /* Pastel beige */
+        }
+
+        .tech-tag.mysql {
+            background-color: #d9e6f2;
+            /* Pastel light blue */
+        }
+
+        .tech-tag.firebase {
+            background-color: #fff2cc;
+            /* Pastel yellow */
+        }
+
+        .tech-tag.java {
+            background-color: #f2d9e6;
+            /* Pastel pink */
+        }
+
+        .tech-tag.android {
+            background-color: #e0f2e6;
+            /* Pastel green */
+        }
+
+        .tech-tag.github {
+            background-color: #e6f0fa;
+            /* Pastel light blue */
+        }
+
+        .tech-tag.python {
+            background-color: #d9e6f2;
+            /* Pastel light blue */
+        }
+
+        .tech-tag.tensorflow {
+            background-color: #ffe0b2;
+            /* Pastel orange */
+        }
+
+        .tech-tag.keras {
+            background-color: #f2d9d9;
+            /* Pastel red */
+        }
+
+        .tech-tag.opencv {
+            background-color: #e6d9f2;
+            /* Pastel purple */
+        }
+
+        .tech-tag.colab {
+            background-color: #fff2cc;
+            /* Pastel yellow */
+        }
+
+        .tech-tag.git {
+            background-color: #f2e0e6;
+            /* Pastel pink */
+        }
+
+        .tech-tag.figma {
+            background-color: #e6e0f2;
+            /* Pastel lavender */
+        }
+
         .project-card-image {
             max-width: 150px;
             display: block;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        /* Nút chính (màu nền hồng) */
+        .btn-omacha-primary {
+            background-color: #E84A7F;
+            /* Mã màu hồng từ logo Omacha của bạn */
+            border-color: #E84A7F;
+            color: #fff;
+            /* Chữ màu trắng */
+        }
+
+        /* Hiệu ứng khi di chuột vào nút chính */
+        .btn-omacha-primary:hover {
+            background-color: #d13c6d;
+            /* Làm màu hồng đậm hơn một chút */
+            border-color: #d13c6d;
+            color: #fff;
+        }
+
+        /* Nút phụ (viền hồng) */
+        .btn-omacha-outline {
+            border-color: #E84A7F;
+            color: #E84A7F;
+        }
+
+        /* Hiệu ứng khi di chuột vào nút phụ */
+        .btn-omacha-outline:hover {
+            background-color: #E84A7F;
+            border-color: #E84A7F;
+            color: #fff;
+            /* Chữ chuyển thành màu trắng */
         }
 
         @media (min-width: 768px) {
@@ -57,7 +284,7 @@
                 padding: 1.5rem !important;
             }
         }
-        
+
         /* CSS CHO NÚT CHUYỂN NGÔN NGỮ */
         .language-switcher {
             position: relative;
@@ -117,7 +344,7 @@
             margin-right: 12px;
             border-radius: 3px;
         }
-        
+
         /* CSS CHO CON TRỎ TÙY CHỈNH */
         .cursor-element {
             position: fixed;
@@ -128,65 +355,125 @@
             opacity: 0;
             transition: opacity 0.3s ease-in-out;
         }
-        .cursor-element.visible { opacity: 1; }
-        .cursor-element img { width: 28px; height: auto; margin-right: 8px; }
-        .cursor-element .cursor-text {
-            background-color: #0d6efd; color: white; padding: 6px 12px;
-            border-radius: 20px; font-size: 0.95em; box-shadow: 0 3px 7px rgba(0,0,0,0.15);
-            font-weight: bold; opacity: 1; transition: opacity 0.5s ease-in-out;
+
+        .cursor-element.visible {
+            opacity: 1;
         }
-        .cursor-element .cursor-text.fade-out { opacity: 0; }
+
+        .cursor-element img {
+            width: 28px;
+            height: auto;
+            margin-right: 8px;
+        }
+
+        .cursor-element .cursor-text {
+            background-color: #0d6efd;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.95em;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+            font-weight: bold;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .cursor-element .cursor-text.fade-out {
+            opacity: 0;
+        }
+
+        /* Thêm vào cuối file CSS của bạn */
+        footer.bg-dark a.text-white-50 {
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer.bg-dark a.text-white-50:hover {
+            color: #ffffff !important;
+            /* Dùng !important để ghi đè bootstrap nếu cần */
+            text-decoration: underline;
+        }
+
+        footer a {
+            color: #adb5bd;
+            /* Màu chữ liên kết trong footer */
+            text-decoration: none;
+        }
     </style>
 </head>
 
 <body class="d-flex flex-column h-100 bg-light">
     <main class="flex-shrink-0">
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-            <div class="container px-5">
-                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Trần Hữu Đạt</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation"><span
-                        class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                        <li class="nav-item"><a class="nav-link" href="index.html" data-translate-key="navHome">Trang chủ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="resume.html" data-translate-key="navResume">Hồ sơ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="projects.html" data-translate-key="navProjects">Dự án</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html" data-translate-key="navContact">Liên hệ</a></li>
-                    </ul>
-                    <!-- NÚT CHUYỂN NGÔN NGỮ -->
-                    <div class="language-switcher">
-                        <div class="current-flag">
-                            <img id="current-flag-img" src="assets/vn.png" alt="Current Language">
-                        </div>
-                        <div class="language-dropdown">
-                            <a href="#" class="lang-option" data-lang="en">
-                                <img src="assets/en.png" alt="English Flag">
-                                <span>English</span>
-                            </a>
-                            <a href="#" class="lang-option" data-lang="vi">
-                                <img src="assets/vn.png" alt="Vietnamese Flag">
-                                <span>Tiếng Việt</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <!-- Navigation-->
+        <header-placeholder></header-placeholder>
+
         <!-- Projects Section -->
         <section class="py-5">
             <div class="container px-5 mb-5">
                 <div class="text-center mb-5">
-                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline" data-translate-key="projectsTitle">Các Dự án của Tôi</span></h1>
+                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline"
+                            data-translate-key="projectsTitle">Các Dự án của Tôi</span></h1>
                 </div>
 
                 <!-- Full-Stack Websites Section -->
                 <div class="mb-5">
-                    <h2 class="text-primary fw-bolder mb-4 text-center" data-translate-key="fullstackTitle">Trang web Full-Stack</h2>
+                    <h2 class="text-primary fw-bolder mb-4 text-center" data-translate-key="fullstackTitle">Trang web
+                        Full-Stack</h2>
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-11 col-xl-9 col-xxl-8">
+                            <!-- Project Card: Omacha Shop -->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="d-flex flex-column flex-md-row align-items-center">
+
+                                        <!-- Logo dự án -->
+                                        <div class="text-center text-md-start p-3 p-md-0">
+                                            <img class="img-fluid project-card-image" src="assets/logo_omacha.png"
+                                                alt="Omacha Shop Logo" />
+                                        </div>
+
+                                        <!-- Nội dung chi tiết -->
+                                        <div class="p-4 p-md-5 flex-grow-1">
+                                            <!-- Tag đặc biệt cho dự án -->
+                                            <div class="project-category-tag project-tag-starter"
+                                                data-translate-key="tagStarterProject">Starter Project</div>
+
+                                            <!-- Tiêu đề và Mô tả -->
+                                            <h3 class="fw-bolder" data-translate-key="omachaTitle">Omacha Shop - Cửa
+                                                hàng đồ chơi</h3>
+                                            <p data-translate-key="omachaDesc">Một nền tảng thương mại điện tử chuyên về
+                                                đồ chơi, được phát triển như một ứng dụng web full-stack. Cung cấp trải
+                                                nghiệm mua sắm toàn diện cho khách hàng và một hệ thống quản trị mạnh
+                                                mẽ.</p>
+
+                                            <!-- Ngăn xếp công nghệ -->
+                                            <div class="tech-stack-container">
+                                                <span class="tech-tag php">PHP</span>
+                                                <span class="tech-tag mysql">MySQL</span>
+                                                <span class="tech-tag html5">HTML5</span>
+                                                <span class="tech-tag css3">CSS3</span>
+                                                <span class="tech-tag javascript">JavaScript</span>
+                                                <span class="tech-tag bootstrap">Bootstrap</span>
+                                            </div>
+
+                                            <!-- Các nút bấm -->
+                                            <a href="https://tranhuudat2004.github.io/Omacha-Shop-Demo/"
+                                                class="btn btn-sm btn-omacha-primary me-2 mt-2" target="_blank"
+                                                rel="noopener noreferrer" data-translate-key="btnLiveDemo">Xem trực
+                                                tiếp</a>
+
+                                            <a href="omacha-shop.html" class="btn btn-sm btn-primary me-2 mt-2"
+                                                rel="noopener noreferrer" data-translate-key="btnViewDetail">Xem thông
+                                                tin chi tiết</a>
+
+                                            <a href="https://github.com/TranHuuDat2004/Omacha_Shop"
+                                                class="btn btn-sm btn-outline-primary me-2 mt-2" target="_blank"
+                                                rel="noopener noreferrer" data-translate-key="btnViewRepo">Xem Kho lưu
+                                                trữ</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
                             <!-- Project Card: BrickShop -->
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
@@ -196,18 +483,35 @@
                                                 alt="BrickShop Logo" />
                                         </div>
                                         <div class="p-4 p-md-5 flex-grow-1">
-                                            <h3 class="fw-bolder" data-translate-key="brickshopTitle">BrickShop - Thương mại điện tử</h3>
-                                            <p data-translate-key="brickshopDesc">Xây dựng một trung tâm thương mại điện tử cho những người đam mê đồ chơi lắp ráp (Qman, Keeppley, LEGO). Các tính năng bao gồm duyệt sản phẩm liền mạch, thanh toán an toàn, quản lý đơn hàng và trang quản trị riêng.</p>
-                                            <p><em>Tech: Node.js, Express.js, MySQL, HTML, CSS, JS, Bootstrap, Tailwind CSS.</em></p>
+                                            <div class="project-category-tag project-tag-special"
+                                                data-translate-key="tagspecialProject">Special Project</div>
+                                            <h3 class="fw-bolder" data-translate-key="brickshopTitle">BrickShop - Thương
+                                                mại điện tử</h3>
+                                            <p data-translate-key="brickshopDesc">Xây dựng một trung tâm thương mại điện
+                                                tử cho những người đam mê đồ chơi lắp ráp (Qman, Keeppley, LEGO). Các
+                                                tính năng bao gồm duyệt sản phẩm liền mạch, thanh toán an toàn, quản lý
+                                                đơn hàng và trang quản trị riêng.</p>
+                                            <!-- THAY THẾ DÒNG TECH CŨ BẰNG CÁI NÀY -->
+                                            <div class="tech-stack-container">
+                                                <span class="tech-tag nodejs">Node.js</span>
+                                                <span class="tech-tag expressjs">Express.js</span>
+                                                <span class="tech-tag mysql">MySQL</span>
+                                                <span class="tech-tag html5">HTML5</span>
+                                                <span class="tech-tag css3">CSS3</span>
+                                                <span class="tech-tag javascript">JavaScript</span>
+                                                <span class="tech-tag bootstrap">Bootstrap</span>
+                                                <span class="tech-tag tailwind">Tailwind CSS</span>
+                                            </div>
 
-                                            <a href="brickshop.html"
-                                                class="btn btn-sm btn-primary me-2 mt-2" 
-                                                rel="noopener noreferrer" data-translate-key="btnViewDetail">Xem thông tin chi tiết</a>
+                                            <a href="brickshop.html" class="btn btn-sm btn-primary me-2 mt-2"
+                                                rel="noopener noreferrer" data-translate-key="btnViewDetail">Xem thông
+                                                tin chi tiết</a>
 
                                             <a href="https://github.com/TranHuuDat2004/brickshop"
                                                 class="btn btn-sm btn-outline-primary me-2 mt-2" target="_blank"
-                                                rel="noopener noreferrer" data-translate-key="btnViewRepo">Xem Kho lưu trữ</a>
-                                            
+                                                rel="noopener noreferrer" data-translate-key="btnViewRepo">Xem Kho lưu
+                                                trữ</a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -217,16 +521,28 @@
                                 <div class="card-body p-0">
                                     <div class="d-flex flex-column flex-md-row align-items-center">
                                         <div class="text-center text-md-start p-3 p-md-0">
-                                            <img class="img-fluid project-card-image" src="assets/logo_zstyle.png"
-                                                alt="ZStyle Logo" />
+                                            <img class="img-fluid project-card-image"
+                                                src="assets/logo_zstyle_resized.png" alt="ZStyle Logo" />
                                         </div>
                                         <div class="p-4 p-md-5 flex-grow-1">
-                                            <h3 class="fw-bolder" data-translate-key="zstyleTitle">ZStyle - Thương mại điện tử Thời trang</h3>
-                                            <p data-translate-key="zstyleDesc">Phát triển một trang web thương mại điện tử cơ bản về quần áo trong khuôn khổ đồ án môn học, triển khai các chức năng cốt lõi để người dùng khám phá các mặt hàng thời trang.</p>
-                                            <p><em>Tech: PHP, MySQL, HTML5, CSS3, JavaScript.</em></p>
+                                            <div class="project-category-tag project-tag-new-release"
+                                                data-translate-key="categoryFullstack">New Release</div>
+                                            <h3 class="fw-bolder" data-translate-key="zstyleTitle">ZStyle - Thương mại
+                                                điện tử Thời trang</h3>
+                                            <p data-translate-key="zstyleDesc">Phát triển một trang web thương mại điện
+                                                tử cơ bản về quần áo trong khuôn khổ đồ án môn học, triển khai các chức
+                                                năng cốt lõi để người dùng khám phá các mặt hàng thời trang.</p>
+                                            <div class="tech-stack-container">
+                                                <span class="tech-tag php">PHP</span>
+                                                <span class="tech-tag mysql">MySQL</span>
+                                                <span class="tech-tag html5">HTML5</span>
+                                                <span class="tech-tag css3">CSS3</span>
+                                                <span class="tech-tag javascript">JavaScript</span>
+                                            </div>
                                             <a href="https://github.com/TranHuuDat2004/ZStyle"
                                                 class="btn btn-sm btn-outline-primary me-2 mt-2" target="_blank"
-                                                rel="noopener noreferrer" data-translate-key="btnViewRepo">Xem Kho lưu trữ</a>
+                                                rel="noopener noreferrer" data-translate-key="btnViewRepo">Xem Kho lưu
+                                                trữ</a>
                                         </div>
                                     </div>
                                 </div>
@@ -237,31 +553,85 @@
 
                 <!-- GitHub Pages & Frontend Projects Section -->
                 <div class="mb-5">
-                    <h2 class="text-primary fw-bolder mb-4 text-center" data-translate-key="frontendTitle">GitHub Pages & Frontend</h2>
+                    <h2 class="text-primary fw-bolder mb-4 text-center" data-translate-key="frontendTitle">GitHub Pages
+                        & Frontend</h2>
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-11 col-xl-9 col-xxl-8">
-                            <!-- Project Card: Puzzle & Image Tools Suite -->
+                            <!-- ========== PROJECT CARD: APTIS PRACTICE ========== -->
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
                                     <div class="d-flex flex-column flex-md-row align-items-center">
                                         <div class="text-center text-md-start p-3 p-md-0">
-                                            <img class="img-fluid project-card-image" src="assets/logo_puzzle0.png"
-                                                alt="Puzzle & Image Tools Suite Logo" />
+                                            <!-- Gợi ý: Tạo một logo đơn giản cho Aptis Practice, ví dụ: file aptis-logo.png -->
+                                            <img class="img-fluid project-card-image" src="assets/logo_aptis.png"
+                                                alt="Aptis Practice Logo" />
                                         </div>
                                         <div class="p-4 p-md-5 flex-grow-1">
-                                            <h3 class="fw-bolder" data-translate-key="puzzleTitle">Bộ Công cụ Xếp hình & Hình ảnh</h3>
-                                            <p data-translate-key="puzzleDesc">Một ứng dụng web hấp dẫn bao gồm trò chơi xếp hình tương tác và các công cụ xử lý ảnh thực tế (cắt ảnh vuông, chia lưới, thay đổi kích thước).</p>
-                                            <p><em>Tech: HTML5, CSS3, JavaScript, Bootstrap.</em></p>
-                                            <a href="https://tranhuudat2004.github.io/games_tools/"
+                                            <div class="project-category-tag project-tag-highly-recommended"
+                                                data-translate-key="tagHighlyRecommended">Highly Recommended</div>
+                                            <h3 class="fw-bolder" data-translate-key="aptisTitle">Aptis Practice - Công
+                                                cụ Luyện thi Aptis</h3>
+                                            <p data-translate-key="aptisDesc">Một công cụ web tương tác được xây dựng để
+                                                giải quyết vấn đề cá nhân sau lần thi Aptis đầu tiên. Dự án bao gồm các
+                                                bài thi mô phỏng, hệ thống chấm điểm, và các công cụ học tập độc đáo dựa
+                                                trên phương pháp "key" và "câu chuyện gợi nhớ".</p>
+                                            <div class="tech-stack-container">
+                                                <span class="tech-tag html5">HTML5</span>
+                                                <span class="tech-tag css3">CSS3</span>
+                                                <span class="tech-tag javascript">JavaScript (ES6+)</span>
+                                                <span class="tech-tag github">Github Pages</span>
+                                            </div>
+                                            <a href="https://tranhuudat2004.github.io/aptis-practice/"
                                                 class="btn btn-sm btn-primary me-2 mt-2" target="_blank"
-                                                rel="noopener noreferrer" data-translate-key="btnLiveDemo">Xem trực tiếp</a>
-                                            <a href="https://github.com/TranHuuDat2004/games_tools"
+                                                rel="noopener noreferrer" data-translate-key="btnLiveDemo">Xem trực
+                                                tiếp</a>
+                                            <a href="https://github.com/TranHuuDat2004/aptis-practice"
                                                 class="btn btn-sm btn-outline-primary mt-2" target="_blank"
-                                                rel="noopener noreferrer" data-translate-key="btnViewRepo">Xem Kho lưu trữ</a>
+                                                rel="noopener noreferrer" data-translate-key="btnViewRepo">Xem Kho lưu
+                                                trữ</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- ======================================================== -->
+
+                            <!-- ========== PROJECT CARD: ANIME.TV (MỚI THÊM) ========== -->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="d-flex flex-column flex-md-row align-items-center">
+                                        <div class="text-center text-md-start p-3 p-md-0">
+                                            <img class="img-fluid project-card-image" src="assets/logo_animetv.png"
+                                                alt="ANIME.TV Logo" />
+                                        </div>
+                                        <div class="p-4 p-md-5 flex-grow-1">
+                                            <div class="project-category-tag project-tag-highly-recommended"
+                                                data-translate-key="tagRecommended">Recommended</div>
+                                            <h3 class="fw-bolder" data-translate-key="animetvTitle">ANIME.TV - Thế giới
+                                                Anime & Manga</h3>
+                                            <p data-translate-key="animetvDesc">Một trang web tĩnh lấy cảm hứng từ
+                                                Crunchyroll, được xây dựng để khám phá và thưởng thức nội dung Anime &
+                                                Manga. Bao gồm trình phát video, thư viện ảnh/GIF, đọc truyện. Dự án cá
+                                                nhân nhằm mục đích học hỏi và rèn luyện kỹ năng.</p>
+                                            <div class="tech-stack-container">
+                                                <span class="tech-tag html5">HTML5</span>
+                                                <span class="tech-tag css3">CSS3</span>
+                                                <span class="tech-tag javascript">JavaScript (ES6+)</span>
+                                                <span class="tech-tag github">Github Page</span>
+                                            </div>
+                                            <a href="https://tranhuudat2004.github.io/anime.tv/"
+                                                class="btn btn-sm btn-primary me-2 mt-2" target="_blank"
+                                                rel="noopener noreferrer" data-translate-key="btnLiveDemo">Xem trực
+                                                tiếp</a>
+                                            <a href="https://github.com/TranHuuDat2004/anime.tv"
+                                                class="btn btn-sm btn-outline-primary mt-2" target="_blank"
+                                                rel="noopener noreferrer" data-translate-key="btnViewRepo">Xem Kho lưu
+                                                trữ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ======================================================== -->
+
                             <!-- Project Card: MyMusic Player Interface -->
                             <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
                                 <div class="card-body p-0">
@@ -271,26 +641,78 @@
                                                 alt="MyMusic Player Logo" />
                                         </div>
                                         <div class="p-4 p-md-5 flex-grow-1">
-                                            <h3 class="fw-bolder" data-translate-key="mymusicTitle">Giao diện Trình phát nhạc MyMusic</h3>
-                                            <p data-translate-key="mymusicDesc">Một giao diện trình phát nhạc trực tuyến đẹp mắt, hiện đại, lấy cảm hứng từ các nền tảng như Spotify, thể hiện khả năng thiết kế UI/UX và kỹ năng frontend với trọng tâm vào trải nghiệm tương tác và đáp ứng (responsive).</p>
-                                            <p><em>Tech: HTML5, CSS3, JavaScript (ES6+).</em></p>
-                                            <a href="https://tranhuudat2004.github.io/mymusic/"
+                                            <div class="project-category-tag project-tag-featured"
+                                                data-translate-key="tagFeatured">Featured Project</div>
+
+                                            <h3 class="fw-bolder" data-translate-key="mymusicTitle">Giao diện Trình phát
+                                                nhạc MyMusic</h3>
+                                            <p data-translate-key="mymusicDesc">Một giao diện trình phát nhạc trực tuyến
+                                                đẹp mắt, hiện đại, lấy cảm hứng từ các nền tảng như Spotify, thể hiện
+                                                khả năng thiết kế UI/UX và kỹ năng frontend với trọng tâm vào trải
+                                                nghiệm tương tác và đáp ứng (responsive).</p>
+                                            <div class="tech-stack-container">
+                                                <span class="tech-tag html5">HTML5</span>
+                                                <span class="tech-tag css3">CSS3</span>
+                                                <span class="tech-tag javascript">JavaScript (ES6+)</span>
+                                                <span class="tech-tag github">Github Page</span>
+                                            </div>
+                                            <a href="https://tranhuudat2004.github.io/mymusic-demo/"
                                                 class="btn btn-sm btn-primary me-2 mt-2" target="_blank"
-                                                rel="noopener noreferrer" data-translate-key="btnLiveDemo">Xem trực tiếp</a>
+                                                rel="noopener noreferrer" data-translate-key="btnLiveDemo">Xem trực
+                                                tiếp</a>
                                             <a href="https://github.com/TranHuuDat2004/mymusic"
                                                 class="btn btn-sm btn-outline-primary mt-2" target="_blank"
-                                                rel="noopener noreferrer" data-translate-key="btnViewRepo">Xem Kho lưu trữ</a>
+                                                rel="noopener noreferrer" data-translate-key="btnViewRepo">Xem Kho lưu
+                                                trữ</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Project Card: Puzzle & Image Tools Suite -->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="d-flex flex-column flex-md-row align-items-center">
+                                        <div class="text-center text-md-start p-3 p-md-0">
+                                            <img class="img-fluid project-card-image" src="assets/logo_puzzle0.png"
+                                                alt="Puzzle & Image Tools Suite Logo" />
+                                        </div>
+                                        <div class="p-4 p-md-5 flex-grow-1">
+                                            <div class="project-category-tag project-tag-learning"
+                                                data-translate-key="tagLearningProject">Learning Project</div>
+                                            <h3 class="fw-bolder" data-translate-key="puzzleTitle">Bộ Công cụ Xếp hình &
+                                                Hình ảnh</h3>
+                                            <p data-translate-key="puzzleDesc">Một ứng dụng web hấp dẫn bao gồm trò chơi
+                                                xếp hình tương tác và các công cụ xử lý ảnh thực tế (cắt ảnh vuông, chia
+                                                lưới, thay đổi kích thước).</p>
+                                            <div class="tech-stack-container">
+                                                <span class="tech-tag html5">HTML5</span>
+                                                <span class="tech-tag css3">CSS3</span>
+                                                <span class="tech-tag javascript">JavaScript</span>
+                                                <span class="tech-tag bootstrap">Bootstrap</span>
+                                                <span class="tech-tag github">Github Page</span>
+                                            </div>
+                                            <a href="https://tranhuudat2004.github.io/games_tools/"
+                                                class="btn btn-sm btn-primary me-2 mt-2" target="_blank"
+                                                rel="noopener noreferrer" data-translate-key="btnLiveDemo">Xem trực
+                                                tiếp</a>
+                                            <a href="https://github.com/TranHuuDat2004/games_tools"
+                                                class="btn btn-sm btn-outline-primary mt-2" target="_blank"
+                                                rel="noopener noreferrer" data-translate-key="btnViewRepo">Xem Kho lưu
+                                                trữ</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
 
                 <!-- Machine Learning Projects Section -->
                 <div>
-                    <h2 class="text-primary fw-bolder mb-4 text-center" data-translate-key="mlTitle">Học Máy (Machine Learning)</h2>
+                    <h2 class="text-primary fw-bolder mb-4 text-center" data-translate-key="mlTitle">Học Máy (Machine
+                        Learning)</h2>
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-11 col-xl-9 col-xxl-8">
                             <!-- Project Card: Signature Verification -->
@@ -302,12 +724,25 @@
                                                 alt="Signature Verification Logo" />
                                         </div>
                                         <div class="p-4 p-md-5 flex-grow-1">
-                                            <h3 class="fw-bolder" data-translate-key="signatureTitle">Hệ thống Xác thực Chữ ký</h3>
-                                            <p data-translate-key="signatureDesc">Phát triển một mô hình để xác thực chữ ký viết tay bằng các kỹ thuật Học máy trong Google Colab, đạt độ chính xác cao trong việc xác định chữ ký thật và giả mạo.</p>
-                                            <p><em>Tech: Python, TensorFlow/Keras, OpenCV, Matplotlib, Colab.</em></p>
+                                            <div class="project-category-tag project-tag-best-choice"
+                                                data-translate-key="categoryML">Best Choice</div>
+                                            <h3 class="fw-bolder" data-translate-key="signatureTitle">Hệ thống Xác thực
+                                                Chữ ký</h3>
+                                            <p data-translate-key="signatureDesc">Phát triển một mô hình để xác thực chữ
+                                                ký viết tay bằng các kỹ thuật Học máy trong Google Colab, đạt độ chính
+                                                xác cao trong việc xác định chữ ký thật và giả mạo.</p>
+                                            <div class="tech-stack-container">
+                                                <span class="tech-tag python">Python</span>
+                                                <span class="tech-tag tensorflow">TensorFlow</span>
+                                                <span class="tech-tag keras">Keras</span>
+                                                <span class="tech-tag opencv">OpenCV</span>
+                                                <span class="tech-tag colab">Google Colab</span>
+                                                <!-- <span class="tech-tag matplotlib">Matplotlib</span> -->
+                                            </div>
                                             <a href="https://github.com/TranHuuDat2004/handwriting-signature-recognition"
                                                 class="btn btn-sm btn-outline-primary mt-2" target="_blank"
-                                                rel="noopener noreferrer" data-translate-key="btnViewRepo">Xem Kho lưu trữ</a>
+                                                rel="noopener noreferrer" data-translate-key="btnViewRepo">Xem Kho lưu
+                                                trữ</a>
                                         </div>
                                     </div>
                                 </div>
@@ -322,29 +757,16 @@
         <section class="py-5 bg-gradient-primary-to-secondary text-white">
             <div class="container px-5 my-5">
                 <div class="text-center">
-                    <h2 class="display-4 fw-bolder mb-4" data-translate-key="ctaTitle">Hãy cùng nhau xây dựng một điều gì đó</h2>
-                    <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.html" data-translate-key="ctaButton">Liên hệ với tôi</a>
+                    <h2 class="display-4 fw-bolder mb-4" data-translate-key="ctaTitle">Hãy cùng nhau xây dựng một điều
+                        gì đó</h2>
+                    <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.html"
+                        data-translate-key="ctaButton">Liên hệ với tôi</a>
                 </div>
             </div>
         </section>
     </main>
-    <!-- Footer -->
-    <footer class="bg-white py-4 mt-auto">
-        <div class="container px-5">
-            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="col-auto">
-                    <div class="small m-0" data-translate-key="footerCopyright">Bản quyền © Trần Hữu Đạt 2024</div>
-                </div>
-                <div class="col-auto">
-                    <a class="small" href="#!" data-translate-key="footerPrivacy">Bảo mật</a>
-                    <span class="mx-1">·</span>
-                    <a class="small" href="#!" data-translate-key="footerTerms">Điều khoản</a>
-                    <span class="mx-1">·</span>
-                    <a class="small" href="contact.html" data-translate-key="footerContact">Liên hệ</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Chuyên nghiệp & Có Cấu trúc -->
+    <footer-placeholder></footer-placeholder>
 
     <!-- Cursor Element HTML -->
     <div class="cursor-element">
@@ -356,7 +778,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
-
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
     <!-- JavaScript tùy chỉnh cho chuyển đổi ngôn ngữ và con trỏ -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -392,7 +815,27 @@
                     "footerPrivacy": "Privacy",
                     "footerTerms": "Terms",
                     "footerContact": "Contact",
-                    "btnViewDetail": "View Details"
+                    "btnViewDetail": "View Details",
+                    "animetvTitle": "ANIME.TV - World of Anime & Manga",
+                    "animetvDesc": "A Crunchyroll-inspired static website built to explore and enjoy Anime & Manga content. Features video player, image/GIF galleries, manga reader. A personal project for learning and skill development.",
+                    "tagRecommended": "Recommended", // Hoặc "Đề xuất Cao"
+                    "tagHighlyRecommended": "Highly Recommended",
+                    "tagFeatured": "Featured Project",
+                    "tagBestChoice": "Best Choice", // Ví dụ thêm
+                    "tagNewRelease": "New Release", // Ví dụ thêm
+                    "tagLearningProject": "Learning Project", // Cho games_tools
+
+                    // --- CÁC KEY MỚI CHO FOOTER ---
+                    "footerTagline": "A passionate Web Developer dedicated to building beautiful and useful applications.",
+                    "footerQuickLinks": "Quick Links",
+                    "footerConnect": "Connect with Me",
+                    "footerCopyright": "Copyright © Tran Huu Dat 2025",
+
+                    "tagStarterProject": "Starter Project",
+                    "omachaTitle": "Omacha Shop - Toy Store",
+                    "omachaDesc": "A delightful e-commerce platform specializing in toys, developed as a full-stack web application. Features a comprehensive shopping experience and a robust administration system.",
+                    "aptisTitle": "Aptis Practice - Aptis Exam Tool",
+                    "aptisDesc": "An interactive web tool built to address personal challenges after the first Aptis exam. The project includes mock tests, a scoring system, and unique learning tools based on the 'key' and 'memory palace' methods.",
                 },
                 "vi": {
                     "metaDescription": "Các dự án và kỹ năng của tôi",
@@ -422,7 +865,28 @@
                     "footerPrivacy": "Bảo mật",
                     "footerTerms": "Điều khoản",
                     "footerContact": "Liên hệ",
-                    "btnViewDetail": "Xem thông tin chi tiết"
+                    "btnViewDetail": "Xem thông tin chi tiết",
+                    "animetvTitle": "ANIME.TV - Thế giới Anime & Manga",
+                    "animetvDesc": "Một trang web tĩnh lấy cảm hứng từ Crunchyroll, được xây dựng để khám phá và thưởng thức nội dung Anime & Manga. Bao gồm trình phát video, thư viện ảnh/GIF, đọc truyện. Dự án cá nhân nhằm mục đích học hỏi và rèn luyện kỹ năng.",
+                    "tagHighlyRecommended": "Rất Đáng Xem", // Hoặc "Đề xuất Cao"
+                    "tagRecommended": "Đáng Xem", // Hoặc "Đề xuất Cao"
+                    "tagFeatured": "Dự án Nổi bật",
+                    "tagBestChoice": "Lựa chọn Tốt nhất", // Ví dụ thêm
+                    "tagNewRelease": "Mới Phát hành", // Ví dụ thêm
+                    "tagLearningProject": "Dự án Học tập", // Cho games_tools
+
+                    // --- CÁC KEY MỚI CHO FOOTER ---
+                    "footerTagline": "Một lập trình viên Web đam mê xây dựng các ứng dụng đẹp và hữu ích.",
+                    "footerQuickLinks": "Liên kết nhanh",
+                    "footerConnect": "Kết nối với tôi",
+                    "footerCopyright": "Bản quyền © Trần Hữu Đạt 2025",
+
+                    // Thêm vào mục "vi"
+                    "tagStarterProject": "Dự án Khởi đầu",
+                    "omachaTitle": "Omacha Shop - Cửa hàng đồ chơi",
+                    "omachaDesc": "Một nền tảng thương mại điện tử chuyên về đồ chơi, được phát triển như một ứng dụng web full-stack. Cung cấp trải nghiệm mua sắm toàn diện và một hệ thống quản trị mạnh mẽ.",
+                    "aptisDesc": "Một công cụ web tương tác được xây dựng để giải quyết vấn đề cá nhân sau lần thi Aptis đầu tiên. Dự án bao gồm các bài thi mô phỏng, hệ thống chấm điểm, và các công cụ học tập độc đáo dựa trên phương pháp 'key' và 'câu chuyện gợi nhớ'.",
+                    "aptisTitle": "Aptis Practice - Công cụ Luyện thi Aptis",
                 }
             };
 
@@ -498,7 +962,7 @@
                         cursorElement.classList.add('visible');
                     }
                 }
-                
+
                 function changeCursorTextWithFade(newText) {
                     if (!cursorTextElement || cursorTextElement.isTextFading || cursorTextElement.textContent === newText) return;
                     cursorTextElement.isTextFading = true;
@@ -509,26 +973,26 @@
                         cursorTextElement.isTextFading = false;
                     }, 300);
                 }
-                
+
                 function updateAutoCursorText() {
                     changeCursorTextWithFade(autoTexts[autoTextCurrentIndex]);
                     autoTextCurrentIndex = (autoTextCurrentIndex + 1) % autoTexts.length;
                 }
-                
+
                 document.addEventListener('mousemove', (e) => updateCursorPosition(e.clientX, e.clientY));
-                
+
                 const interactiveElements = document.querySelectorAll('a, button, input, .form-control, .current-flag');
                 interactiveElements.forEach(el => {
                     el.addEventListener('mouseenter', () => cursorElement.classList.add('hidden-by-interaction'));
                     el.addEventListener('mouseleave', () => cursorElement.classList.remove('hidden-by-interaction'));
                 });
-                
+
                 updateAutoCursorText();
                 setInterval(updateAutoCursorText, 3000);
 
                 setTimeout(() => {
                     if (!cursorElement.classList.contains('hidden-by-interaction')) {
-                         cursorElement.classList.add('visible');
+                        cursorElement.classList.add('visible');
                     }
                 }, 100);
             }

@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Chi tiết dự án Omacha Shop của Trần Hữu Đạt - Lập trình viên Web"
+        data-translate-key="metaDescription" />
+    <meta name="author" content="Trần Hữu Đạt" />
+    <title>Dự án: Omacha Shop - Trần Hữu Đạt</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <!-- Fonts và Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core CSS -->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/github.css" rel="stylesheet" />
+
+    <style>
+        /* Toàn bộ CSS từ trang Omacha.html được giữ nguyên và thêm vào CSS cho PHP */
+        body {
+            cursor: none;
+            position: relative;
+        }
+
+        a,
+        button,
+        input[type="submit"],
+        .form-control,
+        .current-flag {
+            cursor: url('assets/hand_blue.png'), auto;
+        }
+
+        .text-gradient-purple-pink {
+            background: -webkit-linear-gradient(315deg, #8A2BE2 0%, #FF69B4 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .project-card {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .project-category-tag-wrapper {
+            position: absolute;
+            top: 25px;
+            left: -5px;
+            z-index: 1;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .project-category-tag-arrow {
+            width: 15px;
+            background-color: #198754;
+            clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
+            margin-right: -1px;
+        }
+
+        .project-category-tag-text {
+            background-color: #198754;
+            color: white;
+            padding: 7px 12px 7px 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 0 4px 4px 0;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .tech-badge {
+            margin-right: 0.4rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.80em;
+            padding: 0.4em 0.75em;
+            border-radius: 10px;
+            font-weight: 500;
+            color: white;
+            border: 1px solid transparent;
+        }
+
+        .tech-badge.html5 {
+            background-color: #E34F26;
+        }
+
+        .tech-badge.css3 {
+            background-color: #1572B6;
+        }
+
+        .tech-badge.bootstrap {
+            background-color: #7952B3;
+        }
+
+        .tech-badge.javascript {
+            background-color: #F7DF1E;
+            color: #000;
+        }
+
+        .tech-badge.php {
+            background-color: #777BB4;
+        }
+
+        .tech-badge.mysql {
+            background-color: #4479A1;
+        }
+
+        .project-card .card-body {
+            padding-top: 2.5rem !important;
+        }
+
+        .project-card-content-wrapper {
+            padding-top: 35px;
+        }
+
+        .screenshot-table-header {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.6rem 0.5rem;
+        }
+
+        .screenshot-table td {
+            padding: 0.5rem;
+            background-color: #fff;
+            vertical-align: middle;
+        }
+
+        .screenshot-img {
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            padding: 0.25rem;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .underlined-heading {
+            text-decoration: underline;
+            text-decoration-color: #adb5bd;
+            text-underline-offset: 5px;
+            text-decoration-thickness: 1px;
+        }
+
+        /* Các CSS khác cho language switcher, cursor, footer... */
+        /* CSS CHO NÚT CHUYỂN NGÔN NGỮ */
+        .language-switcher {
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .language-switcher .current-flag img {
+            width: 32px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 120%;
+            right: 0;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            padding: 8px;
+            z-index: 1100;
+            width: 180px;
+            border: 1px solid #eee;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+            pointer-events: none;
+        }
+
+        .language-dropdown.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .language-dropdown a {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        .language-dropdown a:hover {
+            background-color: #f0f2f5;
+        }
+
+        .language-dropdown img {
+            width: 24px;
+            margin-right: 12px;
+            border-radius: 3px;
+        }
+
+        /* Cursor styles */
+        .cursor-element {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+            z-index: 1070;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .cursor-element.visible {
+            opacity: 1;
+        }
+
+        .cursor-element img {
+            width: 28px;
+            height: auto;
+            margin-right: 8px;
+        }
+
+        .cursor-element .cursor-text {
+            background-color: #0d6efd;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.95em;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+            font-weight: bold;
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .cursor-element .cursor-text.fade-out {
+            opacity: 0;
+        }
+
+        /* Thêm vào cuối file CSS của bạn */
+        footer.bg-dark a.text-white-50 {
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer.bg-dark a.text-white-50:hover {
+            color: #ffffff !important;
+            /* Dùng !important để ghi đè bootstrap nếu cần */
+            text-decoration: underline;
+        }
+
+        footer a {
+            color: #adb5bd;
+            /* Màu chữ liên kết trong footer */
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <header-placeholder></header-placeholder>
+
+        <!-- Project Details Section -->
+        <section class="py-5">
+            <div class="container px-5 mb-5">
+                <div class="text-center mb-5">
+                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient-purple-pink d-inline"
+                            data-translate-key="pageTitle">Thông tin chi tiết dự án</span></h1>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-11 col-xl-9 col-xxl-8">
+                        <!-- Project Card: Omacha Shop -->
+                        <div class="card overflow-hidden shadow rounded-4 border-0 project-card">
+                            <div class="project-category-tag-wrapper">
+                                <div class="project-category-tag-arrow"></div>
+                                <div class="project-category-tag-text" data-translate-key="omachaCategory">Dự án Khởi
+                                    đầu</div>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="project-card-content-wrapper">
+                                    <h2 class="fw-bolder" data-translate-key="omachaTitle">Omacha Shop - Cửa hàng đồ
+                                        chơi Full-Stack <span role="img" aria-label="toy emoji">🧸</span></h2>
+                                    <p class="text-muted" data-translate-key="omachaDesc">Omacha Shop là một nền tảng
+                                        thương mại điện tử thú vị chuyên cung cấp đồ chơi chất lượng. Dự án này thể hiện
+                                        một ứng dụng web full-stack hoàn chỉnh, được xây dựng bằng PHP và MySQL, với đầy
+                                        đủ các chức năng cho cả khách hàng và quản trị viên.</p>
+
+                                    <h5 class="mt-4 mb-3" data-translate-key="techStackTitle">Ngăn xếp Công nghệ:</h5>
+                                    <div class="mb-4">
+                                        <span class="badge tech-badge php">PHP</span>
+                                        <span class="badge tech-badge mysql">MySQL</span>
+                                        <span class="badge tech-badge html5">HTML5</span>
+                                        <span class="badge tech-badge css3">CSS3</span>
+                                        <span class="badge tech-badge javascript">JavaScript</span>
+                                        <span class="badge tech-badge bootstrap">Bootstrap</span>
+                                    </div>
+
+                                    <h5 class="mt-4" data-translate-key="featuresTitle">Tổng quan Tính năng Chính:</h5>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6 class="fw-semibold" data-translate-key="featuresCustomers">Dành cho
+                                                Khách hàng:</h6>
+                                            <ul class="list-unstyled feature-list">
+                                                <li data-translate-key="omachaFeat1"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Duyệt sản
+                                                    phẩm, lọc & tìm kiếm</li>
+                                                <li data-translate-key="omachaFeat2"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Giỏ hàng &
+                                                    Danh sách yêu thích</li>
+                                                <li data-translate-key="omachaFeat3"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Quy trình
+                                                    thanh toán an toàn</li>
+                                                <li data-translate-key="omachaFeat4"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Tài khoản
+                                                    người dùng & Lịch sử đơn hàng</li>
+                                                <li data-translate-key="omachaFeat5"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Hệ thống
+                                                    bình luận & đánh giá</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6 class="fw-semibold" data-translate-key="featuresAdmin">Dành cho Quản trị
+                                                viên:</h6>
+                                            <ul class="list-unstyled feature-list">
+                                                <li data-translate-key="omachaFeat6"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Dashboard
+                                                    với thống kê trực quan</li>
+                                                <li data-translate-key="omachaFeat7"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Quản lý
+                                                    Sản phẩm, Người dùng, Đơn hàng</li>
+                                                <li data-translate-key="omachaFeat8"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Quản lý
+                                                    Nội dung (Blog)</li>
+                                                <li data-translate-key="omachaFeat9"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Báo cáo
+                                                    doanh thu & sản phẩm</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <p class="mt-4">
+                                        <small class="text-muted" data-translate-key="omachaTechNote">Một dự án
+                                            full-stack cổ điển được xây dựng bằng PHP & MySQL, được thiết kế để chạy
+                                            trên môi trường máy chủ cục bộ như XAMPP.</small>
+                                    </p>
+                                    <p class="mt-3">
+                                        <a class="btn btn-primary px-4 py-3 me-2"
+                                            href="https://github.com/TranHuuDat2004/Omacha_Shop" target="_blank"
+                                            rel="noopener noreferrer">
+                                            <i class="bi bi-github"></i> <span data-translate-key="btnViewGithub">Xem
+                                                trên GitHub</span>
+                                        </a>
+                                    </p>
+                                    <p class="mt-3"><small class="text-muted" data-translate-key="licenseNote">Giấy
+                                            phép: CC BY-NC 4.0</small></p>
+
+                                    <hr class="my-4">
+                                    <!-- === BẢNG GIAO DIỆN KHÁCH HÀNG === -->
+                                    <h5 class="mb-3 fw-semibold underlined-heading"
+                                        data-translate-key="screenshotsCustomerTitle">Ảnh chụp Giao diện Khách hàng</h5>
+                                    <div class="table-responsive mt-2">
+                                        <table class="table table-bordered align-middle text-center screenshot-table">
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaHome1">Trang chủ (Layout 1)</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaProductList">Danh sách SP & Bộ lọc
+                                                    </th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaProductDetail">Chi tiết Sản phẩm
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="assets/omacha/Home1.jpg"
+                                                            alt="Omacha Home Page Layout 1" class="screenshot-img"></td>
+                                                    <td><img src="assets/omacha/product.jpg"
+                                                            alt="Omacha Product List with Filter"
+                                                            class="screenshot-img"></td>
+                                                    <td><img src="assets/omacha/product_detail.jpg"
+                                                            alt="Omacha Product Detail Page" class="screenshot-img">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaCart">Giỏ hàng</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaCheckout">Thanh toán</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaThankYou">Trang Cảm ơn</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="assets/omacha/cart.jpg" alt="Omacha Shopping Cart"
+                                                            class="screenshot-img"></td>
+                                                    <td><img src="assets/omacha/checkout.jpg"
+                                                            alt="Omacha Checkout Process" class="screenshot-img"></td>
+                                                    <td><img src="assets/omacha/thankyou.jpg"
+                                                            alt="Omacha Thank You Page" class="screenshot-img"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaLogin">Trang Đăng nhập</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaRegister">Trang Đăng ký</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaWishlist">Danh sách Yêu thích</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="assets/omacha/login.jpg" alt="Omacha Login Page"
+                                                            class="screenshot-img"></td>
+                                                    <td><img src="assets/omacha/signup.jpg"
+                                                            alt="Omacha Registration Page" class="screenshot-img"></td>
+                                                    <td><img src="assets/omacha/wishlist.jpg" alt="Omacha Wishlist Page"
+                                                            class="screenshot-img"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaBlog">Trang Blog</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaAbout">Trang Giới thiệu</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaContact">Trang Liên hệ</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="assets/omacha/blog.jpg" alt="Omacha Blog Page"
+                                                            class="screenshot-img"></td>
+                                                    <td><img src="assets/omacha/about5.jpg" alt="Omacha About Us Page"
+                                                            class="screenshot-img"></td>
+                                                    <td><img src="assets/omacha/contact.jpg" alt="Omacha Contact Page"
+                                                            class="screenshot-img"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaInvoice">Hóa đơn</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaSearch">Kết quả Tìm kiếm</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaComment">Mục Bình luận</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="assets/omacha/invoice.jpg" alt="Omacha Invoice"
+                                                            class="screenshot-img"></td>
+                                                    <td><img src="assets/omacha/search.jpg" alt="Omacha Search Results"
+                                                            class="screenshot-img"></td>
+                                                    <td><img src="assets/omacha/comment_product.jpg"
+                                                            alt="Omacha Comment Section" class="screenshot-img"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <!-- === BẢNG GIAO DIỆN QUẢN TRỊ === -->
+                                    <h5 class="mb-3 mt-5 fw-semibold underlined-heading"
+                                        data-translate-key="screenshotsAdminTitle">Ảnh chụp Giao diện Quản trị</h5>
+                                    <div class="table-responsive mt-2">
+                                        <table class="table table-bordered align-middle text-center screenshot-table">
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaAdminLogin">Đăng nhập Admin</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaAdminSignup">Đăng ký Admin</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaAdminDashboard">Dashboard</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="assets/omacha/login_admin.jpg"
+                                                            alt="Omacha Admin Login" class="screenshot-img"></td>
+                                                    <td><img src="assets/omacha/create_admin.jpg"
+                                                            alt="Omacha Admin Signup" class="screenshot-img"></td>
+                                                    <td><img src="assets/omacha/admin1.jpg" alt="Omacha Admin Dashboard"
+                                                            class="screenshot-img"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaAdminAddProduct">Thêm Sản phẩm</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaAdminProducts">Quản lý Sản phẩm</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaAdminOrders">Quản lý Đơn hàng</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="assets/omacha/add_product.jpg"
+                                                            alt="Omacha Admin Add Product" class="screenshot-img"></td>
+                                                    <td><img src="assets/omacha/manage_product.jpg"
+                                                            alt="Omacha Admin Manage Products" class="screenshot-img">
+                                                    </td>
+                                                    <td><img src="assets/omacha/manage_order.jpg"
+                                                            alt="Omacha Admin Manage Orders" class="screenshot-img">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssOmachaAdminUsers">Quản lý Người dùng</th>
+                                                    <th scope="col"
+                                                        class="screenshot-table-header visually-hidden-empty"></th>
+                                                    <th scope="col"
+                                                        class="screenshot-table-header visually-hidden-empty"></th>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="assets/omacha/manage_user.jpg"
+                                                            alt="Omacha Admin Manage Users" class="screenshot-img"></td>
+                                                    <td class="visually-hidden-empty"></td>
+                                                    <td class="visually-hidden-empty"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Chuyên nghiệp & Có Cấu trúc -->
+    <footer-placeholder></footer-placeholder>
+
+    <div class="cursor-element">
+        <img src="assets/cursor_blue.png" alt="Custom Cursor Icon">
+        <span class="cursor-text">Huu Dat</span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const translations = {
+                "en": {
+                    "metaDescription": "Omacha Shop Project Details by Tran Huu Dat - Web Developer",
+                    "pageTitle": "Project Details: Omacha Shop",
+                    "omachaCategory": "Starter Project",
+                    "omachaTitle": "Omacha Shop - Full-Stack Toy Store",
+                    "omachaDesc": "Omacha Shop is a delightful e-commerce platform specializing in quality toys. This project showcases a complete full-stack web application built with PHP and MySQL, featuring full functionality for both customers and administrators.",
+                    "techStackTitle": "Technology Stack:",
+                    "featuresTitle": "Key Features Overview:",
+                    "featuresCustomers": "For Customers:",
+                    "omachaFeat1": "Product Browsing, Filtering & Search",
+                    "omachaFeat2": "Shopping Cart & Wishlist",
+                    "omachaFeat3": "Secure Checkout Process",
+                    "omachaFeat4": "User Accounts & Order History",
+                    "omachaFeat5": "Review & Comment System",
+                    "featuresAdmin": "For Administrators:",
+                    "omachaFeat6": "Dashboard with Visual Statistics",
+                    "omachaFeat7": "Product, User, & Order Management",
+                    "omachaFeat8": "Content Management (Blog)",
+                    "omachaFeat9": "Sales & Product Reports",
+                    "omachaTechNote": "A classic full-stack project built with PHP & MySQL, designed to run on a local server environment like XAMPP.",
+                    "btnViewGithub": "View on GitHub",
+                    "licenseNote": "License: CC BY-NC 4.0",
+                    "screenshotsCustomerTitle": "Customer Interface Screenshots",
+                    "ssOmachaHome1": "Home Page (Layout 1)",
+                    "ssOmachaProductList": "Product List & Filter",
+                    "ssOmachaProductDetail": "Product Detail",
+                    "ssOmachaCart": "Shopping Cart",
+                    "ssOmachaCheckout": "Checkout",
+                    "ssOmachaThankYou": "Thank You Page",
+                    "ssOmachaLogin": "Login Page",
+                    "ssOmachaRegister": "Registration Page",
+                    "ssOmachaWishlist": "Wishlist Page",
+                    "ssOmachaBlog": "Blog Page",
+                    "ssOmachaAbout": "About Us Page",
+                    "ssOmachaContact": "Contact Page",
+                    "ssOmachaInvoice": "Invoice",
+                    "ssOmachaSearch": "Search Results",
+                    "ssOmachaComment": "Comment Section",
+                    "screenshotsAdminTitle": "Admin Interface Screenshots",
+                    "ssOmachaAdminLogin": "Admin Login",
+                    "ssOmachaAdminSignup": "Admin Signup",
+                    "ssOmachaAdminDashboard": "Dashboard",
+                    "ssOmachaAdminAddProduct": "Add Product",
+                    "ssOmachaAdminProducts": "Manage Products",
+                    "ssOmachaAdminOrders": "Manage Orders",
+                    "ssOmachaAdminUsers": "Manage Users",
+                    // ... các key dịch chung khác như nav, footer ...
+                    "navHome": "Home", "navResume": "Resume", "navProjects": "Projects", "navContact": "Contact", // Sửa "Project" thành "Projects" cho nhất quán
+                    "footerTagline": "A passionate Web Developer dedicated to building beautiful and useful applications.",
+                    "footerQuickLinks": "Quick Links",
+                    "footerConnect": "Connect with Me",
+                    "footerCopyright": "Copyright © Tran Huu Dat 2025"
+                },
+                "vi": {
+                    "metaDescription": "Chi tiết dự án Omacha Shop của Trần Hữu Đạt - Lập trình viên Web",
+                    "pageTitle": "Chi tiết dự án: Omacha Shop",
+                    "omachaCategory": "Dự án Khởi đầu",
+                    "omachaTitle": "Omacha Shop - Cửa hàng đồ chơi Full-Stack",
+                    "omachaDesc": "Omacha Shop là một nền tảng thương mại điện tử thú vị chuyên cung cấp đồ chơi chất lượng. Dự án này thể hiện một ứng dụng web full-stack hoàn chỉnh, được xây dựng bằng PHP và MySQL, với đầy đủ các chức năng cho cả khách hàng và quản trị viên.",
+                    "techStackTitle": "Ngăn xếp Công nghệ:",
+                    "featuresTitle": "Tổng quan Tính năng Chính:",
+                    "featuresCustomers": "Dành cho Khách hàng:",
+                    "omachaFeat1": "Duyệt sản phẩm, lọc & tìm kiếm",
+                    "omachaFeat2": "Giỏ hàng & Danh sách yêu thích",
+                    "omachaFeat3": "Quy trình thanh toán an toàn",
+                    "omachaFeat4": "Tài khoản người dùng & Lịch sử đơn hàng",
+                    "omachaFeat5": "Hệ thống bình luận & đánh giá",
+                    "featuresAdmin": "Dành cho Quản trị viên:",
+                    "omachaFeat6": "Dashboard với thống kê trực quan",
+                    "omachaFeat7": "Quản lý Sản phẩm, Người dùng, Đơn hàng",
+                    "omachaFeat8": "Quản lý Nội dung (Blog)",
+                    "omachaFeat9": "Báo cáo doanh thu & sản phẩm",
+                    "omachaTechNote": "Một dự án full-stack cổ điển được xây dựng bằng PHP & MySQL, được thiết kế để chạy trên môi trường máy chủ cục bộ như XAMPP.",
+                    "btnViewGithub": "Xem trên GitHub",
+                    "licenseNote": "Giấy phép: CC BY-NC 4.0",
+                    "screenshotsCustomerTitle": "Ảnh chụp Giao diện Khách hàng",
+                    "ssOmachaHome1": "Trang chủ (Layout 1)",
+                    "ssOmachaProductList": "Danh sách SP & Bộ lọc",
+                    "ssOmachaProductDetail": "Chi tiết Sản phẩm",
+                    "ssOmachaCart": "Giỏ hàng",
+                    "ssOmachaCheckout": "Thanh toán",
+                    "ssOmachaThankYou": "Trang Cảm ơn",
+                    "ssOmachaLogin": "Trang Đăng nhập",
+                    "ssOmachaRegister": "Trang Đăng ký",
+                    "ssOmachaWishlist": "Danh sách Yêu thích",
+                    "ssOmachaBlog": "Trang Blog",
+                    "ssOmachaAbout": "Trang Giới thiệu",
+                    "ssOmachaContact": "Trang Liên hệ",
+                    "ssOmachaInvoice": "Hóa đơn",
+                    "ssOmachaSearch": "Kết quả Tìm kiếm",
+                    "ssOmachaComment": "Mục Bình luận",
+                    "screenshotsAdminTitle": "Ảnh chụp Giao diện Quản trị",
+                    "ssOmachaAdminLogin": "Đăng nhập Admin",
+                    "ssOmachaAdminSignup": "Đăng ký Admin",
+                    "ssOmachaAdminDashboard": "Bảng điều khiển",
+                    "ssOmachaAdminAddProduct": "Thêm Sản phẩm",
+                    "ssOmachaAdminProducts": "Quản lý Sản phẩm",
+                    "ssOmachaAdminOrders": "Quản lý Đơn hàng",
+                    "ssOmachaAdminUsers": "Quản lý Người dùng",
+                    // ... các key dịch chung khác như nav, footer ...
+
+                    "navHome": "Trang chủ", "navResume": "Hồ sơ", "navProjects": "Dự án", "navContact": "Liên hệ",
+                    "footerTagline": "Một lập trình viên Web đam mê xây dựng các ứng dụng đẹp và hữu ích.",
+                    "footerQuickLinks": "Liên kết nhanh",
+                    "footerConnect": "Kết nối với tôi",
+                    "footerCopyright": "Bản quyền © Trần Hữu Đạt 2025"
+                }
+            };
+
+            const languageSwitcher = document.querySelector('.language-switcher');
+            const currentFlag = languageSwitcher.querySelector('.current-flag');
+            const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
+
+            const setLanguage = (lang) => {
+                document.querySelectorAll('[data-translate-key]').forEach(element => {
+                    const key = element.getAttribute('data-translate-key');
+                    if (translations[lang] && translations[lang][key]) {
+                        if (element.tagName === 'META') {
+                            element.setAttribute('content', translations[lang][key]);
+                        } else {
+                            element.innerHTML = translations[lang][key];
+                        }
+                    }
+                });
+                document.documentElement.lang = lang;
+                const flagImg = document.getElementById('current-flag-img');
+                flagImg.src = lang === 'en' ? 'assets/en.png' : 'assets/vn.png';
+                flagImg.alt = lang === 'en' ? 'English' : 'Tiếng Việt';
+                localStorage.setItem('language', lang);
+            };
+
+            currentFlag.addEventListener('click', (event) => {
+                event.stopPropagation();
+                languageDropdown.classList.toggle('show');
+            });
+
+            window.addEventListener('click', () => {
+                if (languageDropdown.classList.contains('show')) {
+                    languageDropdown.classList.remove('show');
+                }
+            });
+
+            document.querySelectorAll('.lang-option').forEach(item => {
+                item.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const selectedLang = item.getAttribute('data-lang');
+                    setLanguage(selectedLang);
+                    languageDropdown.classList.remove('show');
+                });
+            });
+
+            const savedLang = localStorage.getItem('language') || 'vi';
+            setLanguage(savedLang);
+
+            // --- LOGIC CON TRỎ TÙY CHỈNH ---
+            const cursorElement = document.querySelector('.cursor-element');
+            if (cursorElement) {
+                const cursorTextElement = cursorElement.querySelector('.cursor-text');
+                const autoTextsEN = ["Omacha Project", "E-commerce Case Study", "Built with PHP", "Explore the features!"];
+                const autoTextsVI = ["Dự án Omacha", "Case Study E-commerce", "Xây dựng bằng PHP", "Khám phá các tính năng!"];
+                let autoTextCurrentIndex = 0;
+                let isCustomCursorActive = true;
+
+                function updateCursorPosition(x, y) {
+                    if (!isCustomCursorActive) return;
+                    cursorElement.style.left = x + 'px';
+                    cursorElement.style.top = y + 'px';
+                }
+
+                function changeCursorTextWithFade(newText) {
+                    if (!cursorTextElement || cursorTextElement.isTextFading || cursorTextElement.textContent === newText) return;
+                    cursorTextElement.isTextFading = true;
+                    cursorTextElement.classList.add('fade-out');
+                    setTimeout(() => {
+                        cursorTextElement.textContent = newText;
+                        cursorTextElement.classList.remove('fade-out');
+                        cursorTextElement.isTextFading = false;
+                    }, 300);
+                }
+
+                function updateAutoCursorText() {
+                    if (!isCustomCursorActive) return;
+                    const currentLang = localStorage.getItem('language') || 'vi';
+                    const textsToUse = (currentLang === 'en') ? autoTextsEN : autoTextsVI;
+                    const newTextToShow = textsToUse[autoTextCurrentIndex];
+                    autoTextCurrentIndex = (autoTextCurrentIndex + 1) % textsToUse.length;
+                    changeCursorTextWithFade(newTextToShow);
+                }
+
+                function showCustomCursor() {
+                    isCustomCursorActive = true;
+                    cursorElement.classList.add('visible');
+                }
+                function hideCustomCursor() {
+                    isCustomCursorActive = false;
+                    cursorElement.classList.remove('visible');
+                }
+
+                document.addEventListener('mousemove', (e) => {
+                    updateCursorPosition(e.clientX, e.clientY);
+                    if (isCustomCursorActive && !cursorElement.classList.contains('visible')) {
+                        showCustomCursor();
+                    }
+                });
+
+                const interactiveElements = document.querySelectorAll('a, button, input, .form-control, .current-flag');
+                interactiveElements.forEach(el => {
+                    el.addEventListener('mouseenter', hideCustomCursor);
+                    el.addEventListener('mouseleave', (e) => {
+                        updateCursorPosition(e.clientX, e.clientY);
+                        showCustomCursor();
+                    });
+                });
+
+                updateAutoCursorText();
+                setInterval(updateAutoCursorText, 3000);
+
+                setTimeout(showCustomCursor, 100);
+            }
+        });
+    </script>
+</body>
+
+</html>

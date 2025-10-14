@@ -104,8 +104,8 @@
         }
 
         .profile-img-custom {
-            max-width: 100%;
-            height: 100%;
+            max-width: 300px;
+            height: 300px;
             border-radius: 50%;
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
         }
@@ -118,7 +118,8 @@
         }
 
         .language-switcher .current-flag {
-             cursor: pointer; /* Đổi con trỏ khi di vào cờ */
+            cursor: pointer;
+            /* Đổi con trỏ khi di vào cờ */
         }
 
         .language-switcher .current-flag img {
@@ -128,7 +129,8 @@
         }
 
         .language-dropdown {
-            display: none; /* Ẩn mặc định */
+            display: none;
+            /* Ẩn mặc định */
             position: absolute;
             top: 120%;
             right: 0;
@@ -178,6 +180,28 @@
             margin-right: 12px;
             border-radius: 3px;
         }
+
+        /* Thêm vào cuối file CSS của bạn */
+        footer.bg-dark a.text-white-50 {
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer.bg-dark a.text-white-50:hover {
+            color: #ffffff !important;
+            /* Dùng !important để ghi đè bootstrap nếu cần */
+            text-decoration: underline;
+        }
+
+        footer a {
+            color: #adb5bd;
+            /* Màu chữ liên kết trong footer */
+            text-decoration: none;
+        }
+
+        .btn-new-gradient {
+            background: linear-gradient(to right, var(--gradient-purple), var(--gradient-pink));
+            color: white;
+        }
     </style>
 </head>
 
@@ -185,50 +209,19 @@
     <!-- Nội dung HTML của bạn từ <body> đến <footer> giữ nguyên -->
     <main class="flex-shrink-0">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-            <div class="container px-5">
-                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Trần Hữu Đạt</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation"><span
-                        class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                        <li class="nav-item"><a class="nav-link" href="index.html" data-translate-key="navHome">Trang
-                                chủ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="resume.html" data-translate-key="navResume">Hồ
-                                sơ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="projects.html" data-translate-key="navProjects">Dự
-                                án</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html" data-translate-key="navContact">Liên
-                                hệ</a></li>
-                    </ul>
-                    <!-- NÚT CHUYỂN NGÔN NGỮ -->
-                    <div class="language-switcher">
-                        <div class="current-flag">
-                            <img id="current-flag-img" src="assets/vn.png" alt="Current Language">
-                        </div>
-                        <div class="language-dropdown">
-                            <a href="#" class="lang-option" data-lang="en">
-                                <img src="assets/en.png" alt="English Flag">
-                                <span>English</span>
-                            </a>
-                            <a href="#" class="lang-option" data-lang="vi">
-                                <img src="assets/vn.png" alt="Vietnamese Flag">
-                                <span>Tiếng Việt</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <header-placeholder></header-placeholder>
+
+        <!-- Header-->
         <!-- Header-->
         <header class="py-5">
             <div class="container px-5 pb-5">
                 <div class="row gx-5 align-items-center">
-                    <div class="col-xxl-5">
+
+                    <!-- === CỘT VĂN BẢN (ĐÃ SỬA) === -->
+                    <!-- Thay đổi từ col-xxl-5 thành col-lg-8 để chiếm khoảng 70% -->
+                    <div class="col-lg-8">
                         <!-- Header text content-->
-                        <div class="text-center text-xxl-start">
+                        <div class="text-center text-lg-start">
                             <div class="badge bg-gradient-primary-to-secondary text-white mb-4">
                                 <div class="text-uppercase" data-translate-key="headerBadge">Phát triển Web · Full-Stack
                                     · Di động</div>
@@ -240,22 +233,40 @@
                             <p class="lead fw-light text-muted mb-4" data-translate-key="headerDescription">Một sinh
                                 viên Kỹ thuật Phần mềm đầy nhiệt huyết, chuyên về phát triển ứng dụng web và di động,
                                 luôn mong muốn học hỏi công nghệ mới và đóng góp vào các dự án sáng tạo.</p>
-                            <div
-                                class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="resume.html"
+
+                            <p class="lead fw-light text-muted mb-4" style="padding-left: 20px; font-weight: 700;" data-translate-key="ready"> Ready for a new look? </p>
+                            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-lg-start mb-3">
+                                <!-- Các nút 1 và 2 giữ nguyên -->
+                                <!-- <a class="btn btn-primary btn-lg px-4 py-3 me-sm-3 fs-6 fw-bolder" href="resume.html"
                                     data-translate-key="btnMyResume">Hồ sơ của tôi</a>
-                                <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="projects.html"
-                                    data-translate-key="btnMyProjects">Dự án của tôi</a>
+                                <a class="btn btn-outline-dark btn-lg px-4 py-3 me-sm-3 fs-6 fw-bolder"
+                                    href="projects.html" data-translate-key="btnMyProjects">Dự án của tôi</a> -->
+
+                                <!-- SỬA NÚT THỨ BA -->
+                                <!-- <a class="btn btn-outline-danger btn-lg px-4 py-3 fs-6 fw-bolder" href="animation.html"
+                                    data-translate-key="btnAnimation">Trang hiệu ứng</a> -->
+
+                                <!-- SỬA NÚT THỨ TƯ -->
+                                <!-- Nút phiên bản mới (đã cập nhật) -->
+                                <a class="btn btn-new-gradient btn-lg px-4 py-3 fs-6 fw-bolder" href="https://tranhuudat2004.github.io"
+                                    data-translate-key="btnNewVersion">
+                                    <span data-translate-key="btnNewVersionText">Explore the New Version</span>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xxl-7">
-                        <div class="d-flex justify-content-center mt-5 mt-xxl-0">
+
+                    <!-- === CỘT ẢNH (ĐÃ SỬA) === -->
+                    <!-- Thay đổi từ col-xxl-4 thành col-lg-4 để chiếm khoảng 30% -->
+                    <div class="col-lg-4">
+                        <div class="d-flex justify-content-center mt-5 mt-lg-0">
                             <div>
-                                <img class="profile-img-custom" src="assets/my_image.jpg" alt="Ảnh đại diện Trần Hữu Đạt" />
+                                <img class="profile-img-custom" src="assets/my_image.jpg"
+                                    alt="Ảnh đại diện Trần Hữu Đạt" />
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </header>
@@ -291,10 +302,25 @@
                                                 data-translate-key="skillMobileDev">Phát triển Di động</div>
                                             <div class="grid-item" data-text="Thiết kế giao diện người dùng"
                                                 data-translate-key="skillUiUx">Thiết kế UI/UX</div>
+
+                                        </div>
+                                    </div>
+                                    <h4 class="fw-bolder my-3 text-center text-gradient"
+                                        data-translate-key="softSkills">Kĩ năng mềm</h4>
+                                    <div class="interactive-grid-container mb-4">
+                                        <div class="interactive-grid">
                                             <div class="grid-item" data-text="Giải quyết vấn đề"
                                                 data-translate-key="skillProblemSolving">Giải quyết vấn đề</div>
                                             <div class="grid-item" data-text="Hợp tác nhóm"
                                                 data-translate-key="skillTeamwork">Làm việc nhóm</div>
+                                            <div class="grid-item" data-text="Effective Communication"
+                                                data-translate-key="skillCommunication">Giao tiếp Hiệu quả</div>
+                                            <div class="grid-item" data-text="Adaptability & Learning"
+                                                data-translate-key="skillAdaptability">Khả năng Thích ứng</div>
+                                            <div class="grid-item" data-text="Attention to Detail"
+                                                data-translate-key="skillAttentionDetail">Chú ý đến Chi tiết</div>
+                                            <div class="grid-item" data-text="Time Management"
+                                                data-translate-key="skillTimeManagement">Quản lý Thời gian</div>
                                         </div>
                                     </div>
                                     <h4 class="fw-bolder my-3 text-center text-gradient"
@@ -322,7 +348,7 @@
                                             <i class="bi bi-code-slash"></i>
                                         </div>
                                         <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline"
-                                                data-translate-key="techStack">Ngăn Xếp Công Nghệ</span></h3>
+                                                data-translate-key="techStack">Công Nghệ Sử Dụng</span></h3>
                                     </div>
                                     <div class="interactive-grid-container">
                                         <div class="interactive-grid">
@@ -361,8 +387,8 @@
         </section>
         <div class="text-center mt-4">
             <a class="btn btn-primary btn-lg px-5 py-3 fs-6 fw-bolder"
-                href="https://github.com/TranHuuDat2004?tab=repositories"
-                data-translate-key="exploreMoreProjects">Khám phá thêm các dự án của tôi trong tab Kho lưu trữ.</a>
+                href="https://github.com/TranHuuDat2004?tab=repositories" data-translate-key="exploreMoreProjects">Khám
+                phá thêm các dự án của tôi trong tab Kho lưu trữ.</a>
         </div>
     </section>
 
@@ -395,22 +421,9 @@
     </div>
 
     </main>
-    <!-- Footer-->
-    <footer class="bg-white py-4 mt-auto">
-        <div class="container px-5">
-            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="col-auto">
-                    <div class="small m-0" data-translate-key="footerCopyright">Bản quyền © Trần Hữu Đạt 2024</div>
-                </div>
-                <div class="col-auto">
-                    <a class="small" href="#!" data-translate-key="footerPrivacy">Chính sách Bảo mật</a>
-                    <span class="mx-1">·</span>
-                    <a class="small" href="#!" data-translate-key="footerTerms">Điều khoản Sử dụng</a>
-                    <span class="mx-1">·</span>
-                    <a class="small" href="contact.html" data-translate-key="footerContact">Liên hệ</a>
-                </div>
-            </div>
-    </footer>
+
+    <!-- Footer Chuyên nghiệp & Có Cấu trúc -->
+    <footer-placeholder></footer-placeholder>
 
     <!-- Cursor Element HTML -->
     <div class="cursor-element">
@@ -424,6 +437,9 @@
     <script src="js/scripts.js"></script>
     <script src="js/github.js"></script>
 
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+
     <!-- === JAVASCRIPT CẬP NHẬT CHO CHUYỂN NGÔN NGỮ VÀ CURSOR === -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -431,8 +447,7 @@
             // --- PHẦN 1: LOGIC CHUYỂN NGÔN NGỮ (ĐÃ CẬP NHẬT) ---
 
             const translations = {
-                // ... (Đối tượng translations giữ nguyên, không cần thay đổi)
-                 "en": {
+                "en": {
                     "metaDescription": "Personal Portfolio of Tran Huu Dat - Web Developer",
                     "navHome": "Home",
                     "navResume": "Resume",
@@ -444,13 +459,19 @@
                     "btnMyResume": "My Resume",
                     "btnMyProjects": "My Projects",
                     "skillsTitle": "My Skills",
+                    "softSkills": "Soft Skills",
+                    "skillProblemSolving": "Problem Solving",
+                    "skillTeamwork": "Teamwork & Collaboration",
+                    "skillCommunication": "Effective Communication",
+                    "skillAdaptability": "Adaptability & Learning",
+                    "skillAttentionDetail": "Attention to Detail",
+                    "skillTimeManagement": "Time Management",
                     "proSkills": "Professional Skills",
                     "generalExpertise": "General Expertise",
                     "skillWebDev": "Web Development",
                     "skillMobileDev": "Mobile Development",
                     "skillUiUx": "UI/UX Design Principles",
-                    "skillProblemSolving": "Problem Solving",
-                    "skillTeamwork": "Teamwork",
+
                     "skillAttentionDetail": "Attention to Detail",
                     "toolsTitle": "Tools",
                     "designSoftware": "Design Software",
@@ -460,10 +481,15 @@
                     "aboutMeTitle": "About Me",
                     "aboutMeIntro": "I am Tran Huu Dat, a dedicated software engineering student at Ton Duc Thang University.",
                     "aboutMeDetails": "Passionate about creating efficient and user-friendly web and mobile solutions. I enjoy tackling challenging problems and continuously expanding my skill set in the ever-evolving world of technology. My goal is to leverage my technical abilities to build impactful applications and contribute to meaningful projects. Currently seeking opportunities to apply my knowledge and grow as a professional developer.",
-                    "footerCopyright": "Copyright © Tran Huu Dat 2024",
-                    "footerPrivacy": "Privacy Policy",
-                    "footerTerms": "Terms of Use",
-                    "footerContact": "Contact"
+                    "btnNewVersionText": "Explore the New Version",
+                    "ready": "Ready for a new look?",
+                    // --- CÁC KEY MỚI CHO FOOTER ---
+                    "footerTagline": "A passionate Web Developer dedicated to building beautiful and useful applications.",
+                    "footerQuickLinks": "Quick Links",
+                    "footerConnect": "Connect with Me",
+                    "footerCopyright": "Copyright © Tran Huu Dat 2025",
+                    "btnAnimation": "Animation Page"
+
                 },
                 "vi": {
                     "metaDescription": "Portfolio cá nhân của Trần Hữu Đạt - Lập trình viên Web",
@@ -478,25 +504,34 @@
                     "btnMyProjects": "Dự án của tôi",
                     "skillsTitle": "Kỹ Năng Của Tôi",
                     "proSkills": "Kỹ Năng Chuyên Môn",
+                    "softSkills": "Kỹ năng mềm",
+                    "skillProblemSolving": "Giải quyết vấn đề",
+                    "skillTeamwork": "Làm việc nhóm & Hợp tác",
+                    "skillCommunication": "Giao tiếp Hiệu quả",
+                    "skillAdaptability": "Khả năng Thích ứng",
+                    "skillAttentionDetail": "Chú ý đến Chi tiết",
+                    "skillTimeManagement": "Quản lý Thời gian",
                     "generalExpertise": "Chuyên Môn Chung",
                     "skillWebDev": "Phát triển Web",
                     "skillMobileDev": "Phát triển Di động",
                     "skillUiUx": "Thiết kế UI/UX",
-                    "skillProblemSolving": "Giải quyết vấn đề",
-                    "skillTeamwork": "Làm việc nhóm",
                     "skillAttentionDetail": "Chú ý đến chi tiết",
                     "toolsTitle": "Công Cụ",
                     "designSoftware": "Phần Mềm Thiết Kế",
-                    "techStack": "Ngăn Xếp Công Nghệ",
+                    "techStack": "Công Nghệ Sử Dụng",
                     "githubProjectsTitle": "Các Dự Án Của Tôi trên GitHub",
                     "exploreMoreProjects": "Khám phá thêm các dự án của tôi trong tab Kho lưu trữ.",
                     "aboutMeTitle": "Giới thiệu sơ lược về tôi",
                     "aboutMeIntro": "Tôi là Trần Hữu Đạt, một sinh viên kỹ thuật phần mềm tận tâm tại trường Đại học Tôn Đức Thắng.",
                     "aboutMeDetails": "Đam mê tạo ra các giải pháp web và di động hiệu quả và thân thiện với người dùng. Tôi thích giải quyết các vấn đề thách thức và liên tục mở rộng bộ kỹ năng của mình trong thế giới công nghệ không ngừng phát triển. Mục tiêu của tôi là tận dụng khả năng kỹ thuật của mình để xây dựng các ứng dụng có tầm ảnh hưởng và đóng góp vào các dự án ý nghĩa. Hiện đang tìm kiếm cơ hội để áp dụng kiến thức và phát triển như một lập trình viên chuyên nghiệp.",
-                    "footerCopyright": "Bản quyền © Trần Hữu Đạt 2024",
-                    "footerPrivacy": "Chính sách Bảo mật",
-                    "footerTerms": "Điều khoản Sử dụng",
-                    "footerContact": "Liên hệ"
+                    "btnNewVersionText": "Trải nghiệm Trang Web Hoàn Toàn Mới",
+                    "ready": "Sẵn sàng cho một giao diện mới?",
+                    // --- CÁC KEY MỚI CHO FOOTER ---
+                    "footerTagline": "Một lập trình viên Web đam mê xây dựng các ứng dụng đẹp và hữu ích.",
+                    "footerQuickLinks": "Liên kết nhanh",
+                    "footerConnect": "Kết nối với tôi",
+                    "footerCopyright": "Bản quyền © Trần Hữu Đạt 2025",
+                    "btnAnimation": " Trang hiệu ứng",
                 }
             };
 
@@ -563,9 +598,9 @@
                 const cursorTextElement = cursorElement.querySelector('.cursor-text');
                 const gridItems = document.querySelectorAll('.interactive-grid .grid-item');
 
-                const autoTexts = [ "Hello!", "I'm Tran Huu Dat", "I'm a Web Developer", "I'm looking for a job", "Thanks for visiting!"];
+                const autoTexts = ["Hello!", "I'm Tran Huu Dat", "I'm a Web Developer", "I'm looking for a job", "Thanks for visiting!"];
 
-                function updateCursorPosition(x, y) { /* ... giữ nguyên ... */ 
+                function updateCursorPosition(x, y) { /* ... giữ nguyên ... */
                     if (cursorElement.classList.contains('hidden-by-interaction')) {
                         if (cursorElement.style.opacity !== '0') cursorElement.style.opacity = '0';
                         return;
@@ -579,7 +614,7 @@
                         cursorElement.classList.add('visible');
                     }
                 }
-                function changeCursorTextWithFade(newText) { /* ... giữ nguyên ... */ 
+                function changeCursorTextWithFade(newText) { /* ... giữ nguyên ... */
                     if (!cursorTextElement || cursorTextElement.isTextFading || cursorTextElement.textContent === newText) return;
                     cursorTextElement.isTextFading = true;
                     cursorTextElement.classList.add('fade-out');
@@ -623,6 +658,7 @@
             }
         });
     </script>
+
 </body>
 
 </html>

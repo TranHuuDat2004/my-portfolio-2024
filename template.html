@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Các dự án và kỹ năng của tôi" data-translate-key="metaDescription" />
+    <meta name="author" content="Trần Hữu Đạt" />
+    <title>Dự án - Trần Hữu Đạt</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <!-- Custom Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <!-- CSS đã được gộp và cập nhật cho con trỏ và nút chuyển ngôn ngữ -->
+    <style>
+        body {
+            cursor: none;
+            position: relative;
+        }
+
+        a,
+        button,
+        input[type="submit"],
+        .form-control,
+        .current-flag {
+            cursor: url('assets/hand_blue.png'), auto;
+        }
+
+        .project-card-image {
+            max-width: 150px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (min-width: 768px) {
+            .project-card-image {
+                max-width: 220px;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .d-flex.flex-md-row>.text-md-start.p-md-0 {
+                padding: 1.5rem !important;
+            }
+
+            .d-flex.flex-md-row>.p-md-5 {
+                padding: 1.5rem !important;
+            }
+        }
+
+        /* CSS CHO NÚT CHUYỂN NGÔN NGỮ */
+        .language-switcher {
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .language-switcher .current-flag img {
+            width: 32px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 120%;
+            right: 0;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            padding: 8px;
+            z-index: 1100;
+            width: 180px;
+            border: 1px solid #eee;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+            pointer-events: none;
+        }
+
+        .language-dropdown.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .language-dropdown a {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        .language-dropdown a:hover {
+            background-color: #f0f2f5;
+        }
+
+        .language-dropdown img {
+            width: 24px;
+            margin-right: 12px;
+            border-radius: 3px;
+        }
+
+        /* CSS CHO CON TRỎ TÙY CHỈNH */
+        .cursor-element {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+            z-index: 1070;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .cursor-element.visible {
+            opacity: 1;
+        }
+
+        .cursor-element img {
+            width: 28px;
+            height: auto;
+            margin-right: 8px;
+        }
+
+        .cursor-element .cursor-text {
+            background-color: #0d6efd;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.95em;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+            font-weight: bold;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .cursor-element .cursor-text.fade-out {
+            opacity: 0;
+        }
+
+
+        /* Thêm vào cuối file CSS của bạn */
+        footer.bg-dark a.text-white-50 {
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer.bg-dark a.text-white-50:hover {
+            color: #ffffff !important;
+            /* Dùng !important để ghi đè bootstrap nếu cần */
+            text-decoration: underline;
+        }
+
+        footer a {
+            color: #adb5bd;
+            /* Màu chữ liên kết trong footer */
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column h-100 bg-light">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <header-placeholder></header-placeholder>
+
+        <!-- Projects Section -->
+        <section class="py-5">
+            <div class="container px-5 mb-5">
+                <div class="text-center mb-5">
+                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline"
+                            data-translate-key="templateTitle">Trang web mẫu</span></h1>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Call to action section -->
+        <section class="py-5 bg-gradient-primary-to-secondary text-white">
+            <div class="container px-5 my-5">
+                <div class="text-center">
+                    <h2 class="display-4 fw-bolder mb-4" data-translate-key="ctaTitle">Hãy cùng nhau xây dựng một điều
+                        gì đó</h2>
+                    <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.html"
+                        data-translate-key="ctaButton">Liên hệ với tôi</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer Chuyên nghiệp & Có Cấu trúc -->
+    <footer-placeholder></footer-placeholder>
+
+    <!-- Cursor Element HTML -->
+    <div class="cursor-element">
+        <img src="assets/cursor_blue.png" alt="Custom Cursor Icon">
+        <span class="cursor-text">Hữu Đạt</span>
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <!-- JavaScript tùy chỉnh cho chuyển đổi ngôn ngữ và con trỏ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- PHẦN 1: LOGIC CHUYỂN NGÔN NGỮ ---
+
+            const translations = {
+                "en": {
+                    "metaDescription": "My Projects and Skills",
+                    "navHome": "Home",
+                    "navResume": "Resume",
+                    "navProjects": "Projects",
+                    "navContact": "Contact",
+                    "templateTitle": "Template", 
+                    "ctaTitle": "Let's build something together",
+                    "ctaButton": "Contact me",
+                    // --- CÁC KEY MỚI CHO FOOTER ---
+                    "footerTagline": "A passionate Web Developer dedicated to building beautiful and useful applications.",
+                    "footerQuickLinks": "Quick Links",
+                    "footerConnect": "Connect with Me",
+                    "footerCopyright": "Copyright © Tran Huu Dat 2025"
+                },
+                "vi": {
+                    "metaDescription": "Các dự án và kỹ năng của tôi",
+                    "navHome": "Trang chủ",
+                    "navResume": "Hồ sơ",
+                    "navProjects": "Dự án",
+                    "navContact": "Liên hệ",
+                    "ctaTitle": "Hãy cùng nhau xây dựng một điều gì đó",
+                    "ctaButton": "Liên hệ với tôi",
+                    "templateTitle": "Trang web mẫu",
+                    "templateTitle": "Trang web mẫu",
+                    // --- CÁC KEY MỚI CHO FOOTER ---
+                    "footerTagline": "Một lập trình viên Web đam mê xây dựng các ứng dụng đẹp và hữu ích.",
+                    "footerQuickLinks": "Liên kết nhanh",
+                    "footerConnect": "Kết nối với tôi",
+                    "footerCopyright": "Bản quyền © Trần Hữu Đạt 2025"
+                }
+            };
+
+            const languageSwitcher = document.querySelector('.language-switcher');
+            const currentFlag = languageSwitcher.querySelector('.current-flag');
+            const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
+
+            const setLanguage = (lang) => {
+                document.querySelectorAll('[data-translate-key]').forEach(element => {
+                    const key = element.getAttribute('data-translate-key');
+                    if (translations[lang] && translations[lang][key]) {
+                        if (element.tagName === 'META' && element.name === 'description') {
+                            element.setAttribute('content', translations[lang][key]);
+                        } else {
+                            element.innerHTML = translations[lang][key];
+                        }
+                    }
+                });
+
+                document.documentElement.lang = lang;
+                const flagImg = document.getElementById('current-flag-img');
+                if (lang === 'en') {
+                    flagImg.src = 'assets/en.png';
+                    flagImg.alt = 'English';
+                } else {
+                    flagImg.src = 'assets/vn.png';
+                    flagImg.alt = 'Tiếng Việt';
+                }
+                localStorage.setItem('language', lang);
+            };
+
+            currentFlag.addEventListener('click', (event) => {
+                event.stopPropagation();
+                languageDropdown.classList.toggle('show');
+            });
+
+            window.addEventListener('click', () => {
+                if (languageDropdown.classList.contains('show')) {
+                    languageDropdown.classList.remove('show');
+                }
+            });
+
+            document.querySelectorAll('.lang-option').forEach(item => {
+                item.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const selectedLang = item.getAttribute('data-lang');
+                    setLanguage(selectedLang);
+                    languageDropdown.classList.remove('show');
+                });
+            });
+
+            const savedLang = localStorage.getItem('language') || 'vi';
+            setLanguage(savedLang);
+
+            // --- PHẦN 2: LOGIC CON TRỎ TÙY CHỈNH ---
+            const cursorElement = document.querySelector('.cursor-element');
+            if (cursorElement) {
+                const cursorTextElement = cursorElement.querySelector('.cursor-text');
+                const autoTexts = ["Hello!", "I'm Huu Dat", "Welcome to my projects!"];
+                let autoTextCurrentIndex = 0;
+
+                function updateCursorPosition(x, y) {
+                    if (cursorElement.classList.contains('hidden-by-interaction')) {
+                        if (cursorElement.style.opacity !== '0') cursorElement.style.opacity = '0';
+                        return;
+                    }
+                    if (cursorElement.style.opacity !== '1' && cursorElement.classList.contains('visible')) {
+                        cursorElement.style.opacity = '1';
+                    }
+                    cursorElement.style.left = x + 'px';
+                    cursorElement.style.top = y + 'px';
+                    if (!cursorElement.classList.contains('visible')) {
+                        cursorElement.classList.add('visible');
+                    }
+                }
+
+                function changeCursorTextWithFade(newText) {
+                    if (!cursorTextElement || cursorTextElement.isTextFading || cursorTextElement.textContent === newText) return;
+                    cursorTextElement.isTextFading = true;
+                    cursorTextElement.classList.add('fade-out');
+                    setTimeout(() => {
+                        cursorTextElement.textContent = newText;
+                        cursorTextElement.classList.remove('fade-out');
+                        cursorTextElement.isTextFading = false;
+                    }, 300);
+                }
+
+                function updateAutoCursorText() {
+                    changeCursorTextWithFade(autoTexts[autoTextCurrentIndex]);
+                    autoTextCurrentIndex = (autoTextCurrentIndex + 1) % autoTexts.length;
+                }
+
+                document.addEventListener('mousemove', (e) => updateCursorPosition(e.clientX, e.clientY));
+
+                const interactiveElements = document.querySelectorAll('a, button, input, .form-control, .current-flag');
+                interactiveElements.forEach(el => {
+                    el.addEventListener('mouseenter', () => cursorElement.classList.add('hidden-by-interaction'));
+                    el.addEventListener('mouseleave', () => cursorElement.classList.remove('hidden-by-interaction'));
+                });
+
+                updateAutoCursorText();
+                setInterval(updateAutoCursorText, 3000);
+
+                setTimeout(() => {
+                    if (!cursorElement.classList.contains('hidden-by-interaction')) {
+                        cursorElement.classList.add('visible');
+                    }
+                }, 100);
+            }
+        });
+    </script>
+</body>
+
+</html>

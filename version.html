@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Lịch sử phiên bản tự động cập nhật từ GitHub"
+        data-translate-key="metaDescription" />
+    <meta name="author" content="Trần Hữu Đạt" />
+    <title>Lịch sử phiên bản - Trần Hữu Đạt</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <!-- Custom Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <!-- CSS (giữ nguyên như cũ) -->
+    <style>
+        body {
+            /* cursor: none; */
+            position: relative;
+        }
+
+        a,
+        button,
+        input[type="submit"],
+        .form-control,
+        .current-flag {
+            cursor: url('assets/hand_blue.png'), auto;
+        }
+
+        /* =================================
+           CSS CHO GIAO DIỆN TIMELINE
+           ================================= */
+        .timeline-section {
+            padding: 50px 0;
+        }
+
+        .timeline-container {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20px;
+            width: 4px;
+            height: 100%;
+            background-color: #e9ecef;
+            /* Light grey line */
+        }
+
+        .timeline-item {
+            padding: 10px 0 30px 60px;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 10px;
+        }
+
+        .timeline-icon {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            left: 10px;
+            top: 18px;
+            transform: translateY(-50%);
+            z-index: 1;
+            border: 4px solid #f8f9fa;
+            /* Match body background */
+            background-color: var(--bs-primary);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        .timeline-content ul li {
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 0.375rem;
+            margin-bottom: 0.75rem;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .timeline-content ul li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, .07);
+        }
+
+        .commit-link {
+            display: block;
+            padding: 0.75rem 1.25rem;
+            text-decoration: none;
+            color: #343a40;
+            font-weight: 500;
+        }
+
+        /* Thêm vào cuối file CSS của bạn */
+        footer.bg-dark a.text-white-50 {
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer.bg-dark a.text-white-50:hover {
+            color: #ffffff !important;
+            /* Dùng !important để ghi đè bootstrap nếu cần */
+            text-decoration: underline;
+        }
+
+        footer a {
+            color: #adb5bd;
+            /* Màu chữ liên kết trong footer */
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column h-100 bg-light">
+    <!-- Phần HTML của header và navigation giữ nguyên -->
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <header-placeholder></header-placeholder>
+
+        <section class="timeline-section">
+            <div class="container px-5">
+                <div class="text-center mb-5">
+                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Lịch sử Phiên bản</span>
+                    </h1>
+                    <p class="lead fw-light text-muted">Tự động cập nhật từ kho lưu trữ GitHub.</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 col-xl-9">
+                        <div id="timeline-container">
+                            <p class="text-center text-muted">Đang tải lịch sử phiên bản...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-5 bg-gradient-primary-to-secondary text-white">
+            <div class="container px-5 my-5">
+                <div class="text-center">
+                    <h2 class="display-4 fw-bolder mb-4">Hãy cùng nhau xây dựng một điều gì đó</h2>
+                    <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.html">Liên hệ với
+                        tôi</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer Chuyên nghiệp & Có Cấu trúc -->
+    <footer-placeholder></footer-placeholder>
+
+    <!-- Cursor Element HTML -->
+    <!-- <div class="cursor-element">
+        <img src="assets/cursor_blue.png" alt="Custom Cursor Icon">
+        <span class="cursor-text">Hữu Đạt</span>
+    </div> -->
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <!-- Custom JavaScript for fetching commits -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const owner = 'TranHuuDat2004';
+            const repo = 'TranHuuDat2004.github.io';
+            // THAY ĐỔI CHÍNH Ở ĐÂY: Thêm "?per_page=100"
+            const apiUrl = `https://api.github.com/repos/${owner}/${repo}/commits?per_page=100`;
+            const timelineContainer = document.getElementById('timeline-container');
+
+            async function fetchAndDisplayCommits() {
+                try {
+                    const response = await fetch(apiUrl);
+                    if (!response.ok) {
+                        throw new Error(`Lỗi từ GitHub API: ${response.status} ${response.statusText}`);
+                    }
+                    const commits = await response.json();
+
+                    const groupedCommits = commits.reduce((acc, commitData) => {
+                        const commitDate = new Date(commitData.commit.author.date);
+                        const formattedDate = new Intl.DateTimeFormat('vi-VN').format(commitDate);
+                        const commit = {
+                            message: commitData.commit.message,
+                            url: commitData.html_url
+                        };
+                        if (!acc[formattedDate]) {
+                            acc[formattedDate] = [];
+                        }
+                        acc[formattedDate].push(commit);
+                        return acc;
+                    }, {});
+
+                    let timelineHtml = '';
+                    for (const date in groupedCommits) {
+                        timelineHtml += `
+                            <div class="timeline-item">
+                                <div class="timeline-icon"></div>
+                                <div class="timeline-content">
+                                    <h3>Cập nhật ngày ${date}</h3>
+                                    <ul>
+                        `;
+
+                        groupedCommits[date].forEach(commit => {
+                            timelineHtml += `
+                                <li>
+                                    <a href="${commit.url}" target="_blank" rel="noopener noreferrer" class="commit-link">
+                                        ${commit.message}
+                                    </a>
+                                </li>
+                            `;
+                        });
+
+                        timelineHtml += `
+                                    </ul>
+                                </div>
+                            </div>
+                        `;
+                    }
+
+                    if (timelineHtml === '') {
+                        timelineContainer.innerHTML = '<p class="text-center">Không tìm thấy commit nào.</p>';
+                    } else {
+                        timelineContainer.innerHTML = timelineHtml;
+                    }
+
+                } catch (error) {
+                    console.error('Lỗi khi tải dữ liệu commits:', error);
+                    timelineContainer.innerHTML = '<p class="text-center text-danger">Không thể tải lịch sử phiên bản. Vui lòng thử lại sau.</p>';
+                }
+            }
+
+            fetchAndDisplayCommits();
+
+
+            // --- PHẦN 1: LOGIC CHUYỂN NGÔN NGỮ ---
+
+            const translations = {
+                "en": {
+                    "metaDescription": "My Projects and Skills",
+                    "navHome": "Home",
+                    "navResume": "Resume",
+                    "navProjects": "Projects",
+                    "navContact": "Contact",
+                    "projectsTitle": "My Projects",
+                    "fullstackTitle": "Full-Stack Websites",
+                    "brickshopTitle": "BrickShop - E-commerce",
+                    "brickshopDesc": "Engineered an e-commerce hub for building block enthusiasts (Qman, Keeppley, LEGO). Features seamless product browsing, secure checkout, order management, and a dedicated admin dashboard.",
+                    "zstyleTitle": "ZStyle - Clothing E-commerce",
+                    "zstyleDesc": "Developed a foundational e-commerce website for clothing as a course project, implementing core functionalities for users to explore fashion items.",
+                    "frontendTitle": "GitHub Pages & Frontend",
+                    "puzzleTitle": "Puzzle & Image Tools Suite",
+                    "puzzleDesc": "An engaging web application featuring an interactive jigsaw puzzle and practical image manipulation tools (square cropper, grid splitter, resizer).",
+                    "mymusicTitle": "MyMusic Player Interface",
+                    "mymusicDesc": "A sleek, modern online music player interface inspired by platforms like Spotify, showcasing UI/UX design and front-end proficiency with a focus on responsive and interactive experience.",
+                    "mlTitle": "Machine Learning",
+                    "signatureTitle": "Signature Verification System",
+                    "signatureDesc": "Developed a model to authenticate handwritten signatures using Machine Learning techniques in Google Colab, achieving high accuracy in identifying genuine and forged signatures.",
+                    "btnViewRepo": "View Repository",
+                    "btnLiveDemo": "Live Demo",
+                    "ctaTitle": "Let's build something together",
+                    "ctaButton": "Contact me",
+                    "footerCopyright": "Copyright © Tran Huu Dat 2024",
+                    "footerPrivacy": "Privacy",
+                    "footerTerms": "Terms",
+                    "footerContact": "Contact",
+                    "btnViewDetail": "View Details",
+                    "animetvTitle": "ANIME.TV - World of Anime & Manga",
+                    "animetvDesc": "A Crunchyroll-inspired static website built to explore and enjoy Anime & Manga content. Features video player, image/GIF galleries, manga reader. A personal project for learning and skill development.",
+                    "templateTitle": "Template",
+                    // --- CÁC KEY MỚI CHO FOOTER ---
+                    "footerTagline": "A passionate Web Developer dedicated to building beautiful and useful applications.",
+                    "footerQuickLinks": "Quick Links",
+                    "footerConnect": "Connect with Me",
+                    "footerCopyright": "Copyright © Tran Huu Dat 2025"
+                },
+                "vi": {
+                    "metaDescription": "Các dự án và kỹ năng của tôi",
+                    "navHome": "Trang chủ",
+                    "navResume": "Hồ sơ",
+                    "navProjects": "Dự án",
+                    "navContact": "Liên hệ",
+                    "projectsTitle": "Các Dự án của Tôi",
+                    "fullstackTitle": "Trang web Full-Stack",
+                    "brickshopTitle": "BrickShop - Thương mại điện tử",
+                    "brickshopDesc": "Xây dựng một trung tâm thương mại điện tử cho những người đam mê đồ chơi lắp ráp (Qman, Keeppley, LEGO). Các tính năng bao gồm duyệt sản phẩm liền mạch, thanh toán an toàn, quản lý đơn hàng và trang quản trị riêng.",
+                    "zstyleTitle": "ZStyle - Thương mại điện tử Thời trang",
+                    "zstyleDesc": "Phát triển một trang web thương mại điện tử cơ bản về quần áo trong khuôn khổ đồ án môn học, triển khai các chức năng cốt lõi để người dùng khám phá các mặt hàng thời trang.",
+                    "frontendTitle": "GitHub Pages & Frontend",
+                    "puzzleTitle": "Bộ Công cụ Xếp hình & Hình ảnh",
+                    "puzzleDesc": "Một ứng dụng web hấp dẫn bao gồm trò chơi xếp hình tương tác và các công cụ xử lý ảnh thực tế (cắt ảnh vuông, chia lưới, thay đổi kích thước).",
+                    "mymusicTitle": "Giao diện Trình phát nhạc MyMusic",
+                    "mymusicDesc": "Một giao diện trình phát nhạc trực tuyến đẹp mắt, hiện đại, lấy cảm hứng từ các nền tảng như Spotify, thể hiện khả năng thiết kế UI/UX và kỹ năng frontend với trọng tâm vào trải nghiệm tương tác và đáp ứng (responsive).",
+                    "mlTitle": "Học Máy (Machine Learning)",
+                    "signatureTitle": "Hệ thống Xác thực Chữ ký",
+                    "signatureDesc": "Phát triển một mô hình để xác thực chữ ký viết tay bằng các kỹ thuật Học máy trong Google Colab, đạt độ chính xác cao trong việc xác định chữ ký thật và giả mạo.",
+                    "btnViewRepo": "Xem Kho lưu trữ",
+                    "btnLiveDemo": "Xem trực tiếp",
+                    "ctaTitle": "Hãy cùng nhau xây dựng một điều gì đó",
+                    "ctaButton": "Liên hệ với tôi",
+                    "footerCopyright": "Bản quyền © Trần Hữu Đạt 2024",
+                    "footerPrivacy": "Bảo mật",
+                    "footerTerms": "Điều khoản",
+                    "footerContact": "Liên hệ",
+                    "btnViewDetail": "Xem thông tin chi tiết",
+                    "animetvTitle": "ANIME.TV - Thế giới Anime & Manga",
+                    "animetvDesc": "Một trang web tĩnh lấy cảm hứng từ Crunchyroll, được xây dựng để khám phá và thưởng thức nội dung Anime & Manga. Bao gồm trình phát video, thư viện ảnh/GIF, đọc truyện. Dự án cá nhân nhằm mục đích học hỏi và rèn luyện kỹ năng.",
+                    "templateTitle": "Trang web mẫu",
+                    // --- CÁC KEY MỚI CHO FOOTER ---
+                    "footerTagline": "Một lập trình viên Web đam mê xây dựng các ứng dụng đẹp và hữu ích.",
+                    "footerQuickLinks": "Liên kết nhanh",
+                    "footerConnect": "Kết nối với tôi",
+                    "footerCopyright": "Bản quyền © Trần Hữu Đạt 2025"
+                }
+            };
+
+            const languageSwitcher = document.querySelector('.language-switcher');
+            const currentFlag = languageSwitcher.querySelector('.current-flag');
+            const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
+
+            const setLanguage = (lang) => {
+                document.querySelectorAll('[data-translate-key]').forEach(element => {
+                    const key = element.getAttribute('data-translate-key');
+                    if (translations[lang] && translations[lang][key]) {
+                        if (element.tagName === 'META' && element.name === 'description') {
+                            element.setAttribute('content', translations[lang][key]);
+                        } else {
+                            element.innerHTML = translations[lang][key];
+                        }
+                    }
+                });
+
+                document.documentElement.lang = lang;
+                const flagImg = document.getElementById('current-flag-img');
+                if (lang === 'en') {
+                    flagImg.src = 'assets/en.png';
+                    flagImg.alt = 'English';
+                } else {
+                    flagImg.src = 'assets/vn.png';
+                    flagImg.alt = 'Tiếng Việt';
+                }
+                localStorage.setItem('language', lang);
+            };
+
+            currentFlag.addEventListener('click', (event) => {
+                event.stopPropagation();
+                languageDropdown.classList.toggle('show');
+            });
+
+            window.addEventListener('click', () => {
+                if (languageDropdown.classList.contains('show')) {
+                    languageDropdown.classList.remove('show');
+                }
+            });
+
+            document.querySelectorAll('.lang-option').forEach(item => {
+                item.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const selectedLang = item.getAttribute('data-lang');
+                    setLanguage(selectedLang);
+                    languageDropdown.classList.remove('show');
+                });
+            });
+
+            const savedLang = localStorage.getItem('language') || 'vi';
+            setLanguage(savedLang);
+
+            // --- PHẦN 2: LOGIC CON TRỎ TÙY CHỈNH ---
+            const cursorElement = document.querySelector('.cursor-element');
+            if (cursorElement) {
+                const cursorTextElement = cursorElement.querySelector('.cursor-text');
+                const autoTexts = ["Hello!", "I'm Huu Dat", "Welcome to my projects!"];
+                let autoTextCurrentIndex = 0;
+
+                function updateCursorPosition(x, y) {
+                    if (cursorElement.classList.contains('hidden-by-interaction')) {
+                        if (cursorElement.style.opacity !== '0') cursorElement.style.opacity = '0';
+                        return;
+                    }
+                    if (cursorElement.style.opacity !== '1' && cursorElement.classList.contains('visible')) {
+                        cursorElement.style.opacity = '1';
+                    }
+                    cursorElement.style.left = x + 'px';
+                    cursorElement.style.top = y + 'px';
+                    if (!cursorElement.classList.contains('visible')) {
+                        cursorElement.classList.add('visible');
+                    }
+                }
+
+                function changeCursorTextWithFade(newText) {
+                    if (!cursorTextElement || cursorTextElement.isTextFading || cursorTextElement.textContent === newText) return;
+                    cursorTextElement.isTextFading = true;
+                    cursorTextElement.classList.add('fade-out');
+                    setTimeout(() => {
+                        cursorTextElement.textContent = newText;
+                        cursorTextElement.classList.remove('fade-out');
+                        cursorTextElement.isTextFading = false;
+                    }, 300);
+                }
+
+                function updateAutoCursorText() {
+                    changeCursorTextWithFade(autoTexts[autoTextCurrentIndex]);
+                    autoTextCurrentIndex = (autoTextCurrentIndex + 1) % autoTexts.length;
+                }
+
+                document.addEventListener('mousemove', (e) => updateCursorPosition(e.clientX, e.clientY));
+
+                const interactiveElements = document.querySelectorAll('a, button, input, .form-control, .current-flag');
+                interactiveElements.forEach(el => {
+                    el.addEventListener('mouseenter', () => cursorElement.classList.add('hidden-by-interaction'));
+                    el.addEventListener('mouseleave', () => cursorElement.classList.remove('hidden-by-interaction'));
+                });
+
+                updateAutoCursorText();
+                setInterval(updateAutoCursorText, 3000);
+
+                setTimeout(() => {
+                    if (!cursorElement.classList.contains('hidden-by-interaction')) {
+                        cursorElement.classList.add('visible');
+                    }
+                }, 100);
+            }
+        });
+
+
+
+    </script>
+</body>
+
+</html>

@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Liên hệ với Trần Hữu Đạt để hợp tác hoặc hỏi đáp." data-translate-key="metaDescription" />
+    <meta name="description" content="Liên hệ với Trần Hữu Đạt để hợp tác hoặc hỏi đáp."
+        data-translate-key="metaDescription" />
     <meta name="author" content="Trần Hữu Đạt" />
     <title>Liên hệ - Trần Hữu Đạt</title>
 
@@ -30,132 +31,195 @@
         .current-flag {
             cursor: url('assets/hand.png'), auto;
         }
-        
+
         /* CSS CHO NÚT CHUYỂN NGÔN NGỮ */
         .language-switcher {
-            position: relative; display: inline-block; margin-left: 20px;
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
         }
+
         .language-switcher .current-flag img {
-            width: 32px; border-radius: 4px; border: 1px solid #ddd;
+            width: 32px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
         }
+
         .language-dropdown {
-            display: none; position: absolute; top: 120%; right: 0;
-            background-color: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            padding: 8px; z-index: 1100; width: 180px; border: 1px solid #eee;
-            opacity: 0; transform: translateY(10px);
+            display: none;
+            position: absolute;
+            top: 120%;
+            right: 0;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            padding: 8px;
+            z-index: 1100;
+            width: 180px;
+            border: 1px solid #eee;
+            opacity: 0;
+            transform: translateY(10px);
             transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
             pointer-events: none;
         }
+
         .language-dropdown.show {
-            display: block; opacity: 1; transform: translateY(0); pointer-events: auto;
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
         }
+
         .language-dropdown a {
-            display: flex; align-items: center; padding: 10px 15px; text-decoration: none;
-            color: #333; font-size: 1rem; font-weight: 500; border-radius: 8px;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 8px;
             transition: background-color 0.2s ease;
         }
-        .language-dropdown a:hover { background-color: #f0f2f5; }
-        .language-dropdown img { width: 24px; margin-right: 12px; border-radius: 3px; }
+
+        .language-dropdown a:hover {
+            background-color: #f0f2f5;
+        }
+
+        .language-dropdown img {
+            width: 24px;
+            margin-right: 12px;
+            border-radius: 3px;
+        }
 
         /* CSS CHO CON TRỎ TÙY CHỈNH */
         .cursor-element {
-            position: fixed; display: flex; align-items: center; pointer-events: none;
-            z-index: 1070; opacity: 0; transition: opacity 0.2s ease-in-out;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+            z-index: 1070;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
         }
-        .cursor-element.visible { opacity: 1; }
-        .cursor-element img { width: 28px; height: auto; margin-right: 8px; }
+
+        .cursor-element.visible {
+            opacity: 1;
+        }
+
+        .cursor-element img {
+            width: 28px;
+            height: auto;
+            margin-right: 8px;
+        }
+
         .cursor-element .cursor-text {
-            background-color: #4CAF50; color: white; padding: 6px 12px;
-            border-radius: 20px; font-size: 0.95em; box-shadow: 0 3px 7px rgba(0,0,0,0.15);
-            font-weight: bold; opacity: 1; transition: opacity 0.2s ease-in-out;
+            background-color: #4CAF50;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.95em;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+            font-weight: bold;
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out;
         }
-        .cursor-element .cursor-text.fade-out { opacity: 0; }
+
+        .cursor-element .cursor-text.fade-out {
+            opacity: 0;
+        }
+
+        /* Thêm vào cuối file CSS của bạn */
+        footer.bg-dark a.text-white-50 {
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer.bg-dark a.text-white-50:hover {
+            color: #ffffff !important;
+            /* Dùng !important để ghi đè bootstrap nếu cần */
+            text-decoration: underline;
+        }
+
+        footer a {
+            color: #adb5bd;
+            /* Màu chữ liên kết trong footer */
+            text-decoration: none;
+        }
     </style>
 </head>
 
 <body class="d-flex flex-column">
     <main class="flex-shrink-0">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-            <div class="container px-5">
-                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Trần Hữu Đạt</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation"><span
-                        class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                        <li class="nav-item"><a class="nav-link" href="index.html" data-translate-key="navHome">Trang chủ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="resume.html" data-translate-key="navResume">Hồ sơ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="projects.html" data-translate-key="navProjects">Dự án</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html" data-translate-key="navContact">Liên hệ</a></li>
-                    </ul>
-                    <div class="language-switcher">
-                        <div class="current-flag">
-                            <img id="current-flag-img" src="assets/vn.png" alt="Current Language">
-                        </div>
-                        <div class="language-dropdown">
-                            <a href="#" class="lang-option" data-lang="en">
-                                <img src="assets/en.png" alt="English Flag">
-                                <span>English</span>
-                            </a>
-                            <a href="#" class="lang-option" data-lang="vi">
-                                <img src="assets/vn.png" alt="Vietnamese Flag">
-                                <span>Tiếng Việt</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <header-placeholder></header-placeholder>
+
         <!-- Page content-->
         <section class="py-5">
             <div class="container px-5">
                 <div class="bg-light rounded-4 py-5 px-4 px-md-5">
                     <div class="text-center mb-5">
-                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+                        <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i
+                                class="bi bi-envelope"></i></div>
                         <h1 class="fw-bolder" data-translate-key="contactTitle">Liên Lạc</h1>
-                        <p class="lead fw-normal text-muted mb-0" data-translate-key="contactSubtitle">Tôi rất mong nhận được phản hồi từ bạn! Hãy kết nối nhé.</p>
+                        <p class="lead fw-normal text-muted mb-0" data-translate-key="contactSubtitle">Tôi rất mong nhận
+                            được phản hồi từ bạn! Hãy kết nối nhé.</p>
                     </div>
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-8 col-xl-6">
                             <form id="contactForm" data-sb-form-api-token="YOUR_FORM_API_TOKEN">
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="name" type="text" placeholder="Nhập tên của bạn..." data-sb-validations="required" />
+                                    <input class="form-control" id="name" type="text" placeholder="Nhập tên của bạn..."
+                                        data-sb-validations="required" />
                                     <label for="name" data-translate-key="formName">Họ và tên</label>
-                                    <div class="invalid-feedback" data-sb-feedback="name:required" data-translate-key="formNameError">Vui lòng nhập tên.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required"
+                                        data-translate-key="formNameError">Vui lòng nhập tên.</div>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                                    <input class="form-control" id="email" type="email" placeholder="name@example.com"
+                                        data-sb-validations="required,email" />
                                     <label for="email" data-translate-key="formEmail">Địa chỉ email</label>
-                                    <div class="invalid-feedback" data-sb-feedback="email:required" data-translate-key="formEmailError1">Vui lòng nhập email.</div>
-                                    <div class="invalid-feedback" data-sb-feedback="email:email" data-translate-key="formEmailError2">Email không hợp lệ.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="email:required"
+                                        data-translate-key="formEmailError1">Vui lòng nhập email.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="email:email"
+                                        data-translate-key="formEmailError2">Email không hợp lệ.</div>
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" />
-                                    <label for="phone" data-translate-key="formPhone">Số điện thoại (Không bắt buộc)</label>
+                                    <label for="phone" data-translate-key="formPhone">Số điện thoại (Không bắt
+                                        buộc)</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <textarea class="form-control" id="message" type="text" placeholder="Nhập tin nhắn của bạn ở đây..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                    <textarea class="form-control" id="message" type="text"
+                                        placeholder="Nhập tin nhắn của bạn ở đây..." style="height: 10rem"
+                                        data-sb-validations="required"></textarea>
                                     <label for="message" data-translate-key="formMessage">Tin nhắn</label>
-                                    <div class="invalid-feedback" data-sb-feedback="message:required" data-translate-key="formMessageError">Vui lòng nhập tin nhắn.</div>
+                                    <div class="invalid-feedback" data-sb-feedback="message:required"
+                                        data-translate-key="formMessageError">Vui lòng nhập tin nhắn.</div>
                                 </div>
                                 <div class="d-none" id="submitSuccessMessage">
                                     <div class="text-center mb-3">
-                                        <div class="fw-bolder" data-translate-key="formSuccess">Gửi biểu mẫu thành công! Cảm ơn bạn.</div>
+                                        <div class="fw-bolder" data-translate-key="formSuccess">Gửi biểu mẫu thành công!
+                                            Cảm ơn bạn.</div>
                                     </div>
                                 </div>
                                 <div class="d-none" id="submitErrorMessage">
-                                    <div class="text-center text-danger mb-3" data-translate-key="formSubmitError">Lỗi khi gửi tin nhắn! Vui lòng thử lại.</div>
+                                    <div class="text-center text-danger mb-3" data-translate-key="formSubmitError">Lỗi
+                                        khi gửi tin nhắn! Vui lòng thử lại.</div>
                                 </div>
-                                <div class="d-grid"><button class="btn btn-success btn-lg" id="submitButton" type="submit" data-translate-key="formSubmitButton">Gửi</button></div>
+                                <div class="d-grid"><button class="btn btn-success btn-lg" id="submitButton"
+                                        type="submit" data-translate-key="formSubmitButton">Gửi</button></div>
                             </form>
                             <hr class="my-5">
                             <div class="text-center">
-                                <p class="lead fw-normal text-muted mb-2" data-translate-key="directContact">Hoặc liên hệ trực tiếp:</p>
-                                <p class="mb-1"><i class="bi bi-envelope-fill text-primary me-2"></i><a href="mailto:huudat.peashooer@gmail.com">huudat.peashooer@gmail.com</a></p>
+                                <p class="lead fw-normal text-muted mb-2" data-translate-key="directContact">Hoặc liên
+                                    hệ trực tiếp:</p>
+                                <p class="mb-1"><i class="bi bi-envelope-fill text-primary me-2"></i><a
+                                        href="mailto:huudat.peashooer@gmail.com">huudat.peashooer@gmail.com</a></p>
                                 <p class="mb-0">
-                                    <i class="bi bi-linkedin text-primary me-2"></i><a href="https://linkedin.com/in/tranhuudat2004" target="_blank" rel="noopener noreferrer" data-translate-key="linkedinProfile">Hồ sơ LinkedIn của tôi</a>
+                                    <i class="bi bi-linkedin text-primary me-2"></i><a
+                                        href="https://linkedin.com/in/tranhuudat2004" target="_blank"
+                                        rel="noopener noreferrer" data-translate-key="linkedinProfile">Hồ sơ LinkedIn
+                                        của tôi</a>
                                 </p>
                             </div>
                         </div>
@@ -164,23 +228,9 @@
             </div>
         </section>
     </main>
-    <!-- Footer-->
-    <footer class="bg-white py-4 mt-auto">
-        <div class="container px-5">
-            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="col-auto">
-                    <div class="small m-0" data-translate-key="footerCopyright">Bản quyền © Trần Hữu Đạt 2024</div>
-                </div>
-                <div class="col-auto">
-                    <a class="small" href="#!" data-translate-key="footerPrivacy">Bảo mật</a>
-                    <span class="mx-1">·</span>
-                    <a class="small" href="#!" data-translate-key="footerTerms">Điều khoản</a>
-                    <span class="mx-1">·</span>
-                    <a class="small" href="contact.html" data-translate-key="footerContact">Liên hệ</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+<!-- Footer Chuyên nghiệp & Có Cấu trúc -->
+    <footer-placeholder></footer-placeholder>
+
 
     <div class="cursor-element">
         <img src="assets/cursor.png" alt="Custom Cursor Icon">
@@ -190,6 +240,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+        <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
 
     <!-- JavaScript tùy chỉnh đã sửa lỗi -->
     <script>
@@ -222,7 +275,12 @@
                     "footerPrivacy": "Privacy",
                     "footerTerms": "Terms",
                     "footerContact": "Contact",
-                    "cursorText": "Huu Dat"
+                    "cursorText": "Huu Dat",
+                    // --- CÁC KEY MỚI CHO FOOTER ---
+                    "footerTagline": "A passionate Web Developer dedicated to building beautiful and useful applications.",
+                    "footerQuickLinks": "Quick Links",
+                    "footerConnect": "Connect with Me",
+                    "footerCopyright": "Copyright © Tran Huu Dat 2025"
                 },
                 "vi": {
                     "metaDescription": "Liên hệ với Trần Hữu Đạt để hợp tác hoặc hỏi đáp.",
@@ -249,7 +307,13 @@
                     "footerPrivacy": "Bảo mật",
                     "footerTerms": "Điều khoản",
                     "footerContact": "Liên hệ",
-                    "cursorText": "Hữu Đạt"
+                    "cursorText": "Hữu Đạt",
+                    
+                    // --- CÁC KEY MỚI CHO FOOTER ---
+                    "footerTagline": "Một lập trình viên Web đam mê xây dựng các ứng dụng đẹp và hữu ích.",
+                    "footerQuickLinks": "Liên kết nhanh",
+                    "footerConnect": "Kết nối với tôi",
+                    "footerCopyright": "Bản quyền © Trần Hữu Đạt 2025"
                 }
             };
 
@@ -264,7 +328,7 @@
                         if (element.tagName === 'META') {
                             element.setAttribute('content', translations[lang][key]);
                         } else if (element.tagName === 'LABEL') {
-                             element.textContent = translations[lang][key];
+                            element.textContent = translations[lang][key];
                         }
                         else {
                             element.innerHTML = translations[lang][key];
@@ -309,7 +373,7 @@
                 // Mảng văn bản đa ngôn ngữ
                 const autoTextsEN = ["Let's connect!", "Ask me anything", "Project inquiry?", "Say Hello!"];
                 const autoTextsVI = ["Hãy kết nối!", "Hỏi bất cứ điều gì", "Cần báo giá dự án?", "Chào bạn!"];
-                
+
                 let autoTextCurrentIndex = 0;
                 let isCustomCursorActive = true;
 
@@ -341,7 +405,7 @@
                         cursorTextElement.isTextFading = false;
                     }, 200);
                 }
-                
+
                 // **KHÔI PHỤC HÀM CẬP NHẬT VĂN BẢN TỰ ĐỘNG**
                 function updateAutoCursorText() {
                     if (!isCustomCursorActive || !cursorTextElement) return;
@@ -349,7 +413,7 @@
                     // Lấy ngôn ngữ hiện tại để chọn mảng văn bản phù hợp
                     const currentLang = localStorage.getItem('language') || 'vi';
                     const textsToUse = (currentLang === 'en') ? autoTextsEN : autoTextsVI;
-                    
+
                     const newTextToShow = textsToUse[autoTextCurrentIndex];
                     autoTextCurrentIndex = (autoTextCurrentIndex + 1) % textsToUse.length;
                     changeCursorTextWithFade(newTextToShow);
@@ -366,11 +430,11 @@
                 interactiveElements.forEach(el => { /* ... giữ nguyên ... */
                     el.addEventListener('mouseenter', hideCustomCursor);
                     el.addEventListener('mouseleave', (e) => {
-                         updateCursorPosition(e.clientX, e.clientY);
-                         showCustomCursor();
+                        updateCursorPosition(e.clientX, e.clientY);
+                        showCustomCursor();
                     });
                 });
-                
+
                 // **KHÔI PHỤC BỘ ĐẾM THỜI GIAN**
                 updateAutoCursorText(); // Chạy lần đầu
                 setInterval(updateAutoCursorText, 3000); // Lặp lại sau mỗi 3 giây

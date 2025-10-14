@@ -3,7 +3,7 @@
 
 <head>
 
-        <meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="Portfolio cá nhân của Trần Hữu Đạt - Lập trình viên Web"
         data-translate-key="metaDescription" />
@@ -11,15 +11,14 @@
     <title>Dự án: BrickShop - Trần Hữu Đạt</title>
     <!-- Favicon-->
     <link rel="icon" type="image/png" href="assets/favicon.png" />
-    <!-- Custom Google font-->
+    <!-- Fonts và Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
-    <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
+    <!-- Core CSS -->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/github.css" rel="stylesheet" />
 
@@ -48,97 +47,236 @@
             margin-bottom: 2.5rem;
             position: relative;
         }
-        
+
         .project-category-tag-wrapper {
-            position: absolute; top: 25px; left: -5px; z-index: 1;
-            display: flex; align-items: stretch; 
+            position: absolute;
+            top: 25px;
+            left: -5px;
+            z-index: 1;
+            display: flex;
+            align-items: stretch;
         }
+
         .project-category-tag-arrow {
-            width: 15px; background-color: #0D6EFD; 
+            width: 15px;
+            background-color: #0D6EFD;
             clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
             margin-right: -1px;
         }
+
         .project-category-tag-text {
-            background-color: #0D6EFD; color: white; padding: 7px 12px 7px 10px;
-            font-size: 0.8rem; font-weight: bold; border-radius: 0 4px 4px 0; 
-            line-height: 1.2; text-transform: uppercase;
+            background-color: #0D6EFD;
+            color: white;
+            padding: 7px 12px 7px 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 0 4px 4px 0;
+            line-height: 1.2;
+            text-transform: uppercase;
         }
 
         .tech-badge {
-            margin-right: 0.4rem; margin-bottom: 0.4rem; font-size: 0.80em;
-            padding: 0.4em 0.75em; border-radius: 10px; font-weight: 500;
-            color: white; border: 1px solid transparent;
+            margin-right: 0.4rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.80em;
+            padding: 0.4em 0.75em;
+            border-radius: 10px;
+            font-weight: 500;
+            color: white;
+            border: 1px solid transparent;
         }
-        .tech-badge.html5 { background-color: #0D6EFD; }
-        .tech-badge.css3 { background-color: #D63384; }
-        .tech-badge.bootstrap { background-color: #0DCAF0; color: #212529; }
-        .tech-badge.javascript { background-color: #FFDA07; color: #212529; }
-        .tech-badge.nodejs { background-color: #198754; }
-        .tech-badge.mysql { background-color: #DC3545; }
-        
+
+        .tech-badge.html5 {
+            background-color: #0D6EFD;
+        }
+
+        .tech-badge.css3 {
+            background-color: #D63384;
+        }
+
+        .tech-badge.bootstrap {
+            background-color: #0DCAF0;
+            color: #212529;
+        }
+
+        .tech-badge.javascript {
+            background-color: #FFDA07;
+            color: #212529;
+        }
+
+        .tech-badge.nodejs {
+            background-color: #198754;
+        }
+
+        .tech-badge.mysql {
+            background-color: #DC3545;
+        }
+
         .feature-list {
-            padding-left: 0; font-size: 0.95rem;
+            padding-left: 0;
+            font-size: 0.95rem;
         }
-        .feature-list li { margin-bottom: 0.3rem; }
-        .project-card .card-body { padding-top: 2.5rem !important; }
-        .project-card-content-wrapper { padding-top: 35px; }
+
+        .feature-list li {
+            margin-bottom: 0.3rem;
+        }
+
+        .project-card .card-body {
+            padding-top: 2.5rem !important;
+        }
+
+        .project-card-content-wrapper {
+            padding-top: 35px;
+        }
 
         .screenshot-table-header {
-            background-color: #f8f9fa; font-weight: 600; font-size: 0.85rem; padding: 0.6rem 0.5rem;
-        }
-        .screenshot-table td { padding: 0.5rem; background-color: #fff; }
-        .screenshot-img {
-            max-height: 170px; width: 100%; object-fit: contain;
-            border: 1px solid #e9ecef; border-radius: 0.25rem;
+            background-color: #f8f9fa;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.6rem 0.5rem;
         }
 
-        .screenshot-table-header.visually-hidden-empty { background-color: #f8f9fa; }
-        .screenshot-table td.visually-hidden-empty { background-color: #fff; }
+        .screenshot-table td {
+            padding: 0.5rem;
+            background-color: #fff;
+        }
+
+        .screenshot-img {
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            padding: 0.25rem;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .screenshot-table-header.visually-hidden-empty {
+            background-color: #f8f9fa;
+        }
+
+        .screenshot-table td.visually-hidden-empty {
+            background-color: #fff;
+        }
 
         .underlined-heading {
-            text-decoration: underline; text-decoration-color: #adb5bd;
-            text-underline-offset: 5px; text-decoration-thickness: 1px;
+            text-decoration: underline;
+            text-decoration-color: #adb5bd;
+            text-underline-offset: 5px;
+            text-decoration-thickness: 1px;
         }
 
         /* CSS CHO NÚT CHUYỂN NGÔN NGỮ */
         .language-switcher {
-            position: relative; display: inline-block; margin-left: 20px;
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
         }
+
         .language-switcher .current-flag img {
-            width: 32px; border-radius: 4px; border: 1px solid #ddd;
+            width: 32px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
         }
+
         .language-dropdown {
-            display: none; position: absolute; top: 120%; right: 0;
-            background-color: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            padding: 8px; z-index: 1100; width: 180px; border: 1px solid #eee;
-            opacity: 0; transform: translateY(10px);
+            display: none;
+            position: absolute;
+            top: 120%;
+            right: 0;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            padding: 8px;
+            z-index: 1100;
+            width: 180px;
+            border: 1px solid #eee;
+            opacity: 0;
+            transform: translateY(10px);
             transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
             pointer-events: none;
         }
+
         .language-dropdown.show {
-            display: block; opacity: 1; transform: translateY(0); pointer-events: auto;
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
         }
+
         .language-dropdown a {
-            display: flex; align-items: center; padding: 10px 15px; text-decoration: none;
-            color: #333; font-size: 1rem; font-weight: 500; border-radius: 8px;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 8px;
             transition: background-color 0.2s ease;
         }
-        .language-dropdown a:hover { background-color: #f0f2f5; }
-        .language-dropdown img { width: 24px; margin-right: 12px; border-radius: 3px; }
+
+        .language-dropdown a:hover {
+            background-color: #f0f2f5;
+        }
+
+        .language-dropdown img {
+            width: 24px;
+            margin-right: 12px;
+            border-radius: 3px;
+        }
 
         /* Cursor styles */
         .cursor-element {
-            position: fixed; display: flex; align-items: center; pointer-events: none;
-            z-index: 1070; opacity: 0; transition: opacity 0.3s ease-in-out;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+            z-index: 1070;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
         }
-        .cursor-element.visible { opacity: 1; }
-        .cursor-element img { width: 28px; height: auto; margin-right: 8px; }
+
+        .cursor-element.visible {
+            opacity: 1;
+        }
+
+        .cursor-element img {
+            width: 28px;
+            height: auto;
+            margin-right: 8px;
+        }
+
         .cursor-element .cursor-text {
-            background-color: #0d6efd; color: white; padding: 6px 12px; border-radius: 20px;
-            font-size: 0.95em; box-shadow: 0 3px 7px rgba(0,0,0,0.15); font-weight: bold;
-            opacity: 1; transition: opacity 0.3s ease-in-out;
+            background-color: #0d6efd;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.95em;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+            font-weight: bold;
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
         }
-        .cursor-element .cursor-text.fade-out { opacity: 0; }
+
+        .cursor-element .cursor-text.fade-out {
+            opacity: 0;
+        }
+
+        /* Thêm vào cuối file CSS của bạn */
+        footer.bg-dark a.text-white-50 {
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer.bg-dark a.text-white-50:hover {
+            color: #ffffff !important;
+            /* Dùng !important để ghi đè bootstrap nếu cần */
+            text-decoration: underline;
+        }
+
+        footer a {
+            color: #adb5bd;
+            /* Màu chữ liên kết trong footer */
+            text-decoration: none;
+        }
     </style>
 
 </head>
@@ -146,44 +284,14 @@
 <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-            <div class="container px-5">
-                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Trần Hữu Đạt</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation"><span
-                        class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                        <li class="nav-item"><a class="nav-link" href="index.html" data-translate-key="navHome">Trang chủ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="resume.html" data-translate-key="navResume">Hồ sơ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="projects.html" data-translate-key="navProjects">Dự án</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html" data-translate-key="navContact">Liên hệ</a></li>
-                    </ul>
-                    <div class="language-switcher">
-                        <div class="current-flag">
-                            <img id="current-flag-img" src="assets/vn.png" alt="Current Language">
-                        </div>
-                        <div class="language-dropdown">
-                            <a href="#" class="lang-option" data-lang="en">
-                                <img src="assets/en.png" alt="English Flag">
-                                <span>English</span>
-                            </a>
-                            <a href="#" class="lang-option" data-lang="vi">
-                                <img src="assets/vn.png" alt="Vietnamese Flag">
-                                <span>Tiếng Việt</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <header-placeholder></header-placeholder>
 
         <!-- Project Details Section -->
         <section class="py-5">
             <div class="container px-5 mb-5">
                 <div class="text-center mb-5">
-                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient-purple-pink d-inline" data-translate-key="pageTitle">Thông tin chi tiết của dự án  </span></h1>
+                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient-purple-pink d-inline"
+                            data-translate-key="pageTitle">Thông tin chi tiết của dự án </span></h1>
                 </div>
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-11 col-xl-9 col-xxl-8">
@@ -191,13 +299,18 @@
                         <div class="card overflow-hidden shadow rounded-4 border-0 project-card">
                             <div class="project-category-tag-wrapper">
                                 <div class="project-category-tag-arrow"></div>
-                                <div class="project-category-tag-text" data-translate-key="brickshopCategory">PT E-commerce</div>
+                                <div class="project-category-tag-text" data-translate-key="brickshopCategory">PT
+                                    E-commerce</div>
                             </div>
                             <div class="card-body p-4">
                                 <div class="project-card-content-wrapper">
-                                    <h2 class="fw-bolder" data-translate-key="brickshopTitle">BrickShop - Thiên đường Đồ chơi Lắp ráp <span role="img" aria-label="brick emoji">🧱</span></h2>
-                                    <p class="text-muted" data-translate-key="brickshopDesc">Chào mừng đến với BrickShop, một dự án website thương mại điện tử chuyên cung cấp đồ chơi lắp ráp sáng tạo từ các thương hiệu hàng đầu như Qman, Keeppley, và LEGO. Khám phá một thế giới sáng tạo với các chủ đề đa dạng và trải nghiệm mua sắm liền mạch.</p>
-                                    
+                                    <h2 class="fw-bolder" data-translate-key="brickshopTitle">BrickShop - Thiên đường Đồ
+                                        chơi Lắp ráp <span role="img" aria-label="brick emoji">🧱</span></h2>
+                                    <p class="text-muted" data-translate-key="brickshopDesc">Chào mừng đến với
+                                        BrickShop, một dự án website thương mại điện tử chuyên cung cấp đồ chơi lắp ráp
+                                        sáng tạo từ các thương hiệu hàng đầu như Qman, Keeppley, và LEGO. Khám phá một
+                                        thế giới sáng tạo với các chủ đề đa dạng và trải nghiệm mua sắm liền mạch.</p>
+
                                     <h5 class="mt-4 mb-3" data-translate-key="techStackTitle">Ngăn xếp Công nghệ:</h5>
                                     <div class="mb-4">
                                         <span class="badge tech-badge html5">HTML5</span>
@@ -211,85 +324,214 @@
                                     <h5 class="mt-4" data-translate-key="featuresTitle">Tổng quan Tính năng Chính:</h5>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <h6 class="fw-semibold" data-translate-key="featuresCustomers">Dành cho Khách hàng:</h6>
+                                            <h6 class="fw-semibold" data-translate-key="featuresCustomers">Dành cho
+                                                Khách hàng:</h6>
                                             <ul class="list-unstyled feature-list">
-                                                <li data-translate-key="featureAuth"><i class="bi bi-check-circle-fill text-primary me-2"></i>Xác thực & Quản lý Tài khoản</li>
-                                                <li data-translate-key="featureBrowse"><i class="bi bi-check-circle-fill text-primary me-2"></i>Duyệt, Lọc & Tìm kiếm Sản phẩm</li>
-                                                <li data-translate-key="featureDetail"><i class="bi bi-check-circle-fill text-primary me-2"></i>Xem chi tiết & Thư viện ảnh</li>
-                                                <li data-translate-key="featureCart"><i class="bi bi-check-circle-fill text-primary me-2"></i>Giỏ hàng & Thanh toán (Voucher, QR)</li>
-                                                <li data-translate-key="featureHistory"><i class="bi bi-check-circle-fill text-primary me-2"></i>Lịch sử & Theo dõi Đơn hàng</li>
+                                                <li data-translate-key="featureAuth"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Xác thực &
+                                                    Quản lý Tài khoản</li>
+                                                <li data-translate-key="featureBrowse"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Duyệt, Lọc
+                                                    & Tìm kiếm Sản phẩm</li>
+                                                <li data-translate-key="featureDetail"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Xem chi
+                                                    tiết & Thư viện ảnh</li>
+                                                <li data-translate-key="featureCart"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Giỏ hàng &
+                                                    Thanh toán (Voucher, QR)</li>
+                                                <li data-translate-key="featureHistory"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Lịch sử &
+                                                    Theo dõi Đơn hàng</li>
                                             </ul>
                                         </div>
                                         <div class="col-md-6">
-                                            <h6 class="fw-semibold" data-translate-key="featuresAdmin">Dành cho Quản trị viên:</h6>
+                                            <h6 class="fw-semibold" data-translate-key="featuresAdmin">Dành cho Quản trị
+                                                viên:</h6>
                                             <ul class="list-unstyled feature-list">
-                                                <li data-translate-key="featureDashboard"><i class="bi bi-check-circle-fill text-primary me-2"></i>Bảng điều khiển với số liệu chính</li>
-                                                <li data-translate-key="featureMgmt"><i class="bi bi-check-circle-fill text-primary me-2"></i>Quản lý Người dùng, SP, Đơn hàng</li>
-                                                <li data-translate-key="featureCoupon"><i class="bi bi-check-circle-fill text-primary me-2"></i>Quản lý Giảm giá & Danh mục</li>
-                                                <li data-translate-key="featureLang"><i class="bi bi-check-circle-fill text-primary me-2"></i>Nhập liệu sản phẩm đa ngôn ngữ</li>
+                                                <li data-translate-key="featureDashboard"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Bảng điều
+                                                    khiển với số liệu chính</li>
+                                                <li data-translate-key="featureMgmt"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Quản lý
+                                                    Người dùng, SP, Đơn hàng</li>
+                                                <li data-translate-key="featureCoupon"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Quản lý
+                                                    Giảm giá & Danh mục</li>
+                                                <li data-translate-key="featureLang"><i
+                                                        class="bi bi-check-circle-fill text-primary me-2"></i>Nhập liệu
+                                                    sản phẩm đa ngôn ngữ</li>
                                             </ul>
                                         </div>
                                     </div>
-                                    
+
                                     <p class="mt-4">
-                                        <small class="text-muted" data-translate-key="techNote">Trang quản trị xây dựng bằng Tailwind CSS, trang khách hàng bằng Bootstrap. Chi tiết đầy đủ trên GitHub.</small>
+                                        <small class="text-muted" data-translate-key="techNote">Trang quản trị xây dựng
+                                            bằng Tailwind CSS, trang khách hàng bằng Bootstrap. Chi tiết đầy đủ trên
+                                            GitHub.</small>
                                     </p>
                                     <p class="mt-3">
-                                        <a class="btn btn-primary px-4 py-3 me-2" href="https://github.com/TranHuuDat2004/BrickShop" target="_blank" rel="noopener noreferrer">
-                                            <i class="bi bi-github"></i> <span data-translate-key="btnViewGithub">Xem trên GitHub</span>
+                                        <a class="btn btn-primary px-4 py-3 me-2"
+                                            href="https://github.com/TranHuuDat2004/BrickShop" target="_blank"
+                                            rel="noopener noreferrer">
+                                            <i class="bi bi-github"></i> <span data-translate-key="btnViewGithub">Xem
+                                                trên GitHub</span>
                                         </a>
                                     </p>
-                                    <p class="mt-3"><small class="text-muted" data-translate-key="licenseNote">Giấy phép: CC BY-NC 4.0</small></p>
+                                    <p class="mt-3"><small class="text-muted" data-translate-key="licenseNote">Giấy
+                                            phép: CC BY-NC 4.0</small></p>
 
                                     <hr class="my-4">
-                                    <h5 class="mb-3 fw-semibold underlined-heading" data-translate-key="screenshotsTitle">Ảnh chụp Giao diện Khách hàng (Bootstrap)</h5>
-                                    <p class="small text-muted mb-3" data-translate-key="screenshotsNote">Lưu ý: Đảm bảo các tệp ảnh chụp màn hình được đặt trong thư mục <code>assets/screenshots/</code> với tên chính xác.</p>
+                                    <h5 class="mb-3 fw-semibold underlined-heading"
+                                        data-translate-key="screenshotsTitle">Ảnh chụp Giao diện Khách hàng (Bootstrap)
+                                    </h5>
+
                                     <div class="table-responsive mt-2">
                                         <table class="table table-bordered align-middle text-center screenshot-table">
                                             <tbody>
                                                 <tr>
-                                                    <th scope="col" class="screenshot-table-header" data-translate-key="ssHeaderHome">Trang Chủ</th>
-                                                    <th scope="col" class="screenshot-table-header" data-translate-key="ssHeaderLego">Giới thiệu LEGO</th>
-                                                    <th scope="col" class="screenshot-table-header" data-translate-key="ssHeaderQman">Giới thiệu Qman</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssHeaderHome">Trang Chủ</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssHeaderLego">Giới thiệu LEGO</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssHeaderQman">Giới thiệu Qman</th>
                                                 </tr>
                                                 <tr>
-                                                    <td><img src="assets/screenshots/customer-home.png" alt="BrickShop Home Page" class="img-fluid screenshot-img"></td>
-                                                    <td><img src="assets/screenshots/customer-lego-intro.png" alt="BrickShop LEGO Introduction" class="img-fluid screenshot-img"></td>
-                                                    <td><img src="assets/screenshots/customer-qman-intro.png" alt="BrickShop Qman Introduction" class="img-fluid screenshot-img"></td>
+                                                    <td><img src="assets/brickshop/homepage.png"
+                                                            alt="BrickShop Home Page" class="img-fluid screenshot-img">
+                                                    </td>
+                                                    <td><img src="assets/brickshop/lego.png"
+                                                            alt="BrickShop LEGO Introduction"
+                                                            class="img-fluid screenshot-img"></td>
+                                                    <td><img src="assets/brickshop/qman.png"
+                                                            alt="BrickShop Qman Introduction"
+                                                            class="img-fluid screenshot-img"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="col" class="screenshot-table-header" data-translate-key="ssHeaderKeeppley">Giới thiệu Keeppley</th>
-                                                    <th scope="col" class="screenshot-table-header" data-translate-key="ssHeaderProducts">Trang Sản phẩm</th>
-                                                    <th scope="col" class="screenshot-table-header" data-translate-key="ssHeaderDetail">Trang Chi tiết Sản phẩm</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssHeaderKeeppley">Giới thiệu Keeppley</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssHeaderProducts">Trang Sản phẩm</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssHeaderDetail">Trang Chi tiết Sản phẩm</th>
                                                 </tr>
                                                 <tr>
-                                                    <td><img src="assets/screenshots/customer-keeppley-intro.png" alt="BrickShop Keeppley Introduction" class="img-fluid screenshot-img"></td>
-                                                    <td><img src="assets/screenshots/customer-products-page.png" alt="BrickShop Products Page" class="img-fluid screenshot-img"></td>
-                                                    <td><img src="assets/screenshots/customer-product-detail.png" alt="BrickShop Product Detail Page" class="img-fluid screenshot-img"></td>
+                                                    <td><img src="assets/brickshop/keeppley.png"
+                                                            alt="BrickShop Keeppley Introduction"
+                                                            class="img-fluid screenshot-img"></td>
+                                                    <td><img src="assets/brickshop/product.png"
+                                                            alt="BrickShop Products Page"
+                                                            class="img-fluid screenshot-img"></td>
+                                                    <td><img src="assets/brickshop/product_detail.png"
+                                                            alt="BrickShop Product Detail Page"
+                                                            class="img-fluid screenshot-img"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="col" class="screenshot-table-header" data-translate-key="ssHeaderSetInfo">Cài đặt - Thông tin</th>
-                                                    <th scope="col" class="screenshot-table-header" data-translate-key="ssHeaderSetAvatar">Cài đặt - Ảnh đại diện</th>
-                                                    <th scope="col" class="screenshot-table-header" data-translate-key="ssHeaderSetSocial">Cài đặt - Mạng xã hội</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssHeaderSetInfo">Cài đặt - Thông tin</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssHeaderSetAvatar">Cài đặt - Ảnh đại diện
+                                                    </th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssHeaderSetSocial">Cài đặt - Mạng xã hội
+                                                    </th>
                                                 </tr>
                                                 <tr>
-                                                    <td><img src="assets/screenshots/customer-settings-info.png" alt="BrickShop Account Settings - Info" class="img-fluid screenshot-img"></td>
-                                                    <td><img src="assets/screenshots/customer-settings-avatar.png" alt="BrickShop Account Settings - Avatar" class="img-fluid screenshot-img"></td>
-                                                    <td><img src="assets/screenshots/customer-settings-social.png" alt="BrickShop Account Settings - Social Links" class="img-fluid screenshot-img"></td>
+                                                    <td><img src="assets/brickshop/settings_profile.png"
+                                                            alt="BrickShop Account Settings - Info"
+                                                            class="img-fluid screenshot-img"></td>
+                                                    <td><img src="assets/brickshop/settings_avatar.png"
+                                                            alt="BrickShop Account Settings - Avatar"
+                                                            class="img-fluid screenshot-img"></td>
+                                                    <td><img src="assets/brickshop/settings_social.png"
+                                                            alt="BrickShop Account Settings - Social Links"
+                                                            class="img-fluid screenshot-img"></td>
                                                 </tr>
                                                 <tr>
-                                                    <th scope="col" class="screenshot-table-header" data-translate-key="ssHeaderOrderDetail">Chi tiết Đơn hàng</th>
-                                                    <th scope="col" class="screenshot-table-header visually-hidden-empty"> </th>
-                                                    <th scope="col" class="screenshot-table-header visually-hidden-empty"> </th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssHeaderOrderDetail">Chi tiết Đơn hàng</th>
+                                                    <th scope="col"
+                                                        class="screenshot-table-header visually-hidden-empty"></th>
+                                                    <th scope="col"
+                                                        class="screenshot-table-header visually-hidden-empty"></th>
                                                 </tr>
                                                 <tr>
-                                                    <td><img src="assets/screenshots/customer-order-detail.png" alt="BrickShop Order Detail" class="img-fluid screenshot-img"></td>
-                                                    <td class="visually-hidden-empty"> </td>
-                                                    <td class="visually-hidden-empty"> </td>
+                                                    <td><img src="assets/brickshop/order.png"
+                                                            alt="BrickShop Order Detail"
+                                                            class="img-fluid screenshot-img"></td>
+                                                    <td class="visually-hidden-empty"></td>
+                                                    <td class="visually-hidden-empty"></td>
                                                 </tr>
                                             </tbody>
                                         </table>
+                                        <!-- ... (Kết thúc bảng Giao diện Khách hàng ở trên) ... -->
+                                    </div> <!-- Kết thúc div.table-responsive của bảng Khách hàng -->
+
+                                    <!-- === BẢNG GIAO DIỆN ADMIN (TAILWIND CSS) === -->
+                                    <h5 class="mb-3 mt-5 fw-semibold underlined-heading"
+                                        data-translate-key="screenshotsAdminTitle">Ảnh chụp Giao diện Quản trị (Tailwind
+                                        CSS)</h5>
+
+                                    <div class="table-responsive mt-2">
+                                        <table class="table table-bordered align-middle text-center screenshot-table">
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssAdminHeaderDashboard">Dashboard</th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssAdminHeaderManageUsers">Quản lý Người dùng
+                                                    </th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssAdminHeaderManageProducts">Quản lý Sản
+                                                        phẩm</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="assets/brickshop/admin_dashboard.png"
+                                                            alt="BrickShop Admin Dashboard"
+                                                            class="img-fluid screenshot-img"></td>
+                                                    <td><img src="assets/brickshop/admin_manage_users.png"
+                                                            alt="BrickShop Admin Manage Users"
+                                                            class="img-fluid screenshot-img"></td>
+                                                    <td><img src="assets/brickshop/admin_manage_products.png"
+                                                            alt="BrickShop Admin Manage Products"
+                                                            class="img-fluid screenshot-img"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssAdminHeaderManageOrders">Quản lý Đơn hàng
+                                                    </th>
+                                                    <th scope="col" class="screenshot-table-header"
+                                                        data-translate-key="ssAdminHeaderAddProduct">Thêm Sản phẩm</th>
+                                                    <th scope="col"
+                                                        class="screenshot-table-header visually-hidden-empty"></th>
+                                                    <!-- Ô trống nếu cần -->
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="assets/brickshop/admin_manage_orders.png"
+                                                            alt="BrickShop Admin Manage Orders"
+                                                            class="img-fluid screenshot-img"></td>
+                                                    <td><img src="assets/brickshop/admin_add_product.png"
+                                                            alt="BrickShop Admin Add Product"
+                                                            class="img-fluid screenshot-img"></td>
+                                                    <td class="visually-hidden-empty"></td> <!-- Ô trống nếu cần -->
+                                                </tr>
+                                                <!-- Bạn có thể thêm các hàng khác nếu có nhiều ảnh hơn -->
+                                                <!-- Ví dụ:
+                                                <tr>
+                                                    <th scope="col" class="screenshot-table-header" data-translate-key="ssAdminHeaderManageComments">Quản lý Bình luận</th>
+                                                    <th scope="col" class="screenshot-table-header visually-hidden-empty"></th>
+                                                    <th scope="col" class="screenshot-table-header visually-hidden-empty"></th>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="assets/brickshop/admin_manage_comments.png" alt="BrickShop Admin Manage Comments" class="img-fluid screenshot-img"></td>
+                                                    <td class="visually-hidden-empty"></td>
+                                                    <td class="visually-hidden-empty"></td>
+                                                </tr>
+                                                -->
+                                            </tbody>
+                                        </table>
                                     </div>
+                                    <!-- === KẾT THÚC BẢNG GIAO DIỆN ADMIN === -->
                                 </div>
                             </div>
                         </div>
@@ -299,22 +541,8 @@
         </section>
     </main>
 
-    <footer class="bg-white py-4 mt-auto">
-        <div class="container px-5">
-            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="col-auto">
-                    <div class="small m-0" data-translate-key="footerCopyright">Bản quyền © Trần Hữu Đạt 2024</div>
-                </div>
-                <div class="col-auto">
-                    <a class="small" href="#!" data-translate-key="footerPrivacy">Chính sách Bảo mật</a>
-                    <span class="mx-1">·</span>
-                    <a class="small" href="#!" data-translate-key="footerTerms">Điều khoản Sử dụng</a>
-                    <span class="mx-1">·</span>
-                    <a class="small" href="contact.html" data-translate-key="footerContact">Liên hệ</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Chuyên nghiệp & Có Cấu trúc -->
+    <footer-placeholder></footer-placeholder>
 
     <div class="cursor-element">
         <img src="assets/cursor_blue.png" alt="Custom Cursor Icon">
@@ -323,13 +551,15 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
             const translations = {
                 "en": {
                     "metaDescription": "BrickShop Project Details by Tran Huu Dat - Web Developer",
-                    "navHome": "Home", "navResume": "Resume", "navProjects": "Project", "navContact": "Contact",
+                    "navHome": "Home", "navResume": "Resume", "navProjects": "Projects", "navContact": "Contact", // Sửa "Project" thành "Projects" cho nhất quán
                     "pageTitle": "Project Details",
                     "brickshopCategory": "E-commerce Dev",
                     "brickshopTitle": "BrickShop - Building Block Toy Paradise",
@@ -351,18 +581,30 @@
                     "btnViewGithub": "View on GitHub",
                     "licenseNote": "License: CC BY-NC 4.0",
                     "screenshotsTitle": "Customer Interface (Bootstrap) Screenshots",
-                    "screenshotsNote": "Note: Ensure screenshot images are placed in <code>assets/screenshots/</code> directory with correct names.",
+                    "screenshotsNote": "Note: Ensure screenshot images are placed in <code>assets/brickshop/</code> directory with correct names.",
                     "ssHeaderHome": "Home Page", "ssHeaderLego": "LEGO Introduction", "ssHeaderQman": "Qman Introduction",
                     "ssHeaderKeeppley": "Keeppley Introduction", "ssHeaderProducts": "Products Page", "ssHeaderDetail": "Product Detail Page",
                     "ssHeaderSetInfo": "Account Settings - Info", "ssHeaderSetAvatar": "Account Settings - Avatar", "ssHeaderSetSocial": "Account Settings - Social Links",
                     "ssHeaderOrderDetail": "Order Detail",
-                    "footerCopyright": "Copyright © Tran Huu Dat 2024",
-                    "footerPrivacy": "Privacy Policy", "footerTerms": "Terms of Use", "footerContact": "Contact"
+                    // === KEY DỊCH MỚI CHO ADMIN SCREENSHOTS ===
+                    "screenshotsAdminTitle": "Admin Interface (Tailwind CSS) Screenshots",
+                    "ssAdminHeaderDashboard": "Dashboard",
+                    "ssAdminHeaderManageUsers": "Manage Users",
+                    "ssAdminHeaderManageProducts": "Manage Products",
+                    "ssAdminHeaderManageOrders": "Manage Orders",
+                    "ssAdminHeaderAddProduct": "Add Product",
+                    "ssAdminHeaderManageComments": "Manage Comments", // Thêm nếu bạn có ảnh này
+
+                    // --- CÁC KEY MỚI CHO FOOTER ---
+                    "footerTagline": "A passionate Web Developer dedicated to building beautiful and useful applications.",
+                    "footerQuickLinks": "Quick Links",
+                    "footerConnect": "Connect with Me",
+                    "footerCopyright": "Copyright © Tran Huu Dat 2025"
                 },
                 "vi": {
                     "metaDescription": "Chi tiết dự án BrickShop của Trần Hữu Đạt - Lập trình viên Web",
                     "navHome": "Trang chủ", "navResume": "Hồ sơ", "navProjects": "Dự án", "navContact": "Liên hệ",
-                    "pageTitle": "Thông tin chi tiết của dự án  ",
+                    "pageTitle": "Thông tin chi tiết của dự án", // Bỏ một khoảng trắng thừa ở cuối
                     "brickshopCategory": "PT E-commerce",
                     "brickshopTitle": "BrickShop - Thiên đường Đồ chơi Lắp ráp",
                     "brickshopDesc": "Chào mừng đến với BrickShop, một dự án website thương mại điện tử chuyên cung cấp đồ chơi lắp ráp sáng tạo từ các thương hiệu hàng đầu như Qman, Keeppley, và LEGO. Khám phá một thế giới sáng tạo với các chủ đề đa dạng và trải nghiệm mua sắm liền mạch.",
@@ -383,16 +625,28 @@
                     "btnViewGithub": "Xem trên GitHub",
                     "licenseNote": "Giấy phép: CC BY-NC 4.0",
                     "screenshotsTitle": "Ảnh chụp Giao diện Khách hàng (Bootstrap)",
-                    "screenshotsNote": "Lưu ý: Đảm bảo các tệp ảnh chụp màn hình được đặt trong thư mục <code>assets/screenshots/</code> với tên chính xác.",
+                    "screenshotsNote": "Lưu ý: Đảm bảo các tệp ảnh chụp màn hình được đặt trong thư mục <code>assets/brickshop/</code> với tên chính xác.",
                     "ssHeaderHome": "Trang Chủ", "ssHeaderLego": "Giới thiệu LEGO", "ssHeaderQman": "Giới thiệu Qman",
                     "ssHeaderKeeppley": "Giới thiệu Keeppley", "ssHeaderProducts": "Trang Sản phẩm", "ssHeaderDetail": "Trang Chi tiết Sản phẩm",
                     "ssHeaderSetInfo": "Cài đặt - Thông tin", "ssHeaderSetAvatar": "Cài đặt - Ảnh đại diện", "ssHeaderSetSocial": "Cài đặt - Mạng xã hội",
                     "ssHeaderOrderDetail": "Chi tiết Đơn hàng",
-                    "footerCopyright": "Bản quyền © Trần Hữu Đạt 2024",
-                    "footerPrivacy": "Chính sách Bảo mật", "footerTerms": "Điều khoản Sử dụng", "footerContact": "Liên hệ"
+                    // === KEY DỊCH MỚI CHO ADMIN SCREENSHOTS ===
+                    "screenshotsAdminTitle": "Ảnh chụp Giao diện Quản trị (Tailwind CSS)",
+                    "ssAdminHeaderDashboard": "Bảng điều khiển",
+                    "ssAdminHeaderManageUsers": "Quản lý Người dùng",
+                    "ssAdminHeaderManageProducts": "Quản lý Sản phẩm",
+                    "ssAdminHeaderManageOrders": "Quản lý Đơn hàng",
+                    "ssAdminHeaderAddProduct": "Thêm Sản phẩm",
+                    "ssAdminHeaderManageComments": "Quản lý Bình luận", // Thêm nếu bạn có ảnh này
+
+                    // --- CÁC KEY MỚI CHO FOOTER ---
+                    "footerTagline": "Một lập trình viên Web đam mê xây dựng các ứng dụng đẹp và hữu ích.",
+                    "footerQuickLinks": "Liên kết nhanh",
+                    "footerConnect": "Kết nối với tôi",
+                    "footerCopyright": "Bản quyền © Trần Hữu Đạt 2025"
                 }
             };
-            
+
             const languageSwitcher = document.querySelector('.language-switcher');
             const currentFlag = languageSwitcher.querySelector('.current-flag');
             const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
@@ -414,7 +668,7 @@
                 flagImg.alt = lang === 'en' ? 'English' : 'Tiếng Việt';
                 localStorage.setItem('language', lang);
             };
-            
+
             currentFlag.addEventListener('click', (event) => {
                 event.stopPropagation();
                 languageDropdown.classList.toggle('show');
@@ -472,7 +726,7 @@
                     autoTextCurrentIndex = (autoTextCurrentIndex + 1) % textsToUse.length;
                     changeCursorTextWithFade(newTextToShow);
                 }
-                
+
                 function showCustomCursor() {
                     isCustomCursorActive = true;
                     cursorElement.classList.add('visible');
@@ -493,8 +747,8 @@
                 interactiveElements.forEach(el => {
                     el.addEventListener('mouseenter', hideCustomCursor);
                     el.addEventListener('mouseleave', (e) => {
-                         updateCursorPosition(e.clientX, e.clientY);
-                         showCustomCursor();
+                        updateCursorPosition(e.clientX, e.clientY);
+                        showCustomCursor();
                     });
                 });
 
@@ -506,4 +760,5 @@
         });
     </script>
 </body>
+
 </html>

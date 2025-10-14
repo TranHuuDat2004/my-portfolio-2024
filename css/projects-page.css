@@ -1,0 +1,454 @@
+/* File: css/projects-page.css */
+
+/* --- CSS ĐẶC THÙ CHO TRANG PROJECT --- */
+
+/* --- BỔ SUNG: Wrapper cho trang con --- */
+.page-wrapper {
+    padding-top: 10rem; /* Tạo khoảng trống ở trên để không bị header che */
+}
+
+.text-primary {
+    color: var(--gradient-purple) !important;
+}
+
+.text-gradient {
+    background: linear-gradient(to right, var(--gradient-purple), var(--gradient-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.light-mode .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+body.light-mode h3,
+body.light-mode p {
+    color: #212121;
+}
+
+/* CSS CHO TAG PHÂN LOẠI DỰ ÁN */
+.project-category-tag {
+    display: inline-block;
+    background-color: #b3cde0;
+    /* Pastel blue */
+    color: #333;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 50px;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.project-category-tag.frontend {
+    background-color: #ccebc5;
+    /* Pastel green */
+}
+
+.project-category-tag.mobile {
+    background-color: #ffedbc;
+    /* Pastel yellow */
+    color: #333;
+}
+
+.project-category-tag.ml {
+    background-color: #decbe4;
+    /* Pastel purple */
+}
+
+.project-category-tag.fullstack {
+    background-color: #fed9a6;
+    /* Pastel orange */
+}
+
+.project-tag-special {
+    background-color: #b3cde0;
+    /* Pastel blue */
+}
+
+.project-tag-highly-recommended {
+    background-color: #ccebc5;
+    /* Pastel green */
+}
+
+.project-tag-featured {
+    background-color: #ffedbc;
+    /* Pastel yellow */
+    color: #333;
+}
+
+.project-tag-best-choice {
+    background-color: #fddaec;
+    /* Pastel pink */
+}
+
+.project-tag-new-release {
+    background-color: #b3e2cd;
+    /* Pastel teal */
+    color: #333;
+}
+
+.project-tag-starter {
+    background-color: #f1d4d4;
+    /* Pastel red */
+}
+
+.project-tag-learning {
+    background-color: #e6e6e6;
+    /* Pastel gray */
+}
+
+/* CSS CHO TECH TAGS */
+.tech-stack-container {
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.tech-tag {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: 0.8em;
+    font-weight: 600;
+    line-height: 1;
+    color: #333;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.375rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tech-tag.html5 {
+    background-color: #f1d4d4;
+    /* Pastel red */
+}
+
+.tech-tag.css3 {
+    background-color: #d1e5f0;
+    /* Pastel blue */
+}
+
+.tech-tag.javascript {
+    background-color: #fff2cc;
+    /* Pastel yellow */
+}
+
+.tech-tag.bootstrap {
+    background-color: #e6d9f2;
+    /* Pastel purple */
+}
+
+.tech-tag.tailwind {
+    background-color: #b3e0e6;
+    /* Pastel cyan */
+}
+
+.tech-tag.nodejs {
+    background-color: #ccebd7;
+    /* Pastel green */
+}
+
+.tech-tag.expressjs {
+    background-color: #e6e6e6;
+    /* Pastel gray */
+}
+
+.tech-tag.php {
+    background-color: #f2e6d9;
+    /* Pastel beige */
+}
+
+.tech-tag.mysql {
+    background-color: #d9e6f2;
+    /* Pastel light blue */
+}
+
+.tech-tag.firebase {
+    background-color: #fff2cc;
+    /* Pastel yellow */
+}
+
+.tech-tag.java {
+    background-color: #f2d9e6;
+    /* Pastel pink */
+}
+
+.tech-tag.android {
+    background-color: #e0f2e6;
+    /* Pastel green */
+}
+
+.tech-tag.github {
+    background-color: #e6f0fa;
+    /* Pastel light blue */
+}
+
+.tech-tag.python {
+    background-color: #d9e6f2;
+    /* Pastel light blue */
+}
+
+.tech-tag.tensorflow {
+    background-color: #ffe0b2;
+    /* Pastel orange */
+}
+
+.tech-tag.keras {
+    background-color: #f2d9d9;
+    /* Pastel red */
+}
+
+.tech-tag.opencv {
+    background-color: #e6d9f2;
+    /* Pastel purple */
+}
+
+.tech-tag.colab {
+    background-color: #fff2cc;
+    /* Pastel yellow */
+}
+
+.tech-tag.git {
+    background-color: #f2e0e6;
+    /* Pastel pink */
+}
+
+.tech-tag.figma {
+    background-color: #e6e0f2;
+    /* Pastel lavender */
+}
+
+.project-card-image {
+    max-width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Nút chính (màu nền hồng) */
+.btn-omacha-primary {
+    background-color: #E84A7F;
+    /* Mã màu hồng từ logo Omacha của bạn */
+    border-color: #E84A7F;
+    color: #fff;
+    /* Chữ màu trắng */
+}
+
+/* Hiệu ứng khi di chuột vào nút chính */
+.btn-omacha-primary:hover {
+    background-color: #d13c6d;
+    /* Làm màu hồng đậm hơn một chút */
+    border-color: #d13c6d;
+    color: #fff;
+}
+
+/* Nút phụ (viền hồng) */
+.btn-omacha-outline {
+    border-color: #E84A7F;
+    color: #E84A7F;
+}
+
+/* Hiệu ứng khi di chuột vào nút phụ */
+.btn-omacha-outline:hover {
+    background-color: #E84A7F;
+    border-color: #E84A7F;
+    color: #fff;
+    /* Chữ chuyển thành màu trắng */
+}
+
+@media (min-width: 768px) {
+    .project-card-image {
+        max-width: 220px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .d-flex.flex-md-row>.text-md-start.p-md-0 {
+        padding: 1.5rem !important;
+    }
+
+    .d-flex.flex-md-row>.p-md-5 {
+        padding: 1.5rem !important;
+    }
+}
+
+/* CSS CHO NÚT CHUYỂN NGÔN NGỮ */
+.language-switcher {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.language-switcher .current-flag img {
+    width: 32px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.language-dropdown {
+    display: none;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    padding: 8px;
+    z-index: 1100;
+    width: 180px;
+    border: 1px solid #eee;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    pointer-events: none;
+}
+
+.language-dropdown.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.language-dropdown a {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.language-dropdown a:hover {
+    background-color: #f0f2f5;
+}
+
+.language-dropdown img {
+    width: 24px;
+    margin-right: 12px;
+    border-radius: 3px;
+}
+
+/* CSS CHO CON TRỎ TÙY CHỈNH */
+.cursor-element {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    z-index: 1070;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.cursor-element.visible {
+    opacity: 1;
+}
+
+.cursor-element img {
+    width: 28px;
+    height: auto;
+    margin-right: 8px;
+}
+
+.cursor-element .cursor-text {
+    background-color: #0d6efd;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.95em;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+    font-weight: bold;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.cursor-element .cursor-text.fade-out {
+    opacity: 0;
+}
+
+/* Thêm vào cuối file CSS của bạn */
+footer.bg-dark a.text-white-50 {
+    transition: color 0.3s ease-in-out;
+}
+
+footer.bg-dark a.text-white-50:hover {
+    color: #ffffff !important;
+    /* Dùng !important để ghi đè bootstrap nếu cần */
+    text-decoration: underline;
+}
+
+footer a {
+    color: #adb5bd;
+    /* Màu chữ liên kết trong footer */
+    text-decoration: none;
+}
+
+/* --- BỔ SUNG: Wrapper cho trang con --- */
+.page-wrapper {
+    padding-top: 10rem;
+}
+
+/* --- [MỚI] BỔ SUNG: Style cho tiêu đề phân loại dự án --- */
+.section-divider {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 6rem 0 4rem 0; /* Tạo khoảng cách lớn */
+    position: relative;
+}
+
+.section-divider::before,
+.section-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.section-divider::before {
+    left: 0;
+}
+
+.section-divider::after {
+    right: 0;
+}
+
+/* --- [MỚI] Nút Back to Home và các điều chỉnh --- */
+.back-to-home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2.5rem;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.back-to-home-btn:hover {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-primary);
+}
+
+body.light-mode .back-to-home-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-color: var(--text-primary);
+}
+
+/* Điều chỉnh lại max-width của container project cho rộng hơn một chút */
+#projects .container {
+    max-width: 1400px;
+}

@@ -421,6 +421,29 @@
             margin-bottom: 2rem;
         }
 
+        /* === CSS ĐỂ KIỂM SOÁT ẢNH BANNER TRONG README === */
+        /* Quy tắc này nhắm vào các ảnh banner dự án cụ thể */
+        #readme-content img[alt*="banner"] {
+            /* Thêm các từ khóa khác nếu có */
+            max-height: 50px;
+            /* Đặt chiều rộng tối đa cho banner. Bạn có thể thay đổi số này! */
+            display: block;
+            /* Đảm bảo ảnh nằm trên một dòng riêng */
+            margin-left: auto;
+            /* Căn giữa ảnh */
+            margin-right: auto;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid #dee2e6;
+            /* Thêm viền nhẹ */
+            border-radius: 8px;
+            /* Bo góc */
+            background-color: white;
+            /* Thêm nền trắng nếu ảnh là PNG trong suốt */
+            padding: 5px;
+            /* Thêm chút đệm bên trong viền */
+        }
+
         /* Cụ thể cho danh sách dự án nếu cần */
         #readme-content h4+ol>li>em,
         /* Tech stack trong project list */
@@ -488,47 +511,67 @@
         }
 
         /* Căn chỉnh phần giới thiệu đầu tiên */
-  #readme-content > h1[align="center"] { /* Tiêu đề "Hi 👋, I'm Tran Huu Dat" */
-      margin-bottom: 0.5rem;
-  }
-  #readme-content > h3[align="center"] { /* "I'm a Software Engineering student..." */
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-      font-size: 1.2rem; /* Có thể giảm kích thước một chút */
-      color: #6c757d; /* Màu xám nhẹ hơn */
-  }
+        #readme-content>h1[align="center"] {
+            /* Tiêu đề "Hi 👋, I'm Tran Huu Dat" */
+            margin-bottom: 0.5rem;
+        }
 
-  /* Xử lý ảnh GIF type.gif và Profile views */
-  #readme-content > img[alt="Coding Animation"][align="right"] {
-      margin-top: -20px; /* Kéo ảnh lên một chút nếu cần */
-      max-width: 300px; /* Giảm kích thước nếu nó quá lớn trên một số màn hình */
-  }
-  @media (max-width: 768px) { /* Trên màn hình nhỏ hơn */
-      #readme-content > img[alt="Coding Animation"][align="right"] {
-          float: none; /* Bỏ float */
-          display: block;
-          margin: 1rem auto; /* Căn giữa và thêm khoảng cách */
-          max-width: 80%;
-      }
-      /* Đảm bảo text không bị ảnh đè lên quá nhiều */
-      #readme-content > h1[align="center"],
-      #readme-content > h3[align="center"],
-      #readme-content > p:has(img[alt="Profile Views"]) { /* Đoạn <p> chứa Profile Views */
-          clear: both; /* Quan trọng để text không bị float ảnh đè */
-      }
-  }
+        #readme-content>h3[align="center"] {
+            /* "I'm a Software Engineering student..." */
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            /* Có thể giảm kích thước một chút */
+            color: #6c757d;
+            /* Màu xám nhẹ hơn */
+        }
+
+        /* Xử lý ảnh GIF type.gif và Profile views */
+        #readme-content>img[alt="Coding Animation"][align="right"] {
+            margin-top: -20px;
+            /* Kéo ảnh lên một chút nếu cần */
+            max-width: 300px;
+            /* Giảm kích thước nếu nó quá lớn trên một số màn hình */
+        }
+
+        @media (max-width: 768px) {
+
+            /* Trên màn hình nhỏ hơn */
+            #readme-content>img[alt="Coding Animation"][align="right"] {
+                float: none;
+                /* Bỏ float */
+                display: block;
+                margin: 1rem auto;
+                /* Căn giữa và thêm khoảng cách */
+                max-width: 80%;
+            }
+
+            /* Đảm bảo text không bị ảnh đè lên quá nhiều */
+            #readme-content>h1[align="center"],
+            #readme-content>h3[align="center"],
+            #readme-content>p:has(img[alt="Profile Views"]) {
+                /* Đoạn <p> chứa Profile Views */
+                clear: both;
+                /* Quan trọng để text không bị float ảnh đè */
+            }
+        }
 
 
-  #readme-content > p:has(img[alt="Profile Views"]) { /* Đoạn <p> chứa Profile Views */
-      margin-bottom: 2rem; /* Tăng khoảng cách dưới Profile Views */
-  }
+        #readme-content>p:has(img[alt="Profile Views"]) {
+            /* Đoạn <p> chứa Profile Views */
+            margin-bottom: 2rem;
+            /* Tăng khoảng cách dưới Profile Views */
+        }
 
-  /* "Here's a little bit about me:" */
-  #readme-content > ul:first-of-type { /* Nhắm vào list ul đầu tiên (thường là phần "Here's a little bit about me") */
-      margin-top: 1rem;
-      list-style-position: outside; /* Đảm bảo bullet points không bị thụt vào quá nhiều */
-      padding-left: 1.5rem; /* Điều chỉnh thụt lề nếu cần */
-  }
+        /* "Here's a little bit about me:" */
+        #readme-content>ul:first-of-type {
+            /* Nhắm vào list ul đầu tiên (thường là phần "Here's a little bit about me") */
+            margin-top: 1rem;
+            list-style-position: outside;
+            /* Đảm bảo bullet points không bị thụt vào quá nhiều */
+            padding-left: 1.5rem;
+            /* Điều chỉnh thụt lề nếu cần */
+        }
 
         /* Hoặc dùng SVG icon */
 

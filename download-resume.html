@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Tải về Hồ sơ (CV) của Trần Hữu Đạt" data-translate-key="metaDescription" />
+    <meta name="author" content="Trần Hữu Đạt" />
+    <title>Tải CV - Trần Hữu Đạt</title>
+    <!-- Favicon và các link CSS/Font giống các trang khác -->
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <style>
+        body {
+            cursor: none;
+            position: relative;
+        }
+
+        a,
+        button,
+        input[type="submit"],
+        .form-control,
+        .current-flag {
+            cursor: url('assets/hand_blue.png'), auto;
+        }
+
+        .glimpse-image-wrapper {
+            width: 90%;
+            max-width: 600px;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 576px) {
+            .glimpse-image-wrapper {
+                width: 80%;
+            }
+
+            .card-body .row .col-lg-8 ul,
+            .card-body .row .col-lg-9 ul {
+                padding-left: 1.25rem;
+            }
+
+            .card-body .row .col-lg-8 ul li,
+            .card-body .row .col-lg-9 ul li,
+            .card-body .row .col-lg-8 p,
+            .card-body .row .col-lg-9 p {
+                font-size: 0.875rem;
+                line-height: 1.5;
+                margin-bottom: 0.35rem;
+            }
+        }
+
+        /* CSS CHO NÚT CHUYỂN NGÔN NGỮ */
+        .language-switcher {
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .language-switcher .current-flag img {
+            width: 32px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            top: 120%;
+            right: 0;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            padding: 8px;
+            z-index: 1100;
+            width: 180px;
+            border: 1px solid #eee;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+            pointer-events: none;
+        }
+
+        .language-dropdown.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .language-dropdown a {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        .language-dropdown a:hover {
+            background-color: #f0f2f5;
+        }
+
+        .language-dropdown img {
+            width: 24px;
+            margin-right: 12px;
+            border-radius: 3px;
+        }
+
+        /* CSS CHO CON TRỎ TÙY CHỈNH */
+        .cursor-element {
+            position: fixed;
+            display: flex;
+            align-items: center;
+            pointer-events: none;
+            z-index: 1070;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .cursor-element.visible {
+            opacity: 1;
+        }
+
+        .cursor-element img {
+            width: 28px;
+            height: auto;
+            margin-right: 8px;
+        }
+
+        .cursor-element .cursor-text {
+            background-color: #0d6efd;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.95em;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+            font-weight: bold;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .cursor-element .cursor-text.fade-out {
+            opacity: 0;
+        }
+
+        /* Thêm vào cuối file CSS của bạn */
+        footer.bg-dark a.text-white-50 {
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer.bg-dark a.text-white-50:hover {
+            color: #ffffff !important;
+            /* Dùng !important để ghi đè bootstrap nếu cần */
+            text-decoration: underline;
+        }
+
+        footer a {
+            color: #adb5bd;
+            /* Màu chữ liên kết trong footer */
+            text-decoration: none;
+        }
+
+        /* === CSS MỚI CHO CARD DOWNLOAD === */
+        .resume-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            text-decoration: none;
+            /* Bỏ gạch chân nếu bọc card trong thẻ a */
+            display: block;
+            /* Đảm bảo thẻ a chiếm toàn bộ không gian */
+        }
+
+        .resume-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+        }
+
+        .resume-card .card-img-top {
+            border-bottom: 1px solid #dee2e6;
+            /* Đường kẻ ngăn cách ảnh và nội dung */
+            padding: 1rem;
+            background-color: #f8f9fa;
+            /* Nền nhẹ cho khu vực ảnh */
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column h-100 bg-light">
+
+    <header-placeholder></header-placeholder>
+
+    <main class="flex-shrink-0">
+        <div class="container px-5 my-5">
+            <div class="text-center mb-5">
+                <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline"
+                        data-translate-key="downloadTitle">Tải về Hồ sơ (CV)</span></h1>
+                <p class="lead fw-normal text-muted mt-3" data-translate-key="downloadSubtitle">Cảm ơn bạn đã quan tâm.
+                    Vui lòng chọn phiên bản CV phù hợp với nhu cầu của bạn.</p>
+            </div>
+
+            <div class="row gx-5 justify-content-center">
+
+                <!-- Card cho CV tiếng Anh -->
+                <div class="col-lg-5 mb-5">
+                    <div class="card h-100 shadow border-0 resume-card">
+                        <img class="card-img-top" src="assets/summary.PNG" alt="Resume Summary Preview" />
+                        <div class="card-body p-4">
+                            <div class="badge bg-primary bg-gradient rounded-pill mb-2">Recommended</div>
+                            <h5 class="card-title mb-3 fw-bolder" data-translate-key="summaryTitle">CV tiếng Anh (1 Trang)
+                            </h5>
+                            <p class="card-text text-muted" data-translate-key="summaryDesc">Phiên bản ngắn gọn, súc
+                                tích, tập trung vào những kỹ năng và dự án nổi bật nhất. Lý tưởng để xem lướt qua nhanh
+                                chóng.</p>
+                        </div>
+                        <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                            <!-- Bọc 2 nút trong một div với d-flex -->
+                            <div class="d-flex justify-content-center gap-2">
+
+                                <!-- Nút 1: Tải bản tiếng Anh -->
+                                <a class="btn btn-primary flex-grow-1"
+                                    href="assets/resume/TranHuuDat-Resume-Summary.pdf" download>
+                                    <i class="bi bi-download me-2"></i>
+                                    <span data-translate-key="btnDownloadSummaryEN">Tải bản tiếng Anh</span>
+                                </a>
+
+                                <!-- Nút 2: Tải bản đầy đủ (SỬA LẠI LINK VÀ KEY CHO ĐÚNG) -->
+                                <a class="btn btn-outline-primary flex-grow-1"
+                                    href="assets/resume/TranHuuDat-Resume-Summary-VN.pdf" download>
+                                    <i class="bi bi-download me-2"></i>
+                                    <span data-translate-key="btnDownloadSummaryVN">Tải bản tiếng Việt</span>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card cho CV Đầy đủ -->
+                <div class="col-lg-5 mb-5">
+                    <div class="card h-100 shadow border-0 resume-card">
+                        <img class="card-img-top" src="assets/full1.PNG" alt="Full Resume Preview" />
+
+                        <!-- <img class="card-img-top" src="assets/full2.PNG" alt="Full Resume Preview" /> Đẹp nha để lại -->
+                        <div class="card-body p-4">
+                            <div class="badge bg-secondary bg-gradient rounded-pill mb-2">Detailed</div>
+                            <h5 class="card-title mb-3 fw-bolder" data-translate-key="fullTitle">CV Đầy đủ (Chi tiết)
+                            </h5>
+                            <p class="card-text text-muted" data-translate-key="fullDesc">Phiên bản chi tiết, bao gồm
+                                tất cả các dự án, kinh nghiệm và thành tích. Phù hợp khi bạn cần tìm hiểu sâu hơn.</p>
+                        </div>
+                        <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                            <a class="btn btn-outline-dark w-100" href="assets/resume/TranHuuDat-Resume-Full.pdf"
+                                download>
+                                <i class="bi bi-download me-2"></i>
+                                <span data-translate-key="btnDownloadFull">Tải bản Đầy đủ</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer-placeholder></footer-placeholder>
+
+    <!-- Cursor Element HTML -->
+    <div class="cursor-element">
+        <img src="assets/cursor_blue.png" alt="Custom Cursor Icon">
+        <span class="cursor-text">Hữu Đạt</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const translations = {
+                "en": {
+                    "metaDescription": "My Resume - Tran Huu Dat",
+                    "navHome": "Home",
+                    "navResume": "Resume",
+                    "navProjects": "Projects",
+                    "navContact": "Contact",
+                    "resumeTitle": "Resume",
+                    "downloadTitle": "Download Resume (CV)",
+                    "downloadSubtitle": "Thank you for your interest. Please choose the version that best suits your needs.",
+                    "summaryTitle": "Summary Resume (1-Page)",
+                    "summaryDesc": "A concise, one-page version focusing on the most relevant skills and standout projects. Ideal for a quick overview.",
+                    "btnDownloadSummary": "Download Summary",
+                    "fullTitle": "Comprehensive Resume",
+                    "fullDesc": "The detailed version, including all projects, experiences, and achievements. Perfect for an in-depth review.",
+                    "btnDownloadFull": "Download Full Version",
+                    "btnDownloadSummaryEN": "English Version",
+                    "btnDownloadSummaryVN": "Vietnamese Version",
+
+                    // --- CÁC KEY MỚI CHO FOOTER ---
+                    "footerTagline": "A passionate Web Developer dedicated to building beautiful and useful applications.",
+                    "footerQuickLinks": "Quick Links",
+                    "footerConnect": "Connect with Me",
+                    "footerCopyright": "Copyright © Tran Huu Dat 2025"
+                },
+                "vi": {
+                    "metaDescription": "Hồ sơ của tôi - Trần Hữu Đạt",
+                    "navHome": "Trang chủ",
+                    "navResume": "Hồ sơ",
+                    "navProjects": "Dự án",
+                    "navContact": "Liên hệ",
+                    "resumeTitle": "Hồ sơ",
+                    "expTitle": "Kinh nghiệm",
+                    "downloadTitle": "Tải về Hồ sơ (CV)",
+                    "downloadSubtitle": "Cảm ơn bạn đã quan tâm. Vui lòng chọn phiên bản CV phù hợp với nhu cầu của bạn.",
+                    "summaryTitle": "CV tiếng Anh (1 Trang)",
+                    "summaryDesc": "Phiên bản ngắn gọn, súc tích, tập trung vào những kỹ năng và dự án nổi bật nhất. Lý tưởng để xem lướt qua nhanh chóng.",
+                    "btnDownloadSummary": "Tải bản tiếng Anh",
+                    "fullTitle": "CV Đầy đủ (Chi tiết)",
+                    "fullDesc": "Phiên bản chi tiết, bao gồm tất cả các dự án, kinh nghiệm và thành tích. Phù hợp khi bạn cần tìm hiểu sâu hơn.",
+                    "btnDownloadFull": "Tải bản Đầy đủ",
+                    "btnDownloadSummaryEN": "Tải bản tiếng Anh",
+                    "btnDownloadSummaryVN": "Tải bản tiếng Việt",
+                    "footerTagline": "Một lập trình viên Web đam mê xây dựng các ứng dụng đẹp và hữu ích.",
+                    "footerQuickLinks": "Liên kết nhanh",
+                    "footerConnect": "Kết nối với tôi",
+                    "footerCopyright": "Bản quyền © Trần Hữu Đạt 2025"
+                }
+            };
+
+            const languageSwitcher = document.querySelector('.language-switcher');
+            const currentFlag = languageSwitcher.querySelector('.current-flag');
+            const languageDropdown = languageSwitcher.querySelector('.language-dropdown');
+
+            const setLanguage = (lang) => {
+                document.querySelectorAll('[data-translate-key]').forEach(element => {
+                    const key = element.getAttribute('data-translate-key');
+                    if (translations[lang] && translations[lang][key]) {
+                        if (element.tagName === 'META') {
+                            element.setAttribute('content', translations[lang][key]);
+                        } else {
+                            element.innerHTML = translations[lang][key];
+                        }
+                    }
+                });
+
+                document.documentElement.lang = lang;
+                const flagImg = document.getElementById('current-flag-img');
+                flagImg.src = lang === 'en' ? 'assets/en.png' : 'assets/vn.png';
+                flagImg.alt = lang === 'en' ? 'English' : 'Tiếng Việt';
+                localStorage.setItem('language', lang);
+            };
+
+            currentFlag.addEventListener('click', (event) => {
+                event.stopPropagation();
+                languageDropdown.classList.toggle('show');
+            });
+
+            window.addEventListener('click', () => {
+                if (languageDropdown.classList.contains('show')) {
+                    languageDropdown.classList.remove('show');
+                }
+            });
+
+            document.querySelectorAll('.lang-option').forEach(item => {
+                item.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    const selectedLang = item.getAttribute('data-lang');
+                    setLanguage(selectedLang);
+                    languageDropdown.classList.remove('show');
+                });
+            });
+
+            const savedLang = localStorage.getItem('language') || 'vi';
+            setLanguage(savedLang);
+
+            // --- LOGIC CON TRỎ TÙY CHỈNH ---
+            const cursorElement = document.querySelector('.cursor-element');
+            if (cursorElement) {
+                const cursorTextElement = cursorElement.querySelector('.cursor-text');
+                const autoTexts = ["Welcome!", "This is my resume", "Let's connect!"];
+                let autoTextCurrentIndex = 0;
+
+                function updateCursorPosition(x, y) {
+                    if (cursorElement.classList.contains('hidden-by-interaction')) {
+                        if (cursorElement.style.opacity !== '0') cursorElement.style.opacity = '0';
+                        return;
+                    }
+                    if (cursorElement.style.opacity !== '1' && cursorElement.classList.contains('visible')) {
+                        cursorElement.style.opacity = '1';
+                    }
+                    cursorElement.style.left = x + 'px';
+                    cursorElement.style.top = y + 'px';
+                    if (!cursorElement.classList.contains('visible')) {
+                        cursorElement.classList.add('visible');
+                    }
+                }
+
+                function changeCursorTextWithFade(newText) {
+                    if (!cursorTextElement || cursorTextElement.isTextFading || cursorTextElement.textContent === newText) return;
+                    cursorTextElement.isTextFading = true;
+                    cursorTextElement.classList.add('fade-out');
+                    setTimeout(() => {
+                        cursorTextElement.textContent = newText;
+                        cursorTextElement.classList.remove('fade-out');
+                        cursorTextElement.isTextFading = false;
+                    }, 300);
+                }
+
+                function updateAutoCursorText() {
+                    changeCursorTextWithFade(autoTexts[autoTextCurrentIndex]);
+                    autoTextCurrentIndex = (autoTextCurrentIndex + 1) % autoTexts.length;
+                }
+
+                document.addEventListener('mousemove', (e) => updateCursorPosition(e.clientX, e.clientY));
+
+                const interactiveElements = document.querySelectorAll('a, button, input, .form-control, .current-flag');
+                interactiveElements.forEach(el => {
+                    el.addEventListener('mouseenter', () => cursorElement.classList.add('hidden-by-interaction'));
+                    el.addEventListener('mouseleave', () => cursorElement.classList.remove('hidden-by-interaction'));
+                });
+
+                updateAutoCursorText();
+                setInterval(updateAutoCursorText, 3000);
+
+                setTimeout(() => {
+                    if (!cursorElement.classList.contains('hidden-by-interaction')) {
+                        cursorElement.classList.add('visible');
+                    }
+                }, 100);
+            }
+        });
+    </script>
+</body>
+
+</html>
