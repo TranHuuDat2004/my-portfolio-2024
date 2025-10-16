@@ -11,13 +11,15 @@ This README is available in English and Vietnamese. Please expand the section fo
   <a href="https://github.com/TranHuuDat2004" target="_blank">
     <img src="https://img.shields.io/badge/GITHUB-TranHuuDat2004-yellow?style=for-the-badge&logo=github&logoColor=white" alt="Author: TranHuuDat2004"/>
   </a>
-  <a href="https://tranhuudat2004.github.io/" target="_blank">
+  <a href="https://my-portfolio-2024/" target="_blank">
     <img src="https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=google-chrome" alt="Live Demo"/>
   </a>
-  <a href="https://github.com/TranHuuDat2004/tranhuudat2004.github.io/releases/latest" target="_blank">
-    <img src="https://img.shields.io/github/v/release/TranHuuDat2004/tranhuudat2004.github.io?style=for-the-badge&logo=github" alt="Latest Release"/>
+  <a href="https://github.com/TranHuuDat2004/my-portfolio-2024/releases/latest" target="_blank">
+    <img src="https://img.shields.io/github/v/release/TranHuuDat2004/my-portfolio-2024?style=for-the-badge&logo=github" alt="Latest Release"/>
   </a>
-
+  <a href="https://github.com/TranHuuDat2004/my-portfolio-2024" target="_blank">
+    <img src="https://img.shields.io/github/repo-size/TranHuuDat2004/my-portfolio-2024?style=for-the-badge&logo=github" alt="GitHub repo size"/>
+  </a>
 </p>
 
 
@@ -61,17 +63,17 @@ This portfolio is built using a combination of modern front-end technologies:
 ## 🚀 How to View / Local Setup
 
 1.  **Live Site:**
-    *   The portfolio is best viewed live at: [https://tranhuudat2004.github.io/](https://tranhuudat2004.github.io/)
+    *   The portfolio is best viewed live at: [https://my-portfolio-2024/](https://my-portfolio-2024/)
 
 2.  **Local Setup:**
     *   Clone this repository:
         ```bash
-        git clone https://github.com/TranHuuDat2004/tranhuudat2004.github.io.git
+        git clone https://github.com/TranHuuDat2004/my-portfolio-2024.git
         ```
         *(Replace with your actual repository URL if it's different)*
     *   Navigate into the cloned directory:
         ```bash
-        cd tranhuudat2004.github.io
+        cd my-portfolio-2024
         ```
     *   Open any of the `.html` files (e.g., `index.html`) directly in your preferred web browser. No compilation or build steps are necessary as this is a static website.
 
@@ -148,17 +150,17 @@ Portfolio này được xây dựng bằng sự kết hợp của các công ngh
 ## 🚀 Cách Xem / Thiết lập Cục bộ
 
 1.  **Trang Trực tuyến:**
-    *   Cách dễ nhất để xem portfolio là truy cập trang trực tuyến tại: [https://tranhuudat2004.github.io/](https://tranhuudat2004.github.io/)
+    *   Cách dễ nhất để xem portfolio là truy cập trang trực tuyến tại: [https://my-portfolio-2024/](https://my-portfolio-2024/)
 
 2.  **Thiết lập Cục bộ:**
     *   Sao chép kho lưu trữ này:
         ```bash
-        git clone https://github.com/TranHuuDat2004/tranhuudat2004.github.io.git
+        git clone https://github.com/TranHuuDat2004/my-portfolio-2024.git
         ```
         *(Thay thế bằng URL kho lưu trữ thực tế của bạn nếu khác)*
     *   Điều hướng vào thư mục dự án vừa sao chép:
         ```bash
-        cd tranhuudat2004.github.io
+        cd my-portfolio-2024
         ```
     *   Mở bất kỳ tệp `.html` nào (ví dụ: `index.html`) trực tiếp bằng trình duyệt web của bạn. Không cần các bước build đặc biệt vì đây là một trang web tĩnh.
 
